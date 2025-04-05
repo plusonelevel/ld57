@@ -1,3 +1,53 @@
-[gd_scene format=3 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=5 format=3 uid="uid://b38wx223fpw4j"]
+
+[ext_resource type="Script" uid="uid://dx8hg62122ogb" path="res://scenes/character_body_3d.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cnrrq0357b65q" path="res://scenes/scene.gd" id="2_0wfyh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0wfyh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o5qli"]
 
 [node name="Main" type="Node"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(67.0156, 1, 44.2959)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13242, -6.42739)
+size = Vector3(9.74634, 1, 0.9375)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.3382, 1.13242, -1.43097)
+size = Vector3(9.74634, 1, 0.9375)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.6618, 1.13242, -1.43097)
+size = Vector3(9.74634, 1, 0.9375)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.245773, 1.13242, 3.04131)
+size = Vector3(9.74634, 1, 0.9375)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -8.23463, 10.361, 5.5432)
+projection = 1
+size = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.358792, 0.933418, 0, -0.933418, 0.358792, 0, 5.77699, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982297, 0)
+script = ExtResource("1_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("SphereMesh_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_o5qli")
+
+[node name="Scene" type="Node3D" parent="."]
+script = ExtResource("2_0wfyh")
