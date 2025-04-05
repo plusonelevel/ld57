@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=16 format=3 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bf40kh3d4wcto" path="res://scenes/ui.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -248,3 +249,5 @@ size = 5.0
 
 [node name="Goal" parent="." instance=ExtResource("3_sugp2")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.96555, 2.689, 1.498)
+
+[node name="UI" parent="." instance=ExtResource("4_jyhfs")]
