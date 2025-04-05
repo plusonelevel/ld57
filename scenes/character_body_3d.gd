@@ -8,7 +8,7 @@ enum MOVE_MODE {xy, xz}
 var move_mode := MOVE_MODE.xy
 
 func _init() -> void:
-	InputListener.camera_toggled.connect(toggle_camera)
+	GameManager.camera_toggled.connect(toggle_camera)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
