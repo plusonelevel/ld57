@@ -1,9 +1,11 @@
 extends CharacterBody3D
 
 var speed = 5.0
+var gravity = -9.8
 
 func _physics_process(delta: float) -> void:
 	var input_direction = Vector3.ZERO
+	velocity.y += gravity * delta
 	
 	if Input.is_action_pressed("up"):
 		input_direction.z -= 1
