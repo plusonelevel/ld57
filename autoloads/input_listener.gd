@@ -1,5 +1,6 @@
 extends Node
 
+signal camera_toggled
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_fullscreen"):
@@ -10,3 +11,6 @@ func _input(event: InputEvent) -> void:
 
 	elif event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+	
+	elif event.is_action_pressed("toggle_camera"):
+		camera_toggled.emit()

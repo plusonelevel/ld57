@@ -1,3 +1,53 @@
-[gd_scene format=3 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=8 format=3 uid="uid://b38wx223fpw4j"]
+
+[ext_resource type="Script" uid="uid://bkbqji4x1juil" path="res://scenes/camera_3d.gd" id="1_o5qli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
+size = Vector2(20, 20)
+subdivide_width = 5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
+size = Vector2(20, 10)
+subdivide_width = 5
+orientation = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
 
 [node name="Main" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.656836, 0.610799, -0.442145, -2.0439e-08, 0.586372, 0.810042, 0.754034, -0.532064, 0.38515, 0, 9.03142, 0)
+light_color = Color(1, 1, 0.968627, 1)
+shadow_enabled = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("PlaneMesh_sgp6g")
+
+[node name="Wall" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("PlaneMesh_o5qli")
+skeleton = NodePath("../Floor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.947, 0.5, 0.5)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+script = ExtResource("1_o5qli")
