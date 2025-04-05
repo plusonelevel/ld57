@@ -49,5 +49,8 @@ mesh = SubResource("SphereMesh_0wfyh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("SphereShape3D_o5qli")
 
-[node name="Scene" type="Node3D" parent="."]
+[node name="Node2D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+
+[node name="Scene" type="Node3D" parent="Node2D"]
 script = ExtResource("2_0wfyh")
