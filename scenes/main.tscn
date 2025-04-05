@@ -31,6 +31,7 @@ albedo_color = Color(1, 0.360784, 1, 1)
 material = SubResource("StandardMaterial3D_o5qli")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
+size = Vector3(1, 1, 0.214355)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
 
@@ -71,6 +72,97 @@ mesh = SubResource("BoxMesh_sgp6g")
 shape = SubResource("BoxShape3D_0wfyh")
 
 [node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box2" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.173768, 0, 0, 0, 4.2702, -1.57846, 2.4466, 2.95336)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box2"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box2" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box4" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.173768, 0, 0, 0, 4.2702, -4.0539, 2.4466, 6.31066)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box4"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box4" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box6" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.167847, -1.10521, 0, 0.0449743, 4.12469, -7.62197, 2.4741, 2.79791)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box6"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box6" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box8" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(0.733457, -4.65661e-10, 2.90261, 0.175929, 0.167847, -0.810623, -0.656574, 0.0449743, 3.02529, -6.71382, 2.73705, 1.81659)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box8"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box8" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box7" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(0.824166, 0, -2.41842, -0.146582, 0.167847, -0.910875, 0.547051, 0.0449743, 3.39943, -8.78972, 2.41014, 3.06975)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box7"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box7" groups=["2d_collider"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Box5" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 6.627, 0, 0, 0, 4.2702, -8.37156, 3.60338, 2.89888)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.392822)
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box5" groups=["2d_collider"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 visible = false
 shape = SubResource("BoxShape3D_0wfyh")
@@ -140,18 +232,19 @@ shape = SubResource("WorldBoundaryShape3D_0wfyh")
 mesh = SubResource("PlaneMesh_sgp6g")
 skeleton = NodePath("../..")
 
-[node name="FrontCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73, 2.5, 4.021)
+[node name="Player" parent="." instance=ExtResource("2_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20611, 0, 0.54661)
+
+[node name="FrontCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121, 1.04, 8.30322)
 projection = 1
 current = true
 size = 5.0
 
-[node name="SideCamera" type="Camera3D" parent="."]
-transform = Transform3D(0.794735, 0.167118, -0.583496, 0.0808094, 0.923656, 0.374607, 0.601553, -0.344865, 0.720557, -3, 2.2, 3.4)
+[node name="SideCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.136, 5.245, 4.928)
+fov = 45.0
 size = 5.0
 
-[node name="Player" parent="." instance=ExtResource("2_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20611, 0, 0.54661)
-
 [node name="Goal" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.835, 2.689, 1.498)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.96555, 2.689, 1.498)

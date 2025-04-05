@@ -1,7 +1,7 @@
 extends Node
 
-@onready var front_cam := $FrontCamera
-@onready var side_cam := $SideCamera
+@onready var front_cam := $Player/FrontCamera
+@onready var side_cam := $Player/SideCamera
 
 func _init() -> void:
 	#front_cam.current = true
