@@ -1,12 +1,14 @@
-[gd_scene load_steps=31 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=32 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
 [ext_resource type="Shader" uid="uid://dwjk346jyxc8o" path="res://scenes/main.gdshader" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c18k5abmlhb72" path="res://assets/ground.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bo5aph1dvp7w6" path="res://assets/lamp.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b537ka3mua008" path="res://assets/lamp_2.tscn" id="9_85g3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,28 +18,24 @@ ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_o5qli")
 tonemap_mode = 2
+fog_enabled = true
+fog_density = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
+albedo_color = Color(0.244822, 0.333282, 0.407164, 1)
+albedo_texture = ExtResource("2_tipki")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
-size = Vector2(20, 10)
+material = SubResource("StandardMaterial3D_85g3d")
+size = Vector2(20, 20)
 subdivide_width = 5
 orientation = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sugp2"]
 plane = Plane(0, 0, 1, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
-albedo_color = Color(1, 0.360784, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
-material = SubResource("StandardMaterial3D_o5qli")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
-size = Vector3(1, 1, 0.214355)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0wfyh"]
 
@@ -46,6 +44,7 @@ shader = ExtResource("4_jyhfs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vknx"]
 albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
+albedo_texture = ExtResource("6_o6xl0")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_e4837"]
 _surfaces = [{
@@ -159,6 +158,12 @@ shadow_mesh = SubResource("ArrayMesh_hl77x")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tipki"]
 points = PackedVector3Array(-2.5795, 5.48741, 1.45098, -2.09273, 2.99177, -1.22456, -2.45611, 2.58132, 1.16622, -1.18428, 5.33092, 2.47067, -1.41698, 7.66046, 2.37479, -2.2307, 8.37429, 1.76882, -2.12139, 11.6455, 1.51091, -1.96351, 12.9057, -1.06923, -1.56466, 1.73845, -1.67663, -1.82165, 0.0897912, -0.865006, -2.0733, -0.0268918, 0.096673, -1.84157, 10.7519, -1.3468, -1.365, 11.1857, -1.81134, -0.685364, 3.13728, 2.39253, 0.587919, 0.00468129, 1.99654, -0.909318, 12.3964, 2.42369, -1.55349, 11.4671, 2.09482, -1.91298, 12.6888, 0.890082, -1.6249, 13.4411, -0.631537, -0.795641, 12.5268, -1.96188, 0.952269, 3.20454, -2.31232, -1.03514, 0.927164, -1.77203, 1.03583, 6.83544, -2.42689, -1.36937, -0.284967, -0.924451, -1.45001, -0.530688, -0.0893347, 1.78785, 2.43581, 1.78177, 1.73392, 12.9139, 1.86566, 1.27678, 0.107637, 1.79471, 1.32342, 0.593587, 1.81868, 0.693337, -0.490878, 1.38195, 0.607836, 13.2887, 1.80766, -1.31836, 13.2338, 1.12403, 1.50802, 13.4644, 0.0779762, 1.25638, 13.4932, -1.48679, 0.82839, 12.5227, -2.08988, 1.45119, 13.3409, -1.6891, 2.10605, 3.02883, -2.05104, 1.40406, 0.551032, -1.99927, 1.31711, 0.0897912, -1.92256, 0.0904591, 0.141955, -1.78833, 1.77424, 12.8632, -1.84394, 1.31176, 6.98507, -2.33964, -0.199564, -0.300067, -1.3957, 0.818188, -0.361841, -1.48823, 1.218, -0.385177, -0.805081, 1.79562, 0.526323, 0.523819, 2.36643, 2.17499, -1.45419, 2.06038, 4.28489, 1.50947, 2.01083, 7.41062, 1.50084, 2.14345, 6.05298, 1.12115, 2.0288, 12.9318, 0.399175, 1.22577, -0.265749, 1.35462, 1.80291, 0.048609, 0.0281186, 1.38026, -0.368704, -0.344856, 1.68826, 13.3422, -1.45179, 2.00063, 6.69131, -2.11528, 2.38344, 7.48887, -1.70108, 1.73344, -0.0172826, -1.78929, 1.43515, -0.195739, -1.7658, 2.16677, 12.8632, -1.45179, 1.95448, 7.90206, -2.09275, 1.74121, -0.194366, -1.16463, 1.94039, -0.00355518, -1.22552, 2.02346, 0.736353, -1.52322, 2.06475, 12.9139, -0.0821435)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6xl0"]
+size = Vector3(4.16101, 13.8978, 3.04004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
+size = Vector3(285.993, 14.0005, 3.95996)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
 
@@ -166,9 +171,9 @@ script = ExtResource("1_0wfyh")
 environment = SubResource("Environment_0wfyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.656836, 0.610799, -0.442145, -2.0439e-08, 0.586372, 0.810042, 0.754034, -0.532064, 0.38515, 0, 9.03142, 0)
-light_color = Color(1, 1, 0.968627, 1)
-light_energy = 0.1
+transform = Transform3D(-2.13257e-08, -0.872914, 0.487875, -3.81563e-08, 0.487875, 0.872914, -1, 0, -4.37114e-08, 0, 9.03142, 3.40989)
+light_color = Color(0.98373, 0.422199, 0.369877, 1)
+shadow_enabled = true
 sky_mode = 1
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -180,110 +185,6 @@ mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall"]
 shape = SubResource("WorldBoundaryShape3D_sugp2")
-
-[node name="Box4" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.173768, 0, 0, 0, 4.2702, -4.0539, 2.4466, 6.31066)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box4"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box4" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="Box6" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.167847, -1.10521, 0, 0.0449743, 4.12469, -7.62197, 2.4741, 2.79791)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box6"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box6" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="Box8" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(0.733457, -4.65661e-10, 2.90261, 0.175929, 0.167847, -0.810623, -0.656574, 0.0449743, 3.02529, -6.71382, 2.73705, 1.81659)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box8"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box8" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="Box7" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(0.824166, 0, -2.41842, -0.146582, 0.167847, -0.910875, 0.547051, 0.0449743, 3.39943, -8.78972, 2.41014, 3.06975)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box7"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box7" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="Box5" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 6.627, 0, 0, 0, 4.2702, -8.37156, 3.60338, 2.89888)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Box5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.241372, 0, 0, -0.406695)
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Box5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.392822)
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Box5" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="Column2" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(0.231216, 0, 0, 0, 1.04555, 0, 0, 0, 0.253, 1.19397, 2.88413, 0.0795571)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Column2"]
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Column2"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Column2" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_sugp2")
-
-[node name="Platform" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 0.3, 4.071, 1.45, 0.149537)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Platform"]
-mesh = SubResource("BoxMesh_sgp6g")
-
-[node name="CollisionIso" type="CollisionShape3D" parent="Node3D/Platform"]
-shape = SubResource("BoxShape3D_0wfyh")
-
-[node name="CollisionFront" type="CollisionShape3D" parent="Node3D/Platform" groups=["2d_collider"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-visible = false
-shape = SubResource("BoxShape3D_0wfyh")
 
 [node name="Floor" type="StaticBody3D" parent="Node3D"]
 
@@ -315,77 +216,196 @@ material = SubResource("ShaderMaterial_tbgi4")
 [node name="Ground" parent="Scene" instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.29827, 0)
 
-[node name="Stone" type="StaticBody3D" parent="Scene"]
+[node name="Terrain" type="Node3D" parent="Scene"]
+
+[node name="Stone" type="StaticBody3D" parent="Scene/Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.957988, 0.442928, 0.481149)
 
-[node name="Stone" type="MeshInstance3D" parent="Scene/Stone"]
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qnkc7")
 skeleton = NodePath("")
 
-[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Stone"]
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
-[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Stone" groups=["2d_collider"]]
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone" groups=["2d_collider"]]
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 4.885, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
-[node name="Stone2" type="StaticBody3D" parent="Scene"]
-transform = Transform3D(1, 5.59178e-08, -8.74228e-08, 6.18172e-08, -0.617831, -0.258819, -1.07071e-07, 0.165547, -0.965926, -1.62389, 2.94159, 2.16614)
+[node name="Stone4" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(1, 0, 0, 0, 0.170638, 0, 0, 0, 1, -4.06396, 2.4507, 4.61083)
 
-[node name="Stone" type="MeshInstance3D" parent="Scene/Stone2"]
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone4"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qnkc7")
 skeleton = NodePath("")
 
-[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Stone2"]
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone4"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
-[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Stone2" groups=["2d_collider"]]
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone4" groups=["2d_collider"]]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 4.885, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone5" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.0151694, -0.033094, -0.980895, 0.00299895, 0.167398, -0.19392, 0.99988, 0, 0.015463, -8.36198, 2.69792, 2.20009)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone5"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone5"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone6" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(-0.957064, -0.039873, -0.17154, -0.26186, 0.162232, 0.165884, 0.124328, 0.0347556, -0.971111, -7.40479, 2.88481, 2.07039)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone6"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone6"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone7" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.105237, 0.0160891, -0.989967, -0.328137, 0.160916, 0.0549357, 0.93875, 0.0544443, 0.130181, -7.23195, 3.16205, 1.01651)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone7"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone7"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone2" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(1, 5.59178e-08, -8.74228e-08, 6.18172e-08, -0.617831, -0.258819, -1.07071e-07, 0.165547, -0.965926, -1.62389, 2.94159, 2.16614)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone2"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone2"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone2" groups=["2d_collider"]]
 transform = Transform3D(0.252509, 1.07947e-08, 2.59244e-08, -7.49082e-09, 0.258047, -0.679204, -7.25416e-09, 0.109285, 1.60376, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
-[node name="lamp" parent="Scene/Stone2" instance=ExtResource("6_tefeu")]
-transform = Transform3D(0.989997, 0.138569, -0.0265613, 0.213068, -1.39213, 0.678856, 0.0365171, -0.43349, -0.900419, 0.303158, -0.0678484, -0.446385)
-
-[node name="Stone3" type="StaticBody3D" parent="Scene"]
+[node name="Stone3" type="StaticBody3D" parent="Scene/Terrain"]
 transform = Transform3D(-0.389428, -3.83151e-09, -0.111924, 2.1593e-15, 0.930867, -6.03785e-09, 0.111924, -1.33313e-08, -0.389428, 5.88376, 0.0517841, 1.41338)
 
-[node name="Stone" type="MeshInstance3D" parent="Scene/Stone3"]
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone3"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 mesh = SubResource("ArrayMesh_85g3d")
 skeleton = NodePath("")
 
-[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Stone3"]
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone3"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_choun")
 
-[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Stone3" groups=["2d_collider"]]
-transform = Transform3D(0.25576, -9.49805e-10, -0.788716, 8.78397e-10, 0.283803, -1.33686e-09, 0.0589482, -1.0804e-10, 3.42203, 0, 0, 0)
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone3" groups=["2d_collider"]]
+transform = Transform3D(0.242724, -1.03102e-09, -1.65118, 9.1908e-10, 0.283803, -2.78838e-09, 0.0682313, -1.55102e-10, 5.87387, 2.12068, 0.05574, -7.37867)
 shape = SubResource("ConvexPolygonShape3D_choun")
 
-[node name="Column" type="StaticBody3D" parent="Scene"]
+[node name="Column" type="StaticBody3D" parent="Scene/Terrain"]
 transform = Transform3D(0.86546, 0, 0, 0, 0.598607, 0, 0, 0, 0.445818, 1.1362, 0.15384, 1.45691)
 
-[node name="Stone2" type="MeshInstance3D" parent="Scene/Column"]
+[node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vfl2y")
 skeleton = NodePath("")
 
-[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Column"]
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Column"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
-[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Column" groups=["2d_collider"]]
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column" groups=["2d_collider"]]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 4.34969, 0, 0, 3.23745)
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Scene"]
-transform = Transform3D(0.965926, -1.13133e-08, 0.258819, -0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 3.21324, 7.14601, 2.40261)
-light_color = Color(0.748022, 0.828517, 0.828718, 1)
+[node name="Column4" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.988369, 0, 0, 0, 1.76331, 0, 0, 0, 0.821515, -8.31253, 0.15384, 1.21198)
+
+[node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column4"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_vfl2y")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Column4"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_tipki")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column4" groups=["2d_collider"]]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 4.34969, 0, 0, 3.23745)
+shape = SubResource("ConvexPolygonShape3D_tipki")
+
+[node name="Column2" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.00719049, 0, -0.235917, 0, 0.274, 0, 0.174767, 0, 0.00970639, 1.17103, 2.36173, 0.136029)
+
+[node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column2"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_vfl2y")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Column2"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_tipki")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column2" groups=["2d_collider"]]
+transform = Transform3D(12.7032, 0, -0.0113346, 0, 0.289472, 0, 0.420745, 0, 0.342211, 25.554, 1.8585, 0.778966)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="Column3" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(1.91458e-09, 0.486043, 1.04929e-08, -0.00840014, -2.12456e-08, 0.23755, 0.204168, 0, 0.00977357, 3.19668, 1.37804, 0.136029)
+
+[node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column3"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_vfl2y")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Column3"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_tipki")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column3"]
+transform = Transform3D(0.289888, 1.88024e-14, -1.30385e-08, -2.59792e-14, 0.289888, 1.08073e-13, 0, 4.01013e-13, 0.289888, 41.308, 1.88435, -0.00324631)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Lights" type="Node3D" parent="Scene"]
+
+[node name="lamp" parent="Scene/Lights" instance=ExtResource("6_tefeu")]
+transform = Transform3D(0.989997, 0.138569, -0.0265612, -0.141091, 0.972296, -0.186373, -1.52737e-07, 0.188256, 0.982121, -1.32073, 3.09904, 2.58608)
+
+[node name="lamp2" parent="Scene/Lights" instance=ExtResource("9_85g3d")]
+transform = Transform3D(0.99251, 0.122164, 0, -0.121302, 0.985512, 0.118543, 0.0144816, -0.117655, 0.992949, 5.09461, -0.100036, 0.50122)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Scene/Lights"]
+transform = Transform3D(0.965926, -1.13133e-08, 0.258819, -0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 5.26302, 7.14601, 2.40261)
+light_color = Color(0.170358, 0.69476, 0.835653, 1)
 light_energy = 20.0
-spot_range = 65.391
-spot_attenuation = 2.0
-spot_angle = 15.0
+shadow_enabled = true
+shadow_bias = 1.0
+spot_range = 11.446
+spot_attenuation = 1.5
+spot_angle = 30.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Lights"]
+transform = Transform3D(0.929029, 1.61735e-08, -0.370006, 0.370006, -4.06092e-08, 0.929029, 0, -1, -4.37114e-08, -7.46556, 7.14601, 2.40261)
+light_color = Color(0.168627, 0.694118, 0.835294, 1)
+light_energy = 20.0
+shadow_enabled = true
+shadow_bias = 1.0
+spot_range = 11.446
+spot_attenuation = 1.5
+spot_angle = 30.0

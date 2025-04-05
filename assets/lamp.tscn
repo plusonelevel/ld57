@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bo5aph1dvp7w6"]
+[gd_scene load_steps=9 format=4 uid="uid://bo5aph1dvp7w6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66qk2"]
 resource_name = "Glass"
@@ -80,20 +80,24 @@ turbulence_influence_max = 1.0
 turbulence_initial_displacement_min = 1.49012e-06
 turbulence_initial_displacement_max = 1.49012e-06
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edji2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljmaf"]
 transparency = 1
 albedo_color = Color(0.85098, 0.356863, 0, 1)
 emission_enabled = true
 emission = Color(0.900315, 0.594259, 0.249157, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_dhgu1"]
-material = SubResource("StandardMaterial3D_edji2")
+material = SubResource("StandardMaterial3D_ljmaf")
 radius = 0.01
 height = 0.02
 radial_segments = 4
 rings = 2
 
-[node name="lamp" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ljmaf"]
+radius = 0.0573564
+height = 1.03773
+
+[node name="lamp" type="StaticBody3D"]
 
 [node name="lamp" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0410382, 0, 0, 0, 0.0410382, 0, 0, 0, 0.0410382, 0, 0, 0)
@@ -103,8 +107,8 @@ skeleton = NodePath("")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854795, 0.00396609)
 light_color = Color(1, 0.549063, 0.129974, 1)
+light_energy = 5.0
 shadow_enabled = true
-omni_range = 1.5
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.821881, 0.00344845)
@@ -114,3 +118,7 @@ explosiveness = 0.5
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ljmaf")
 draw_pass_1 = SubResource("SphereMesh_dhgu1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47214, 0)
+shape = SubResource("CapsuleShape3D_ljmaf")
