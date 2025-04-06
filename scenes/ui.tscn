@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf40kh3d4wcto"]
+[gd_scene load_steps=8 format=3 uid="uid://bf40kh3d4wcto"]
 
 [ext_resource type="Script" uid="uid://87kwxphreif4" path="res://scenes/ui.gd" id="1_nt7q6"]
+[ext_resource type="Shader" uid="uid://cc7b7564g5633" path="res://scenes/shmat_ui_symbol.tres" id="2_gdt2y"]
 [ext_resource type="Script" uid="uid://bdta37svqp68f" path="res://hide_on_web.gd" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://dmymsgtonve4p" path="res://assets/symbol.png" id="2_yev5y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wm3ai"]
+shader = ExtResource("2_gdt2y")
+shader_parameter/ColorParameter = Color(0.952941, 0.0313726, 0.219608, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_nt7q6"]
 font_names = PackedStringArray("Courier New")
@@ -11,6 +17,7 @@ subpixel_positioning = 0
 [sub_resource type="LabelSettings" id="LabelSettings_x4jx1"]
 font = SubResource("SystemFont_nt7q6")
 font_size = 72
+font_color = Color(0.952941, 0.0313726, 0.219608, 1)
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -21,6 +28,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nt7q6")
+
+[node name="Symbol" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_wm3ai")
+layout_mode = 1
+offset_left = 111.0
+offset_top = 38.0
+offset_right = 582.0
+offset_bottom = 509.0
+rotation = 0.226893
+texture = ExtResource("2_yev5y")
 
 [node name="StartMenu" type="VBoxContainer" parent="."]
 visible = false
@@ -40,7 +58,7 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="StartMenu"]
 layout_mode = 2
-text = "THIS IS THE TITLE!!!"
+text = "ROCK AND STONE"
 label_settings = SubResource("LabelSettings_x4jx1")
 horizontal_alignment = 1
 vertical_alignment = 1

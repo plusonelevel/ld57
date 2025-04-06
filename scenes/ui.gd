@@ -3,9 +3,13 @@ extends Control
 @onready var pause_menu: VBoxContainer = $PauseMenu
 @onready var settings_menu: VBoxContainer = $SettingsMenu
 @onready var start_menu: VBoxContainer = $StartMenu
+@onready var symbol: TextureRect = $Symbol
+@onready var ivc: SubViewportContainer = $"../IntroViewportContainer"
 
 func _ready() -> void:
 	start_menu.show()
+	symbol.show()
+	ivc.show()
 
 func handle_pause() -> void:
 	pause_menu.visible = !pause_menu.visible
@@ -17,6 +21,8 @@ func _on_quit_button_pressed() -> void:
 func _on_start_button_pressed() -> void:
 	get_tree().paused = false
 	start_menu.hide()
+	symbol.hide()
+	ivc.hide()
 	GameManager.game_paused.emit()
 	GameManager.game_paused.connect(handle_pause)
 
