@@ -1,14 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://mx5xm7wp05rf"]
+[gd_scene load_steps=4 format=4 uid="uid://mx5xm7wp05rf"]
 
-[ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="1_jj4ce"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goy7t"]
+albedo_color = Color(1, 0.64287, 0.327981, 1)
+metallic = 1.0
+roughness = 0.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wqif"]
-albedo_color = Color(0.200625, 0.0893688, 0.0758179, 1)
-albedo_texture = ExtResource("1_jj4ce")
-emission = Color(0.952941, 0.0313726, 0.219608, 1)
-emission_energy_multiplier = 0.6
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_b8gmj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8l6lx"]
 _surfaces = [{
 "aabb": AABB(-2.12101, -2.02716, -2.0897, 4.28778, 4.10784, 4.18492),
 "format": 34359742465,
@@ -22,7 +19,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_q7cyg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_jj4ce"]
 resource_name = "stone_Stone"
 _surfaces = [{
 "aabb": AABB(-2.12101, -2.02716, -2.0897, 4.28778, 4.10784, 4.18492),
@@ -31,1878 +28,743 @@ _surfaces = [{
 "index_count": 384,
 "index_data": PackedByteArray("BAA3ADgANwAEADkANwA5ADoAOwA8AAIAPAA7AD0APAA9AD4APwAjACIAPwBAACMAQAAkACAAQABBACQAPwBBAEAAQQA/ACUAJQA/ACYAQgAJAEMACQBCAAoACQAKAEQANQBFADYANQAyAEUARQAyAEYAMgA1AEcARwA1ADMAMgBHADQASABJAEoASQBIACsASQArAEsATABNAE4ATQBMAAAATQAAAE8ABwALAA0ACwAHAFAACwBQAAwAUQAbAB0AGwBRAFIAGwBSAFMAVABVAFYAVQBXAFgAVQBZAFcAVABZAFUAVwBZAFoAVABbAFkAWQBbAFwAXABdAF4AXABbAF0AXwBbAFQAXwBUAGAAWwBfAGEAWwBhAGIAWwBiAAMAYgBhAGMAYgBjAAUAZAAVABQAZQAVAGQAZQBkAGYAZwAVAGUAZwBlAGgAFQBnAGkAFQBpAGoAaQBnAGsAawBnAGwAaQBrABkABgBtAAgAbQAGAG4AbQBuAG8AFgBwACcAFgBxAHAAcgAWAHMAcgBxABYAdABxAHIAdQB0AHYAdwB0AHUAcQB0AHcAcQB3AHgAeAB3AHkAcQB4AHoAcQB6ACkAewAYABoAGAB7AHwAGAB8AH0AfgB/AIAAfwCBAIIAfwCDAIEAfwCEAIMAfgCEAH8AgwCEAIUAhAB+AIYAhgB+AIcAhACGAIgAFwCJAIoAFwABAIkALACLAIwALAAtAIsAHgCNACEAjQAeAI4AjgAeAB8AjQCOAI8AMAAuADEALgAwAJAAkAAwAC8ALgCQAJEAKgCSAJMAlACSACoAlQCSAJQAkgCVABwAHACVAJYAkgAcAJcAlwAcACgAkgCXAJgAkgCYAJkAmgCbABEADwCcABIADwCdAJwADwCeAJ0AngCfAKAADwChAJ4AngChAJ8AnwCiAKMAnwChAKIAoQAPAKQApAAPAKUApAClAA4ApAAOABAAEwCkAKYApwCkABMAoQCkAKcApwATAKgAoQCnAKkAqQCnAKoAoQCpAKsA"),
 "lods": [0.6697, PackedByteArray("AAABAAIAAwAAAAIAAQADAAIAAwABAAQAAwAEAAUABgAAAAMABgADAAcABgAHAAgABwAJAAgACQAHAAoACwAHAAwABwALAA0ADgAPAAAAEAAPAA4AEQAPABAADwARABIAEQAQABMAAQAAABEAEQATABQAEwAVABQAFgABABEAAQAWABcAFQATABgAGQAYABoAFQAYABkAGwAVABkAGwAcABUAHAAbAB0AHQAeAB8AIAAeAB0AHgAgACEAIgAgACMAIgAkACAAJAAiACUAJQAiACYAJwAcACgAKQAVABwAKQAcACcAFQApACoAEQArACkAFgARACkAKQAnABYALAAWACcALAAtABYALgAvABYALgAwAC8AMAAuADEAMgAzADQAMgA1ADMANQAyADYA")],
-"material": SubResource("StandardMaterial3D_6wqif"),
+"material": SubResource("StandardMaterial3D_goy7t"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 172,
 "vertex_data": PackedByteArray("UIQBQO4BS7+p8sK/WXijP6rqtb+sweU/x9DmP3R5vb+ASuk8bL0EQHIQhz99Qxa/NPXdPyRQwD+C3e4/EhTBP+diA0CwQ6A9jSDYP9AC9z+Xyrm/EhTBP+diA0CwQ6A9JtygP8kpBUDXS76/ZPbPv83oAUDSlyG/mqcbP4hF8D/qZuc/hIcoP4gnyD/hnvg/NPXdPyRQwD+C3e4/mqcbP4hF8D/qZuc/jSDYP9AC9z+Xyrm/OTTgPxhyFz8Tbeu/JtygP8kpBUDXS76/3Lq3P/LM3L97/+G/UIQBQO4BS7+p8sK/mw1RP6jwAz+nJQLAzHu5Pc6lsb+35OS/DlWuvk5xI78puem/iJGNv/+8AcAgxf2914IWP7Mtw7/2l/8/JtygP8kpBUDXS76/SJBLvx7Ljj9iGfu/ZPbPv83oAUDSlyG/ZPbPv83oAUDSlyG/r6/rvyD7KL+jVKy/Xk77v0FAvz9814i/iCHpv2NEuL9GcF2/r6/rvyD7KL+jVKy/kr4HwODobz56asE/+q8EwIxCx7/gusY9ZPbPv83oAUDSlyG/Xk77v0FAvz9814i/hdDGv4B3Yj0EGAZAhIcoP4gnyD/hnvg/mqcbP4hF8D/qZuc/CFKFv4s46r9jpUq/iCHpv2NEuL9GcF2/d+76vlqs77/18jS/zHu5Pc6lsb+35OS/zHu5Pc6lsb+35OS/iCHpv2NEuL9GcF2/+q8EwIxCx7/gusY9+q8EwIxCx7/gusY914IWP7Mtw7/2l/8/hdDGv4B3Yj0EGAZAkr4HwODobz56asE/NPXdPyRQwD+C3e4/hdDGv4B3Yj0EGAZAhIcoP4gnyD/hnvg/14IWP7Mtw7/2l/8/WXijP6rqtb+sweU/2jbwP5hfyb0DmSI/G335P26Y4L681ZQ/VNsBQKSbwj80eMw+k3UAQMItQj9AF+E8MGD4P0dHxL+42Jy/SYOMP0XN7b8YLKI+E+LeP/2W3L+7EJW/8gWUP/rT8r/dJqi+driovzMt6T8I6Y8/Ytn0vwh8oz9y82M/ayivvxu2nD8qRvM/EhTBP+diA0CwQ6A9JtygP8kpBUDXS76/driovzMt6T8I6Y8/tHCpP1R5b7+Y0+g/G335P26Y4L681ZQ/ayivvxu2nD8qRvM/dqWoP1FOuL/SE/a/0AQ1Pw0n8r+JBZ+/3Lq3P/LM3L97/+G/uN/ZvaPQ678/jZW/OTTgPxhyFz8Tbeu/jSDYP9AC9z+Xyrm/EibjP5fKuT9K/eu/YqwKQJfKuT+Xyrm/VNsBQKSbwj80eMw+r6/rvyD7KL+jVKy/Iamuv5AAZ74X2Oe/SJBLvx7Ljj9iGfu/tHCpP1R5b7+Y0+g/hDSEP/g96L8C5IM/WXijP6rqtb+sweU/SYOMP0XN7b8YLKI+QhouP//p7b/u4O69Y+blP0BUgL+QLAY/x9DmP3R5vb+ASuk8XKICQFrh2j5ZDTO/gSvzP+muHL/w+Qe9rhb8P+zru77sw+a+6HX0P59En7/00DG/2jbwP5hfyb0DmSI/G335P26Y4L681ZQ/k3UAQMItQj9AF+E8TCYEQKxQwD8Q5Ke9VNsBQKSbwj80eMw+dqWoP1FOuL/SE/a/Yp9CP9FwMr9ZCfm/Lb+zP0SMer9B3f+/gHgePrbYiz4zafq/VZVbPyCqRLybKwDAIamuv5AAZ74X2Oe/fnKEv/UmGr/3z+K/5x9UP0Ynjj+rvQXAmw1RP6jwAz+nJQLAEhTBP+diA0CwQ6A9YqwKQJfKuT+Xyrm/TCYEQKxQwD8Q5Ke9BD8kv+7Y8r8afyS+/nkwPuFd87/YEua9hDSEP/g96L8C5IM/8W4bP8tD/7/jpoY/QhouP//p7b/u4O698gWUP/rT8r/dJqi+SYOMP0XN7b8YLKI++u8XPzDT9b8WfCK/0AQ1Pw0n8r+JBZ+/BGeDP9+G9L+7NzK/uN/ZvaPQ678/jZW/SJBLvx7Ljj9iGfu/5x9UP0Ynjj+rvQXAl8q5Pxny9j9EMdi/MGD4P0dHxL+42Jy/YqwKQJfKuT+Xyrm/UIQBQO4BS7+p8sK/bL0EQHIQhz99Qxa/TCYEQKxQwD8Q5Ke9XKICQFrh2j5ZDTO/6HX0P59En7/00DG/rhb8P+zru77sw+a+Y+blP0BUgL+QLAY/x9DmP3R5vb+ASuk8gSvzP+muHL/w+Qe9hDSEP/g96L8C5IM/8W4bP8tD/7/jpoY/iJGNv/+8AcAgxf29CFKFv4s46r9jpUq/kr4HwODobz56asE/Xk77v0FAvz9814i/Ytn0vwh8oz9y82M/8W4bP8tD/7/jpoY/iJGNv/+8AcAgxf29d+76vlqs77/18jS/uN/ZvaPQ678/jZW/DlWuvk5xI78puem/fnKEv/UmGr/3z+K/Iamuv5AAZ74X2Oe/CFKFv4s46r9jpUq/BD8kv+7Y8r8afyS+/nkwPuFd87/YEua97OzdPy4Gxr/Y+uS/dqWoP1FOuL/SE/a/MGD4P0dHxL+42Jy/E+LeP/2W3L+7EJW/8gWUP/rT8r/dJqi+BGeDP9+G9L+7NzK/+u8XPzDT9b8WfCK/7OzdPy4Gxr/Y+uS/3Lq3P/LM3L97/+G/0AQ1Pw0n8r+JBZ+/l8q5Pxny9j9EMdi/EibjP5fKuT9K/eu/5x9UP0Ynjj+rvQXAVZVbPyCqRLybKwDAgHgePrbYiz4zafq/Lb+zP0SMer9B3f+/Yp9CP9FwMr9ZCfm/dqWoP1FOuL/SE/a/I/lrw4yRt+mMmBg5Ke/d1XKtXjgXwknWENasZDGcUe4Q8q1+ZX8x9xDWrGRqlYroaLigxmY3V920oSHGLSiH22i4oMbnNU7eLnyQ80EMy70ufJDznQ6/vbShIcaVJVbotKEhxv///z+0oSHGlyQ97YXrvB9Lw0bWheu8H3yfVvuF67wfMC6Q5yPcZA/30Bjbheu8H3IrqRmF67wf4J0Y/cUKlgkjY5n1xQqWCbdul/y2kR8IDef3woyYGDm76mDUIzgn8nl9ut/FCpYJAa6k7iM4J/KFXFvVxxRF0kOgvez7MsAW/9nd7McURdL///+/rQKCjJOB9PitAoKMToHS9xJRqKy9w1H1rQKCjCWBIvcSUaispLvK0hJRqKz8u4XUElGorCIykwMSUaisCiXLnRJRqKzfxE4GtpEfCNPhgcL7MsAWfD4i+raRHwgH9+3L+zLAFltCcUq0PogMq/ZrtK9GkyS91ZGpr0aTJGPaiqc/XwpL/8mMRj9fCksTcGEkP18KSyjCpD0/XwpL8wom28eS64BncoD4x5LrgAuXjvbHkuuA////P8eS64ACfDj+x5LrgFKMKvsQ8q1+m36d8xDyrX5MfavtEPKtfnCAivsQ8q1+9YBu/XKtXjh8ydXXcq1eOC/Nm9hyrV44iM+A2XKtXjhw3HPgElGorK+88ScSUaisuMBPFhJRqKwWxFIJLnyQ8+gfar0ufJDzJSFjvS58kPOhABGvx5LrgJF1X/rHkuuArm219ceS64Bog/7+tD6IDCH5O7S0PogMTPdftLQ+iAxk+iO0tD6IDMf1fbQj+WvDoJl24iP5a8PzjyfrI/lrw36fMd0j+WvDB398+bShIcaLKLrZxxRF0huIDu/HFEXSw5II7scURdJcrCvrENasZGi07/EQ1qxkQaLK8BDWrGT2/hGJENasZEu5PvIQ1qxkqsx38xDWrGS2nnfwENasZLOaDO0Q1qxkl5vO7RDWrGRAnF7uENasZDKcUu4Q1qxkP5xd7hDWrGSKiJLdENasZOrD6vIQ1qxkFJw57hDWrGQompXsENasZJqYQuvFCpYJmpP5+8UKlgmxkm/8xQqWCS2eovbFCpYJxk2z6MUKlgn1cPL9xQqWCYKMjv/FCpYJc5MecsUKlgkbUbbqxQqWCfw3idtouKDGPDjN3Gi4oMbJOHHcaLigxsk4cdy2kR8Ive6kw7aRHwgx9yrFtpEfCCz3/cW2kR8IG/fEyLaRHwgd92TItpEfCB/3Cci2kR8IIPfjx7aRHwio9lbEtpEfCCL3kse2kR8IHPeSyLaRHwgS9x/KIzgn8mJpZ9kjOCfytpz32iM4J/L///+/1u1zd6KItPnW7XN3moie+dbtc3eoiMT51u1zd5aIlPnW7XN3k4iK+dbtc3eaiJz51u1zd6GIsvnW7XN3moie+dbtc3eNiHr51u1zd4aIZvnW7XN3j4h++YyYGDnZ5bzSjJgYOfnfwtCvRpMkYtQoqq9GkyQfyg+rrQKCjIeONv6tAoKMUolc/q0Cgoy9syb9P18KSwCjXjE/XwpL6M6npvsywBa59+qs+zLAFp87pAr7MsAWufBV3fsywBa853rj+zLAFsGcsVz7MsAWnfTZrPsywBZI77ys+zLAFqPww6wj3GQP99AY2yPcZA/30Bjbheu8H5rPT8qF67wfkVfpBYXrvB+0xe/Theu8H4TMT82F67wfZ9OexoXrvB+Kp4nyheu8HxXLtM6F67wfTMhp0YXrvB/DTiT2heu8H/enEvKF67wfqrtNIoXrvB+wnx37heu8HzGd2P2F67wfWs1/zIXrvB8snd39heu8H5Wj3PY=")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b8gmj")
+shadow_mesh = SubResource("ArrayMesh_8l6lx")
 
 [node name="Wall" type="Node3D"]
 
 [node name="Stone" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.679455, -0.271534, -0.20973, -0.0654516, 0.19148, -0.59968, 0.592866, 0.332331, 0.174157, 1.00592, -0.0996666, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.41294, 0, 0, 0, 7.27806e-09, 0.987114, 0, 0.166503, -4.31481e-08, -22.0805, -3.16906, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.09631, -0.0901946, -0.0119908, -0.268681, -0.336437, 0.0286021, 0.143872, 0.058993, 0.144785, -19.5162, -0.567375, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.120698, 0.268425, 0.0771229, -0.0019266, -0.121667, 0.257638, 0.164366, -0.198537, -0.0536135, 3.52247, 0.415767, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.601713, 0, 0, 0, -0.00216329, -0.620326, 0, -0.0901263, 0.0148896, -18.0735, -3.16906, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0653853, 0.649152, 0.242237, 0.330113, -0.0619572, -0.113198, -0.0536884, 0.409624, -0.401007, 0.988418, 2.20448, -0.829001)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.712131, 0.00515374, -0.00113316, 4.09029e-09, 0.0019663, 0.750397, -0.0448909, -0.0817568, 0.017976, -23.0601, -0.447986, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone5" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.567587, -0.270054, -0.2378, -0.0180705, -0.200665, 0.543266, -0.695495, -0.215175, -0.208182, 1.69251, 1.01786, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.180984, 0.0329911, 2.32629, 0.418373, 0.0106205, 1.01737, -0.00897468, -0.170208, 0.514382, -15.2556, -3.16906, -0.165593)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.214646, -0.392656, -0.360522, 0.10907, 0.300989, -0.54374, 0.309526, -0.378356, -0.0584077, 5.06591, 0.243749, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.00323109, -0.591957, -0.0101024, -0.0024757, -0.0108835, 0.579916, 0.0914142, 0.0206283, 0.0160625, -12.6688, -0.567375, -0.103982)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone7" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.128043, 0.133283, -0.607573, 0.336887, -0.215538, -0.123569, -0.349376, -0.158986, -0.341822, 6.17172, 2.20725, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.601713, 0, 0, 0, -0.00216329, -0.620326, 0, -0.0901263, 0.0148896, -11.2261, -3.16906, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone8" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.439928, -0.222016, 0.0187784, -0.248901, -0.360162, -0.0892809, 0.093501, 0.0858426, -0.326021, 4.45973, 1.60545, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.339722, -0.00683585, 0.0054431, -0.00414756, -0.00152014, -0.375145, -0.0357885, 0.0650654, -0.00819277, -17.3488, -0.745766, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.201982, -0.0439141, 0.0194728, -0.0201524, 0.0850572, -0.267731, 0.0210441, -0.340036, -0.0694854, 9.80617, 1.90606, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone11" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.362444, 0.162653, 0.433787, -0.322415, 0.377515, 0.275319, -0.156918, -0.399978, 0.436258, 12.2996, 0.08708, -1.30493)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.307587, 0.230266, 0.143548, -0.410221, -0.240644, 0.023235, 0.233497, -0.119447, 0.229918, 10.2047, 0.637143, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone13" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.484716, -0.14887, 0.593905, -0.286086, 0.358538, 0.485296, -0.551624, -0.31676, 0.270182, 11.6223, 1.28201, -1.15367)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone15" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0333413, -0.129847, 0.639332, -0.278694, 0.21792, 0.27975, -0.408823, -0.159145, -0.138565, 7.11698, 0.14672, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.328641, 0.00657977, 0.0071152, -0.00557103, -0.00104795, 0.383973, -0.0348542, 0.0622084, 0.0057158, -21.2811, 0.972318, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone16" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.417862, 0.225519, 0.0889312, 0.289966, 0.352713, 0.0216896, -0.0946465, 0.0849405, -0.326179, 8.84227, 0.727829, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.41294, 0, 0, 0, 7.27806e-09, 0.987114, 0, 0.166503, -4.31481e-08, 2.29586, -3.16906, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.09631, -0.0901946, -0.0119908, -0.268681, -0.336437, 0.0286021, 0.143872, 0.058993, 0.144785, 4.86018, -0.567375, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone18" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.198897, -0.0371734, -0.0533321, 0.0306183, 0.11787, -0.255403, 0.033025, -0.333161, -0.0844091, 20.7614, 1.90289, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.601713, 0, 0, 0, -0.00216329, -0.620326, 0, -0.0901263, 0.0148896, 6.30289, -3.16906, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone19" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0696088, 0.127407, -0.67807, -0.295669, -0.392621, -0.0356497, -0.292429, 0.366643, 0.19745, 23.2954, 0.114178, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone20" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.362252, 0.231164, 0.105841, -0.417795, -0.233756, -0.0212231, 0.118087, -0.117901, 0.249597, 21.1884, 0.638938, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone22" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.346624, 0.0119516, 0.306046, -0.176496, -0.147139, 0.564078, 0.049765, -0.60509, -0.131121, 19.2179, 2.0749, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone21" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.712131, 0.00515374, -0.00113316, 4.09029e-09, 0.0019663, 0.750397, -0.0448909, -0.0817568, 0.017976, 1.31628, -0.447986, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone23" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.219491, -0.275499, 0.288869, -0.132129, 0.100555, 0.684077, -0.429343, -0.171788, -0.0628459, 18.1121, 0.111398, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.180984, 0.0329911, 2.32629, 0.418373, 0.0106205, 1.01737, -0.00897468, -0.170208, 0.514382, 9.12074, -3.16906, -0.165593)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone24" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.439526, 0.222016, 0.0224912, 0.265607, 0.360162, 0.0651369, 0.0223718, 0.0858426, -0.331458, 19.8241, 0.713204, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone25" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00323109, -0.591957, -0.0101024, -0.0024757, -0.0108835, 0.579916, 0.0914142, 0.0206283, 0.0160625, 11.7076, -0.567375, -0.103982)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone26" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.13488, 0.264816, -0.00952454, 0.0908366, -0.125325, 0.227983, 0.123295, -0.197367, -0.157545, 14.4777, 0.412589, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone28" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.26233, -0.230266, -0.163156, 0.399255, 0.240644, -0.0510849, 0.298648, -0.119447, 0.21161, 14.0792, 1.68151, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone30" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.294096, -0.384335, -0.146744, -0.0611127, 0.304783, -0.564958, 0.251666, -0.375122, -0.308675, 16.017, 0.222009, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone31" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.200234, 0.0634936, -0.633182, -0.0253174, -0.289289, -0.18023, -0.452972, 0.044236, -0.269822, 17.1669, 2.17193, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone32" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.394386, -0.225519, -0.126829, -0.291733, -0.352713, 0.00545146, -0.164313, 0.0849405, -0.314097, 15.4416, 1.59082, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.601713, 0, 0, 0, -0.00216329, -0.620326, 0, -0.0901263, 0.0148896, 13.1503, -3.16906, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone27" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.117316, -0.282325, -0.0533321, -0.0297479, 0.118545, -0.255403, 0.164134, -0.180309, -0.084409, 20.7497, 4.70154, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.339722, -0.00683585, 0.0054431, -0.00414756, -0.00152014, -0.375145, -0.0357885, 0.0650654, -0.00819277, 7.0276, -0.745766, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone33" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.00157691, 0.321715, 0.105841, -0.563349, 0.0125704, -0.0212231, -0.0485698, -0.135354, 0.249597, 21.1766, 3.43759, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone28" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.328641, 0.00657977, 0.0071152, -0.00557103, -0.00104795, 0.383973, -0.0348542, 0.0622084, 0.0057158, 3.09529, 0.972318, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone34" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0027532, 0.37814, 0.202181, 0.376222, 0.117135, -0.540084, -0.815258, 0.0527778, -0.249918, 22.5796, 4.09944, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.51018, 0, 0, 0, -1.02942e-08, -1.40977, 0, 0.235504, -6.16232e-08, -8.74045, 1.4953, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone35" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.514291, 0.377991, -0.0116763, 0.341674, -0.445522, -0.161618, -0.195455, 0.215775, -0.313247, 19.2062, 4.87356, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.13263, 2.66701e-08, 0, 7.47566e-15, 7.72064e-09, -1.05733, -1.71023e-07, -0.176628, -4.62174e-08, 0.154337, 1.4953, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone37" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.130459, 0.416593, 0.0224912, 0.489472, 0.1024, 0.0651369, 0.0873369, 0.0483912, -0.331458, 19.8124, 3.51186, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.219171, 0, 2.19689, 1.36179, -1.28677e-08, 0.353575, 5.95257e-08, 0.294379, 1.54553e-08, -3.94074, 1.4953, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone39" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.146359, 0.239553, -0.0445156, 0.0714056, -0.0534082, 0.256352, 0.122988, -0.254067, -0.0958609, 14.466, 3.21125, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone13" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.87348, 0, 0.236458, 0.501996, -1.02942e-08, 0.882474, 2.1943e-08, 0.235504, 3.85742e-08, 11.5246, 0.39238, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone40" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.459276, 0.247228, -0.035188, -0.0522254, 0.188018, 0.633014, 0.215126, -0.482166, 0.228798, 11.9725, 5.03023, -1.17022)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.771314, -2.57612e-08, 0.365642, -0.206673, 1.46234e-08, 1.3646, -1.29608e-07, -0.176628, 5.96483e-08, 2.93286, 2.54147, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone41" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0727938, -0.326099, -0.0995602, 0.539766, -0.00736938, -0.0777496, 0.144101, -0.137129, 0.240938, 14.0675, 4.48016, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone15" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.204522, 0, -1.65756, -1.99375, -1.28677e-08, 0.170035, -8.71494e-08, 0.294379, 7.43246e-09, 6.8884, 1.55205, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone42" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.103635, -0.37885, -0.181055, -0.0658815, -0.110555, 0.60895, -0.884632, 0.0526159, -0.0241398, 12.6498, 3.8353, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.771315, 2.57612e-08, -0.365642, 0.206673, 8.17923e-10, -1.3646, -1.1154e-07, -0.176628, -5.96483e-08, -9.82705, -4.26697, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone43" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.38863, -0.00944695, -0.0841429, 0.0471188, 0.146057, -0.636629, 0.0175914, -0.599917, -0.153669, 16.0053, 3.02066, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.13263, -7.60177e-08, 3.86283e-09, 6.86643e-08, 1.14173, 0.0441857, -3.36371e-08, -0.229031, 0.220267, 8.04439, -3.33412, -0.250641)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone44" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0273122, -0.175571, 0.609397, 0.505201, -0.121642, -0.174604, 0.235135, 0.281748, 0.304361, 17.1551, 4.97059, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.344775, -0.77851, 0.00219755, 1.31419, -0.204242, -0.00833542, 0.0716256, 5.12122e-05, 0.163517, -7.33714, -3.33412, -0.338264)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone45" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.10147, -0.413827, -0.0514457, -0.496636, -0.0945257, 0.0581843, -0.10346, 0.0478827, -0.329758, 15.4299, 4.38948, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone46" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.385767, 0.347214, 0.0519735, 0.133529, 0.162055, -0.452557, -0.404301, -0.277775, -0.199057, 0.994205, 2.69899, -1.00594)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone48" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.511733, 0.0218808, 0.131849, 0.0551977, -0.682747, -0.117362, 0.139508, 0.189874, -0.437203, 0.976698, 5.00313, -1.08543)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone49" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.518047, -0.115522, -0.0615343, -0.119438, -0.30678, 0.116593, -0.192575, -0.120498, -0.237847, 3.08377, 4.47837, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone50" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.016955, -0.369603, -0.237801, -0.327695, -0.138154, 0.543266, -0.835778, 0.0616658, -0.208182, 1.68079, 3.81652, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone51" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.018486, 0.565246, -0.147774, -0.621915, 0.0880065, 0.0848633, 0.179774, 0.246329, 0.308774, 5.05419, 3.0424, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone52" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.247751, 0.0422452, -0.607573, -0.01095, -0.294497, -0.123569, -0.436407, 0.0313722, -0.341822, 6.16, 5.00591, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.26994, 2.25492e-07, -0.058576, 0.0362957, 0.980788, -0.0233175, 0.338339, -0.105214, -0.21736, 5.26584, -2.81104, -0.343811)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone53" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.34882, -0.280984, -0.115254, 0.24363, 0.320369, -0.160469, 0.288444, 0.0692026, 0.274917, 4.44801, 4.4041, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.01498, 0, -0.503968, -0.279934, -1.02942e-08, 1.82728, -1.22363e-08, 0.235504, 7.98729e-08, -1.96235, -4.09904, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone54" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0341011, 0.255006, -0.186209, 0.0882227, 0.197294, 0.196301, 0.18083, -0.144344, -0.0606553, 9.79445, 4.70472, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone29" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.16236e-08, 1.02942e-08, -1.51018, -1.40977, 4.49973e-16, 6.60124e-08, 5.38729e-15, 0.235504, 6.60119e-08, -10.0863, 12.0875, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone30" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.75183e-08, -5.29363e-08, -1.13263, 0.0145835, 1.09935, -4.20279e-08, 0.192471, -0.0832977, 1.48244e-07, -11.3815, 3.56405, -0.38134)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone31" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.52378, 1.28677e-08, 0.339276, 0.245242, 1.08974e-15, -2.10805, -6.66065e-08, 0.294379, -1.48302e-08, -9.67101, 7.6069, -0.579526)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone32" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.21938, -0.220749, 0.0260629, -1.34751, 0.194476, -0.0368721, 0.0993085, -0.0716833, -0.180295, -7.38153, 1.19031, -0.417926)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone38" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.457019, -0.00283788, 1.84155, 0.393041, 0.0194252, -2.13075, -0.0237612, 0.266736, 0.174766, -11.1083, -1.5033, -0.623017)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone44" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0272618, 2.96913e-10, -0.866446, 0.0149137, -0.947655, 0.0340312, -0.100643, -0.140427, -0.229655, -14.6749, 13.1019, -0.412696)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone45" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78819e-08, 1.22295, 0.0456396, -1.05733, 2.79685e-08, -5.9849e-09, -3.14007e-08, -0.245324, 0.227515, -13.6756, -3.58138, -0.294341)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone46" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.4444, -0.0248595, 0.136512, 0.3269, -0.0266304, 0.658221, -0.152963, 0.17783, 0.117653, -13.5542, 2.50162, -0.342404)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone47" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.106313, 1.02942e-08, -1.65085, -1.2406, -1.22338e-15, -0.141469, -4.64708e-09, 0.235504, 7.21611e-08, -14.3432, 6.63682, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone48" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.35397, -0.175678, -0.00826188, 0.355211, 0.66963, -0.00217817, 0.0737936, 4.40861e-05, 0.162074, -13.6756, 10.7775, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone50" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0293219, 1.01535, -0.0120196, 0.981363, -0.0435928, -0.0196065, -0.149857, -0.0868038, -0.130748, -13.1152, -0.987584, -0.348068)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone55" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.520475, 0.0909059, 0.0772082, -0.00415356, 0.258045, -0.186126, -0.215639, -0.224384, -0.182768, 10.1929, 3.4358, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.0582404, 1.42111, -0.00497558, 1.47417, -0.056488, -0.00231829, -0.0164162, -0.0307343, -0.225815, -6.23791, 8.71424, -0.472464)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone56" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.345256, 0.373903, -0.0198493, -0.18188, 0.674828, 0.0804888, 0.0539654, -0.117748, 0.398262, 8.25509, 4.8953, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.751889, -0.00320754, -1.13884, -2.55207, 0.000945053, 0.335524, 3.62753e-07, 0.286369, -0.0138631, -6.05047, -2.51797, -0.563911)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone57" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0714505, -0.0374302, 0.698419, 0.0429083, 0.295448, 0.0984147, -0.488848, 0.0314036, -0.0934433, 7.10526, 2.94538, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.91084, 1.02942e-08, -0.219743, -1.28573, 3.16349e-17, -0.326581, -8.35256e-08, 0.235504, 9.60529e-09, -6.63951, 1.32133, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone58" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.124766, 0.414219, 0.0135014, 0.499304, 0.104206, -0.0321846, -0.0526872, 0.0066433, -0.336978, 8.83055, 3.52649, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.5024, -0.347678, -0.00837056, 0.322337, 1.62048, -0.00180649, 0.0810026, 0.000105487, 0.162443, -5.29181, 4.53391, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone33" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.41294, -6.36268e-16, -8.62962e-08, 1.23524e-07, -7.27806e-09, -0.987114, 0, 0.166503, -4.31481e-08, 16.2683, 18.5972, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone34" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.09632, 0.0901946, 0.0119908, 0.268681, 0.336437, -0.028602, 0.143872, 0.058993, 0.144785, 13.7039, 15.9955, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone35" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.601713, 1.8912e-10, 5.42306e-08, 5.26035e-08, 0.00216329, 0.620326, 0, -0.0901262, 0.0148896, 12.2612, 18.5972, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone36" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.712131, -0.00515374, 0.00113309, -6.61802e-08, -0.0019663, -0.750397, -0.0448909, -0.0817568, 0.017976, 17.2478, 15.8761, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone37" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.180984, -0.0329911, -2.32629, -0.418373, -0.0106205, -1.01736, -0.00897468, -0.170208, 0.514382, 9.44338, 18.5972, -0.165593)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone39" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00323109, 0.591958, 0.0101023, 0.0024757, 0.0108834, -0.579916, 0.0914143, 0.0206283, 0.0160625, 6.85653, 15.9955, -0.103982)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone40" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.601713, 1.8912e-10, 5.42306e-08, 5.26035e-08, 0.00216329, 0.620326, 0, -0.0901262, 0.0148896, 5.41382, 18.5972, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone41" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.339722, 0.00683585, -0.00544307, 0.00414753, 0.00152014, 0.375145, -0.0357885, 0.0650654, -0.00819277, 11.5365, 16.1739, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone42" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.328641, -0.00657976, -0.00711523, 0.00557106, 0.00104795, -0.383973, -0.0348541, 0.0622084, 0.0057158, 15.4688, 14.4558, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone43" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.41294, -6.36268e-16, -8.62962e-08, 1.23524e-07, -7.27806e-09, -0.987114, 0, 0.166503, -4.31481e-08, -8.1081, 18.5972, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone49" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.09632, 0.0901946, 0.0119908, 0.268681, 0.336437, -0.028602, 0.143872, 0.058993, 0.144785, -10.6724, 15.9955, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone51" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.601713, 1.8912e-10, 5.42306e-08, 5.26035e-08, 0.00216329, 0.620326, 0, -0.0901262, 0.0148896, -12.1151, 18.5972, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone52" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.712131, -0.00515374, 0.00113309, -6.61802e-08, -0.0019663, -0.750397, -0.0448909, -0.0817568, 0.017976, -7.12853, 15.8761, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone54" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.180984, -0.0329911, -2.32629, -0.418373, -0.0106205, -1.01736, -0.00897468, -0.170208, 0.514382, -14.933, 18.5972, -0.165593)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone59" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.838344, -0.111906, 0.158326, 0.337451, -0.254471, 0.428236, -0.0271754, 0.292332, 0.433382, 23.2662, 10.6144, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.00323109, 0.591958, 0.0101023, 0.0024757, 0.0108834, -0.579916, 0.0914143, 0.0206283, 0.0160625, -17.5198, 15.9955, -0.103982)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone60" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00725776, 0.214048, -0.218675, -0.0541059, -0.275392, -0.15729, -0.196489, 0.0679265, 0.0513891, 20.7497, 10.099, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.601713, 1.8912e-10, 5.42306e-08, 5.26035e-08, 0.00216329, 0.620326, 0, -0.0901262, 0.0148896, -18.9626, 18.5972, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone61" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.324241, 0.281503, 0.327271, 0.149803, 0.159932, -0.626158, -0.420777, 0.273858, 0.0292663, 23.2837, 8.31027, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.339722, 0.00683585, -0.00544307, 0.00414753, 0.00152014, 0.375145, -0.0357885, 0.0650654, -0.00819277, -12.8398, 16.1739, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone62" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.547532, -0.0870952, -0.00337603, 0.0831579, 0.212989, -0.211776, 0.114091, 0.262734, 0.17056, 21.1766, 8.83504, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.328641, -0.00657976, -0.00711523, 0.00557106, 0.00104795, -0.383973, -0.0348541, 0.0622084, 0.0057158, -8.90754, 14.4558, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone63" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.855808, -0.117862, -0.0418284, -0.269748, -0.358399, -0.203073, 0.0319916, 0.130975, -0.593328, 22.5796, 9.49689, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.51018, 8.99946e-16, 1.23246e-07, 1.32024e-07, 1.02942e-08, 1.40977, 0, 0.235504, -6.16232e-08, 2.9282, 13.9328, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone64" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0511855, -0.217586, 0.607758, 0.138503, 0.554855, 0.187153, -0.363281, 0.180885, 0.156985, 19.2062, 10.271, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.13263, -2.66701e-08, 9.24348e-08, -9.90179e-08, -7.72063e-09, 1.05733, -1.71023e-07, -0.176628, -4.62174e-08, -5.96659, 13.9328, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone65" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.140085, -0.111021, 0.627042, -0.481822, -0.0246669, 0.189693, -0.013254, -0.276701, -0.268499, 18.1004, 8.3075, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone66" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0754006, 0.297497, 0.290894, 0.00362826, -0.193909, 0.472892, 0.315637, -0.0688385, -0.074926, 19.8124, 8.9093, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone67" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0190993, -0.321371, 0.526332, -0.907937, 0.00833344, -0.00980136, -0.00312018, -0.457751, -0.369697, 11.9382, 8.12363, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone68" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0741478, -0.263911, 0.154348, 0.0516042, 0.1752, 0.230343, -0.182989, 0.156346, 0.00241634, 14.466, 8.60869, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone69" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.10166, -0.369827, -0.49734, 0.482722, 0.0386189, -0.212105, 0.128786, -0.436684, 0.402439, 11.9725, 10.4277, -1.13288)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone70" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.447974, -0.031784, -0.163156, -0.0173131, 0.347371, -0.0510849, 0.34122, 0.059353, 0.21161, 14.0675, 9.87761, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone72" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.245267, -0.129173, 0.471352, 0.104606, -0.179586, -0.567286, 0.263201, 0.191746, -0.213776, 16.0053, 8.41811, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone74" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.090736, 0.370874, 0.157259, -0.508445, 0.0541067, 0.0455436, 0.0299649, -0.204952, 0.296594, 15.4299, 9.78692, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone75" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.570454, 0.0270612, 0.0519735, -0.041593, 0.192836, -0.452557, -0.0543827, -0.431347, -0.199057, 0.994205, 8.09643, -1.34194)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone76" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.120698, 0.268425, 0.0771228, -0.00192657, -0.121667, 0.257638, 0.164366, -0.198537, -0.0536135, 3.51075, 8.61186, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone77" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.134127, -0.1301, 0.650722, 0.464404, -0.171894, -0.252693, 0.266394, 0.365167, 0.112887, 0.976698, 10.4006, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone78" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.34164, -0.231164, -0.120657, 0.420053, 0.233756, 0.0035876, 0.162977, -0.117901, 0.243681, 3.08377, 9.87581, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone79" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.567587, -0.270054, -0.237801, -0.0180703, -0.200665, 0.543266, -0.695496, -0.215175, -0.208182, 1.68079, 9.21396, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone80" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.113524, -0.218819, 0.462194, 0.180912, -0.124871, -0.588573, 0.304433, 0.155804, 0.177412, 5.05419, 8.43985, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone81" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.128043, 0.133283, -0.607573, 0.336887, -0.215538, -0.123569, -0.349376, -0.158986, -0.341822, 6.16, 10.4034, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone82" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.439928, -0.222016, 0.0187784, -0.248901, -0.360162, -0.0892809, 0.093501, 0.0858426, -0.326021, 4.44801, 9.80155, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone83" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0235805, -0.350253, -0.016556, -0.0980531, -0.00112425, -0.243179, 0.177413, 0.0459318, -0.1322, 9.79445, 10.1022, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone84" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.389143, -0.174955, 0.143548, 0.350586, -0.275328, 0.023235, 0.20753, 0.137057, 0.229918, 10.1929, 8.83324, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone86" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.685454, -0.0734186, -0.166007, 0.275035, -0.00472103, 0.430887, -0.154899, -0.333273, 0.0304666, 7.10526, 8.34282, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone87" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.304354, -0.326727, 0.0889312, -0.403677, 0.265764, 0.0216896, -0.109823, -0.0714084, -0.326179, 8.83055, 8.92393, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone88" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.12231, -0.440921, -0.20973, 0.210124, 0.160915, -0.59968, 0.870816, 0.0231012, 0.174157, 1.00592, 5.29777, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone89" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.257902, 0.168056, 0.0225281, -0.159035, -0.0863441, -0.209794, -0.193015, -0.153409, 0.142759, 3.52247, 5.81321, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone90" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.247259, 0.361984, 0.242237, 0.217372, -0.564828, -0.113198, 0.0880016, 0.378107, -0.401006, 0.988418, 7.60192, -1.053)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone91" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0181556, -0.333584, -0.0800707, 0.555843, -0.00805544, 0.0494973, -0.102141, -0.103131, 0.255128, 3.09549, 7.07715, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone92" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.016955, -0.369603, -0.237801, -0.327695, -0.138154, 0.543266, -0.835778, 0.0616658, -0.208182, 1.69251, 6.4153, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone94" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.035141, 0.152149, -0.607573, 0.48761, -0.0480982, -0.123569, -0.11381, -0.253051, -0.341822, 6.17172, 7.60469, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone96" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0190993, 0.321371, -0.526332, 0.907937, -0.00833346, 0.00980141, -0.0031203, -0.457751, -0.369697, 12.334, 7.78856, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone97" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.17342, -0.151253, 0.0852474, -0.102767, -0.293835, 0.0647469, 0.0317833, -0.124786, -0.255789, 9.80617, 7.3035, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone98" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.435646, -0.282614, 0.11092, -0.264633, 0.472033, -0.155534, -0.011081, -0.16208, -0.646374, 12.2996, 5.48452, -1.05055)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone99" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.355422, 0.258754, -0.0705439, 0.292395, 0.0528187, -0.228965, -0.32495, -0.235491, -0.128868, 10.2047, 6.03458, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone101" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0718567, 0.572604, 0.215521, 0.128357, -0.228906, 0.573851, 0.363214, -0.032388, -0.245433, 8.2668, 7.49408, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone102" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.513325, 0.0388036, -0.203827, -0.0591997, 0.61655, 0.204177, 0.21037, 0.268187, -0.439904, 7.11698, 5.54416, -0.964661)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone104" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.375636, -0.0846938, 0.36549, -0.240685, -0.342424, -0.272743, 0.362042, -0.315517, 0.197894, 23.2779, 7.81576, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone106" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.208592, 0.331953, 0.468024, -0.419221, 0.340937, 0.0502914, -0.180816, -0.407513, 0.42332, 23.2954, 5.51162, -1.28142)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.219171, 8.63471e-16, -2.19689, -1.36179, 1.28677e-08, -0.353575, 5.95257e-08, 0.294379, 1.54553e-08, -1.87151, 13.9328, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone107" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.416725, 0.192997, 0.105841, -0.352904, -0.271518, -0.021223, 0.146704, -0.104927, 0.249597, 21.1884, 6.03638, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.428322, -2.93062e-10, -5.84758, -2.6589, 0.0119804, -0.940269, 0.113672, 0.280231, 0.0401981, 22.3291, 3.35572, -0.515685)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone66" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.87348, 2.72439e-16, -0.236459, -0.501997, 1.02942e-08, -0.882474, 2.1943e-08, 0.235503, 3.85742e-08, -17.3368, 15.0357, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone67" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.771314, 2.57612e-08, -0.365642, 0.206673, -1.46234e-08, -1.3646, -1.29608e-07, -0.176628, 5.96483e-08, -8.74511, 12.8866, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone68" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.204522, 1.22081e-15, 1.65756, 1.99375, 1.28677e-08, -0.170035, -8.71494e-08, 0.294379, 7.43246e-09, -12.7006, 13.876, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone69" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.771314, -2.57612e-08, 0.365642, -0.206673, -8.17921e-10, 1.3646, -1.1154e-07, -0.176628, -5.96483e-08, 4.0148, 19.6951, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone70" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.13263, -2.37954e-08, -7.72567e-09, 3.03536e-08, -1.14173, -0.0441857, -3.36371e-08, -0.229031, 0.220267, -13.8566, 18.7622, -0.250641)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone71" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.344775, 0.77851, -0.00219755, -1.31419, 0.204242, 0.00833542, 0.0716256, 5.12122e-05, 0.163517, 1.52489, 18.7622, -0.338264)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone72" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.26994, -3.06532e-07, 0.058576, -0.0362959, -0.980788, 0.0233174, 0.338339, -0.105214, -0.21736, -11.0781, 18.2391, -0.343811)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone73" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.01498, 8.99946e-16, 0.503968, 0.279934, 1.02942e-08, -1.82728, -1.22363e-08, 0.235504, 7.98729e-08, -3.84991, 19.5271, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone108" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.00508861, 0.23226, -0.511281, 0.260159, 0.310566, 0.350686, 0.859353, -0.0953952, -0.103139, 22.5913, 6.69823, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-6.16236e-08, 1.02942e-08, -1.51018, -1.40977, 4.49973e-16, 6.60124e-08, 5.38729e-15, 0.235504, 6.60119e-08, 11.8186, 11.1891, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone109" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.52378, 1.28677e-08, 0.339276, 0.245242, 1.08974e-15, -2.10805, -6.66065e-08, 0.294379, -1.48302e-08, 12.2339, 6.70848, -0.579526)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone110" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.675289, 0.124359, 0.0867888, -0.0214844, 0.194834, -0.489011, -0.224048, -0.393506, -0.214693, 18.1121, 5.50884, -0.85266)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.0582404, 1.42111, -0.00497558, 1.47417, -0.056488, -0.00231829, -0.0164162, -0.0307343, -0.225815, 15.667, 7.81583, -0.472464)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone111" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.228546, 0.268706, -0.13972, -0.167848, 0.461623, -0.0683705, 0.0689737, 0.233002, 0.296586, 19.8241, 6.11065, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.41294, -6.36268e-16, -8.62962e-08, 1.23524e-07, -7.27806e-09, -0.987114, 0, 0.166503, -4.31481e-08, 13.7968, 17.6987, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone112" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0409928, 0.212796, -0.118976, -0.317684, -0.0753022, -0.0906435, -0.166365, 0.0913606, 0.202406, 14.4777, 5.81003, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.09632, 0.0901946, 0.0119908, 0.268681, 0.336437, -0.028602, 0.143872, 0.058993, 0.144785, 11.2324, 15.0971, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone113" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0768253, -0.231188, 0.202578, -0.190079, 0.239231, 0.178195, -0.524766, -0.120499, -0.0348879, 14.0792, 7.07895, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.712131, -0.00515374, 0.00113309, -6.61802e-08, -0.0019663, -0.750397, -0.0448909, -0.0817568, 0.017976, 14.7763, 14.9777, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone114" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.328641, -0.00657976, -0.00711523, 0.00557106, 0.00104795, -0.383973, -0.0348541, 0.0622084, 0.0057158, 12.9973, 13.5574, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone115" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.229894, 0.0310035, -0.626091, 0.437692, -0.00999696, -0.333616, -0.038642, -0.297684, -0.0540032, 17.1669, 7.56937, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.13263, -2.66701e-08, 9.24348e-08, -9.90179e-08, -7.72063e-09, 1.05733, -1.71023e-07, -0.176628, -4.62174e-08, 15.9383, 13.0344, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone116" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00766551, -0.414291, 0.0824306, 0.266837, -0.0922197, -0.280875, 0.443156, 0.048362, 0.170549, 15.4416, 6.98826, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.771314, 2.57612e-08, -0.365642, 0.206673, -1.46234e-08, -1.3646, -1.29608e-07, -0.176628, 5.96483e-08, 13.1598, 11.9882, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone117" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.778286, 0.236397, -0.0507432, -0.284124, -0.190973, 0.565171, 0.361908, 0.358447, 0.334576, 23.2662, 21.6555, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.01498, 8.99946e-16, 0.503968, 0.279934, 1.02942e-08, -1.82728, -1.22363e-08, 0.235504, 7.98729e-08, 18.055, 18.6287, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone118" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0896111, -0.287954, -0.106297, 0.0419134, 0.117043, -0.252715, 0.178329, -0.172207, 0.00598191, 20.7497, 21.14, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.150154, 7.20529e-09, 1.21349, -1.05385, -1.02662e-09, -0.1729, 0, 0.166503, -5.35792e-08, -23.7495, 16.2721, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone119" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0446226, -0.656886, -0.243497, -0.331423, -0.00894143, -0.11204, 0.065575, 0.401808, -0.400568, 23.2837, 19.3513, -0.828998)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.454757, -0.29747, 0.0294398, -1.13242, 0.126982, 0.00768812, 0.155542, 0.0547796, 0.142046, -21.3521, 13.5353, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone120" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.449182, 0.209337, 0.026758, -0.336402, -0.256758, -0.0883665, -0.0692273, -0.110601, 0.255787, 21.1766, 19.8761, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0941714, -0.00214333, -0.551292, -0.660938, 0.000305385, 0.0785489, -1.4824e-16, -0.0901967, 0.0133662, -24.3147, 12.5689, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone121" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.709972, 0.244248, 0.0169946, 0.329704, 0.203346, -0.489235, -0.439808, -0.241845, -0.394191, 22.5796, 20.5379, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.111417, 0.00122501, 0.667021, 0.781974, -0.00540311, -0.0940106, -0.0497915, -0.0821145, 0.0161366, -20.7256, 16.7936, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone122" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.134292, 0.426882, 0.42093, -0.167384, -0.30882, 0.495372, 0.328214, -0.332156, 0.0804043, 19.2062, 21.312, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.0332609, -0.00052354, -0.46498, 0.255761, 0.00676034, 0.0593817, -0.0271684, 0.0630004, -0.0102361, -21.847, 11.5573, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone123" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0663851, -0.295031, -0.0705597, -0.484782, 0.0451234, -0.149313, 0.111942, 0.0204509, -0.688465, 18.1004, 19.3485, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0387798, -0.00187467, 0.467165, -0.242648, -0.00607167, -0.0754182, -0.0260569, 0.0593308, 0.00704301, -19.4703, 14.9492, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone124" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.441277, 0.186699, -0.093347, 0.171046, 0.379359, 0.115856, 0.20062, 0.0872187, -0.3041, 19.8124, 19.9504, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.150154, 7.20529e-09, 1.21349, -1.05385, -1.02662e-09, -0.1729, 0, 0.166503, -5.35792e-08, -23.1454, 13.8613, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone125" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.630527, -0.319411, -0.281773, 0.494376, 0.0104014, 0.539468, -0.427496, -0.459079, 0.20827, 11.9382, 19.1647, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.111417, 0.00122501, 0.667021, 0.781974, -0.00540311, -0.0940106, -0.0497915, -0.0821145, 0.0161366, -20.1215, 14.3828, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone126" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0988572, 0.264817, -0.125043, 0.177407, -0.125325, 0.0954099, 0.0199904, -0.197367, -0.22836, 14.466, 19.6497, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone127" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.31226, -0.162653, -0.49734, 0.348686, -0.377515, -0.212105, -0.202121, -0.399978, 0.402439, 11.9725, 21.4687, -1.21175)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0387798, -0.00187467, 0.467165, -0.242648, -0.00607167, -0.0754182, -0.0260569, 0.0593308, 0.00704301, -1.54767, 10.2064, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone128" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0160559, -0.230266, -0.206411, 0.237985, 0.240644, -0.163007, 0.510409, -0.119447, 0.0695108, 14.0675, 20.9187, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.90301, 1.26894e-08, 0.0123674, 0.0134861, -2.13464e-09, 1.74516, 8.21284e-08, 0.294379, 1.21216e-08, 22.3327, 17.8217, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone129" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.20139, 0.0832711, 0.00857513, -0.108302, -0.923697, 0.000783478, 0.0635912, 5.90122e-05, 0.163339, 26.871, 13.8938, -0.338264)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone130" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.281322, -0.384335, 0.205921, -0.262244, 0.304783, -0.366778, 0.0751605, -0.375122, -0.508981, 16.0053, 19.4592, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.124007, 1.01516e-08, -1.67669, -1.20617, -1.70771e-09, -0.172382, -1.40917e-08, 0.235504, 7.10251e-08, 28.5706, 18.7149, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone131" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.370889, 0.105091, -0.400887, 0.0723215, -0.221966, -0.466183, -0.321139, -0.171358, 0.358006, 17.1552, 21.4091, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.11563, -0.0572945, 0.0466394, -1.41219, -0.0465148, 0.0224515, 0.0983457, -0.0179818, -0.206682, 22.0841, 14.6035, -0.417926)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone132" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.177791, -0.225519, -0.263115, -0.218211, -0.352713, 0.126914, -0.434076, 0.0849405, -0.171568, 15.4299, 20.828, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(2.7176, -0.00145477, -0.299685, -1.32341, -0.00298725, -0.615401, 4.13217e-07, 0.284553, -0.00799265, 26.2222, 15.2137, -0.563911)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone133" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.570454, 0.0270612, 0.0519734, -0.0415929, 0.192836, -0.452558, -0.0543827, -0.431347, -0.199057, 0.994205, 19.1375, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(1.62321, 1.70771e-09, 0.30863, 1.71147, 1.01515e-08, -0.292715, -8.55444e-08, 0.235504, 1.03797e-08, 22.0688, 15.3084, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone134" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.130588, 0.268425, 0.0381367, 0.0417547, -0.121667, 0.251459, 0.150969, -0.198537, -0.102537, 3.51075, 19.6529, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0551035, -2.35742, 0.000400834, 1.23241, -0.105415, -0.00872785, 0.0650323, 0.000150193, 0.165739, 18.8987, 17.082, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone135" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.203332, 0.00566796, 0.169287, -0.0685442, -0.00285161, 0.499574, -0.0227535, 0.059241, 0.00785064, 19.1779, 10.1297, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone127" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.14815, -1.01913e-08, 1.71349, 1.1549, 1.45207e-09, 0.219806, -1.3532e-08, 0.235504, 7.27948e-08, -23.531, 17.9278, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone74" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.8487e-07, -1.02942e-08, 1.51018, 1.40977, 4.49973e-16, -1.98036e-07, 5.38729e-15, 0.235504, 6.60119e-08, 4.27404, 3.34056, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone75" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.87933e-08, -4.31717e-08, 1.13263, -0.0145835, -1.09935, -5.69901e-08, 0.192471, -0.0832977, 1.48244e-07, 5.5692, 11.864, -0.38134)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone76" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.52378, -1.28677e-08, -0.339276, -0.245242, -1.56553e-16, 2.10805, -6.66065e-08, 0.294379, -1.48302e-08, 3.85876, 7.82119, -0.579526)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone77" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.21938, 0.220749, -0.026063, 1.34751, -0.194476, 0.0368722, 0.0993085, -0.0716832, -0.180295, 1.56928, 14.2378, -0.417926)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone78" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.457019, 0.00283787, -1.84155, -0.393041, -0.0194252, 2.13075, -0.0237612, 0.266736, 0.174766, 5.29601, 16.9314, -0.623017)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone79" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0272618, 8.46423e-08, 0.866446, -0.0149137, 0.947655, -0.0340313, -0.100643, -0.140427, -0.229655, 8.86261, 2.3262, -0.412696)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone80" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.45529e-08, -1.22295, -0.0456397, 1.05733, 7.8945e-08, 9.97485e-09, -3.14007e-08, -0.245324, 0.227515, 7.86332, 19.0095, -0.294341)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone81" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4444, 0.0248596, -0.136512, -0.3269, 0.0266304, -0.658221, -0.152963, 0.17783, 0.117653, 7.74194, 12.9265, -0.342404)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone82" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.106313, -1.02942e-08, 1.65085, 1.2406, 1.99434e-15, 0.141469, -4.64708e-09, 0.235504, 7.21611e-08, 8.53094, 8.79127, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone83" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.35397, 0.175678, 0.00826188, -0.355211, -0.66963, 0.00217817, 0.0737935, 4.40855e-05, 0.162074, 7.86332, 4.65058, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone89" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.76555e-08, 7.27806e-09, 1.05742, -1.31901, -9.0967e-16, -4.62211e-08, 0, 0.166503, -4.62211e-08, -23.4025, 9.8097, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone90" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.260306, -0.391393, 0.0275765, -1.06214, 0.104927, 0.0115608, 0.139387, 0.0686292, 0.139593, -20.6155, 7.41586, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone91" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.45531e-08, -0.0021741, -0.664505, -0.561709, -7.36794e-11, 2.90761e-08, 0, -0.0905768, 0.01595, -23.4025, 6.06907, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone92" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.25432e-08, 0.00200569, 0.803579, 0.66479, -0.00525699, 0.00121343, -0.0419066, -0.0833948, 0.01925, -20.4876, 10.7241, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone93" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.530669, 0.0104156, 0.999957, 0.229563, -0.0323548, -2.28648, -0.0113836, -0.166925, 0.505581, -23.4025, 3.43856, -0.165593)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone94" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00248052, -0.0101188, 0.618951, -0.00323738, 0.550365, 0.0107824, 0.0915922, 0.0191789, 0.0171437, -20.6155, 1.02369, -0.103982)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone95" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.45531e-08, -0.0021741, -0.664505, -0.561709, -7.36794e-11, 2.90761e-08, 0, -0.0905768, 0.01595, -23.4025, -0.323099, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone96" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00388182, -0.00149814, -0.403145, 0.317957, 0.0067369, -0.00584934, -0.0334957, 0.0641235, -0.00880425, -20.8066, 5.39254, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone97" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00518148, -0.0010239, 0.409726, -0.30566, -0.00642875, -0.00759243, -0.0324169, 0.0607806, 0.00609916, -18.9662, 9.06342, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone98" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.62174e-08, 7.72064e-09, -1.13263, 1.05733, -2.66701e-08, 4.9509e-08, -1.59653e-07, -0.176628, -4.9509e-08, -18.4059, 11.8088, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone99" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.487522, -1.02942e-08, 1.02842, 1.81946, 1.91416e-15, -0.275564, 2.13103e-08, 0.235503, 4.49535e-08, -19.5874, 1.19454, -0.43009)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone100" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.177344, 1.46234e-08, 1.40511, -0.661857, 2.57613e-08, -0.376498, -1.11215e-07, -0.176628, 6.14193e-08, -17.2853, 9.21504, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone101" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.09545, -1.28677e-08, 0.154723, 0.214954, 6.40557e-17, 1.50829, -9.15949e-08, 0.294379, 6.76314e-09, -18.3452, 5.52249, -0.535826)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone102" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78818e-08, 1.22295, 0.0456396, -1.05733, 2.79686e-08, -5.98491e-09, -3.14007e-08, -0.245324, 0.227515, -23.5793, 4.44335, -0.250641)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone103" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0340817, 1.05062, -0.0218442, 1.19247, -2.88303e-07, 0.0548749, 0.3177, -0.112705, -0.203627, -23.019, 7.03717, -0.343811)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone136" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.34164, -0.231164, -0.120657, 0.420053, 0.233756, 0.00358762, 0.162976, -0.117901, 0.243681, 3.08377, 20.9169, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.0941713, 0.00214333, 0.551292, 0.660938, -0.000305385, -0.0785489, 1.53886e-10, -0.0901967, 0.0133662, 31.0044, 5.1159, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone137" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.567587, -0.270054, -0.237801, -0.0180706, -0.200665, 0.543266, -0.695496, -0.215175, -0.208182, 1.68079, 20.255, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0332609, 0.000523541, 0.46498, -0.255761, -0.00676034, -0.0593816, -0.0271684, 0.0630004, -0.0102361, 28.5367, 6.12748, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
+skeleton = NodePath("")
+
+[node name="Stone138" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.76556e-08, -7.27806e-09, -1.05742, 1.31901, 2.73402e-16, -4.62211e-08, 0, 0.166503, -4.62211e-08, 30.0922, 7.87512, -0.26194)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone139" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.189796, 0.275499, -0.332336, 0.195865, -0.100555, -0.649243, -0.419028, -0.171788, -0.152945, 6.16, 21.4444, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.260306, 0.391392, -0.0275765, 1.06214, -0.104927, -0.0115608, 0.139388, 0.0686292, 0.139593, 27.3052, 10.269, -0.390459)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone140" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.434862, -0.222016, -0.047695, -0.273232, -0.360162, -0.0496051, -0.0216818, 0.0858426, -0.331478, 4.44802, 20.8426, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-2.45531e-08, 0.0021741, 0.664505, 0.561709, 2.63745e-10, 2.90167e-08, 0, -0.0905768, 0.01595, 30.0922, 11.6157, -0.0851215)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone141" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.134512, -0.264816, -0.0165561, -0.0661296, 0.125325, -0.243179, 0.138489, -0.197367, -0.132201, 9.79445, 21.1432, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(2.54965e-08, -0.00200569, -0.803579, -0.664789, 0.00525699, -0.0012135, -0.0419066, -0.0833948, 0.01925, 27.1773, 6.96067, -0.131049)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone142" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.307587, 0.230266, 0.143548, -0.410221, -0.240644, 0.023235, 0.233497, -0.119447, 0.229918, 10.1929, 19.8743, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.00388185, 0.00149814, 0.403145, -0.317957, -0.0067369, 0.00584938, -0.0334957, 0.0641235, -0.00880425, 27.4963, 12.2923, -0.0746709)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone143" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.212675, 0.384335, 0.372402, -0.11251, -0.304783, 0.542071, 0.309312, -0.375122, -0.058879, 8.25509, 21.3338, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.00518145, 0.0010239, -0.409726, 0.30566, 0.00642875, 0.0075924, -0.0324169, 0.0607806, 0.00609916, 25.6559, 8.6214, -0.0490886)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone144" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.131961, -0.129847, 0.612526, -0.330702, 0.21792, 0.114112, -0.345168, -0.159145, -0.343505, 7.10526, 19.3839, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(0.177344, -1.46233e-08, -1.40511, 0.661857, -2.57613e-08, 0.376498, -1.11215e-07, -0.176628, 6.14193e-08, 23.975, 8.46977, -0.298704)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone145" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.417862, 0.225519, 0.0889312, 0.289966, 0.352713, 0.0216896, -0.0946465, 0.0849405, -0.326179, 8.83055, 19.965, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-1.10317e-07, -1.22295, -0.0456396, 1.05733, -1.34882e-07, 1.99497e-09, -3.14008e-08, -0.245324, 0.227515, 30.269, 13.2415, -0.250641)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
 [node name="Stone146" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.679455, -0.271534, -0.20973, -0.0654516, 0.19148, -0.59968, 0.592866, 0.332331, 0.174157, 1.00592, 16.3388, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
+transform = Transform3D(-0.0340816, -1.05062, 0.0218442, -1.19247, 1.91695e-07, -0.054875, 0.3177, -0.112705, -0.203627, 29.7087, 10.6476, -0.343811)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone148" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.134127, -0.1301, 0.650722, 0.464404, -0.171894, -0.252693, 0.266394, 0.365167, 0.112887, 0.988418, 18.643, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone104" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.51018, 8.99946e-16, -2.46493e-07, -2.64048e-07, 1.02942e-08, -1.40977, 5.77097e-15, 0.235504, 6.16231e-08, -16.4293, 7.96304, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone150" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.567587, -0.270054, -0.237801, -0.0180706, -0.200665, 0.543266, -0.695496, -0.215175, -0.208182, 1.69251, 17.4564, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone105" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.015625, 1.01511, -0.0315005, 0.0285619, -1.34758e-07, -0.802011, -0.105443, -0.150422, -0.212576, -17.5159, 3.67953, -0.412696)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone151" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.536375, -0.345005, -0.0300397, -0.349743, 0.46596, 0.135989, -0.0970594, 0.22755, -0.324014, 5.06591, 16.6822, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone106" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.344775, -0.77851, 0.00219755, 1.31419, -0.204242, -0.0083354, 0.0716254, 5.12529e-05, 0.163517, -15.0259, 4.61239, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone152" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.128043, 0.133283, -0.607573, 0.336887, -0.215538, -0.123569, -0.349376, -0.158986, -0.341822, 6.17172, 18.6457, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone84" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0293219, -1.01535, 0.0120196, -0.981363, 0.0435928, 0.0196065, -0.149857, -0.0868037, -0.130748, 7.30298, 16.4157, -0.348068)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone153" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.434862, -0.222016, -0.047695, -0.273232, -0.360162, -0.0496051, -0.0216818, 0.0858426, -0.331478, 4.45973, 18.0439, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone85" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0582406, -1.42111, 0.00497558, -1.47417, 0.0564881, 0.00231829, -0.0164162, -0.0307343, -0.225815, 0.425658, 6.71385, -0.472464)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone155" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.134512, -0.264816, -0.0165561, -0.0661296, 0.125325, -0.243179, 0.138489, -0.197367, -0.132201, 9.80617, 18.3446, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone86" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.751889, 0.00320754, 1.13884, 2.55207, -0.000945053, -0.335524, 3.62647e-07, 0.286369, -0.0138631, 0.238218, 17.9461, -0.563911)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone157" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.240604, 0.302278, 0.0806135, 0.201914, -0.0498742, 0.251062, 0.46771, 0.177032, -0.0669154, 10.2047, 17.0756, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone87" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.91084, -1.02942e-08, 0.219743, 1.28573, 3.16348e-17, 0.326581, -8.35256e-08, 0.235504, 9.60529e-09, 0.827262, 14.1068, -0.47379)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")
 
-[node name="Stone158" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.511407, 0.272481, 0.286966, -0.0851418, 0.195592, -0.550425, -0.727233, -0.214515, -0.137359, 11.6223, 17.7205, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone159" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.212675, 0.384335, 0.372402, -0.11251, -0.304783, 0.542071, 0.309312, -0.375122, -0.058879, 8.2668, 18.5351, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone161" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.282335, 0.259488, 0.195549, -0.234052, 0.156443, -0.275478, -0.364902, -0.301117, 0.025392, 8.84227, 17.1663, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone162" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.574089, 0.017022, -0.00865322, 0.0175446, -0.192326, 0.453971, 0.014807, -0.432087, -0.202407, 23.2779, 18.8568, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone163" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.11272, -0.287954, -0.0533321, -0.0316464, 0.117043, -0.255403, 0.166975, -0.172207, -0.084409, 20.7614, 18.3414, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone164" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.304947, -0.530372, -0.158776, -0.436778, 0.385567, 0.0861842, 0.0247413, 0.269663, -0.435507, 23.2954, 16.5527, -0.754332)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone165" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.39551, 0.209337, 0.105841, -0.380761, -0.256758, -0.0212231, 0.135339, -0.110601, 0.249597, 21.1884, 17.0774, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone167" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.503052, 0.39173, -0.0116763, 0.354547, -0.43612, -0.161618, -0.201678, 0.210412, -0.313247, 19.2179, 18.5134, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone168" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0663852, -0.295031, -0.0705597, -0.484782, 0.0451233, -0.149313, 0.111942, 0.0204509, -0.688465, 18.1121, 16.5499, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone170" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0571162, 0.264817, -0.1663, 0.190793, -0.125325, -0.0019825, -0.0445149, -0.197367, -0.221873, 14.4777, 16.8511, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone172" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.105434, -0.721702, 0.110058, -0.0167009, -0.210101, -0.3914, 0.379208, -0.209914, 0.0133623, 16.017, 16.6605, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone173" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00632701, 0.293909, -0.136059, 0.4954, 0.00621774, 0.028397, 0.0213948, -0.0570564, -0.697773, 17.1669, 18.6104, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone175" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.679455, -0.233092, -0.200422, 0.201009, 0.272777, -0.442153, 0.561577, 0.184383, 0.400754, 1.00592, 10.9414, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone176" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.168649, -0.0917331, 0.136963, -0.0663069, -0.179497, -0.219231, 0.0935369, -0.292639, 0.0915366, 3.52247, 11.4568, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone177" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.205599, -0.386705, 0.121714, 0.372293, 0.16684, 0.441725, -0.351786, -0.0494417, 0.53861, 0.988418, 13.2455, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone178" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.470246, 0.161331, 0.0838129, -0.207239, 0.0138431, 0.252787, 0.23589, -0.309451, 0.0550038, 3.09549, 12.7208, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone181" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0031881, -0.277608, 0.263825, 0.494467, -0.0174247, -0.114578, 0.0862747, 0.110125, 0.646935, 6.17172, 13.2483, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone182" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.239343, 0.239734, 0.072763, 0.0838153, 0.0358317, 0.538374, 0.202522, 0.268491, -0.136818, 4.45973, 12.6465, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone183" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.706657, -0.258915, -0.273109, -0.157439, 0.451946, -0.362254, 0.548246, -0.203941, -0.456049, 12.334, 13.4322, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone184" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0522328, 0.26079, 0.173047, -0.0471126, -0.204965, 0.216575, 0.191567, -0.121515, 0.00607973, 9.80617, 12.9471, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone186" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.307587, 0.230266, 0.143548, -0.410221, -0.240644, 0.023235, 0.233497, -0.119447, 0.229918, 10.2047, 11.6782, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone187" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.751689, -0.186123, -0.171879, -0.440763, 0.346023, 0.0213611, 0.19582, 0.0643809, -0.611707, 11.6223, 12.3231, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone189" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.131961, -0.129847, 0.612526, -0.330702, 0.21792, 0.114112, -0.345168, -0.159145, -0.343505, 7.11698, 11.1878, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone190" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.417862, 0.225519, 0.0889312, 0.289966, 0.352713, 0.0216896, -0.0946465, 0.0849405, -0.326179, 8.84227, 11.7689, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone191" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.188718, 0.0335934, 0.468215, 0.21798, -0.427487, 0.0996174, 0.496966, 0.200261, 0.134106, 23.2779, 13.4594, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone192" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.191111, 0.0631528, -0.0823559, -0.0548804, 0.325476, -0.081643, 0.0453062, 0.127863, 0.248499, 20.7614, 12.9439, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone193" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.104613, 0.123155, -0.663247, -0.498598, 0.136837, 0.199746, 0.212326, 0.382007, 0.142273, 23.2954, 11.1552, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone194" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.39551, 0.209337, 0.105841, -0.380761, -0.256758, -0.0212231, 0.135339, -0.110601, 0.249597, 21.1884, 11.68, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone195" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.741757, -0.138751, -0.278841, -0.412954, 0.347699, 0.109751, 0.292338, 0.139101, -0.552476, 22.5913, 12.3418, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone198" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.46222, 0.186699, 0.0224912, 0.224544, 0.379359, 0.0651369, 0.0127623, 0.0872187, -0.331458, 19.8241, 11.7543, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone199" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0233336, 0.350727, -0.00952452, 0.114595, 0.0328927, 0.227983, 0.16724, 0.0263955, -0.157545, 14.4777, 11.4536, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone200" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.435322, 0.216045, 0.0472413, -0.218944, 0.0844542, 0.242105, 0.282789, -0.267191, 0.114723, 14.0792, 12.7226, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone201" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.294096, -0.384335, -0.146744, -0.0611126, 0.304783, -0.564958, 0.251666, -0.375122, -0.308675, 16.017, 11.2631, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone202" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.593994, -0.207828, -0.0454324, -0.309048, 0.216714, -0.303135, 0.34806, -0.162252, -0.346692, 17.1669, 13.213, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone203" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.394014, 0.172491, 0.171715, 0.297836, -0.0266854, -0.276198, -0.15393, 0.389891, -0.0948719, 15.4416, 12.6319, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone205" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.321882, 0.0885058, -0.064934, -0.104563, 0.0115342, -0.243428, -0.120495, 0.22642, 0.0377828, 20.7497, 15.7426, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone206" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.284647, 0.405953, 0.0753188, 0.10295, -0.155971, -0.448964, -0.156555, 0.635534, -0.158294, 23.2837, 13.9539, -0.866335)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone207" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.207495, -0.152463, -0.223384, 0.509343, 0.0187441, -0.117186, 0.131297, -0.31366, 0.101579, 21.1766, 14.4786, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone209" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0184607, 0.230879, -0.480345, -0.02853, 0.185571, 0.596571, 0.370327, 0.00278722, 0.069905, 19.2062, 15.9146, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone210" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.198638, -0.268653, -0.136105, -0.433074, -0.0873054, -0.292284, 0.157928, 0.0984944, -0.630319, 18.1004, 13.9511, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone211" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.448507, 0.156223, 0.0962682, 0.23308, 0.373076, 0.0628497, -0.111888, 0.150949, -0.254968, 19.8124, 14.5529, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone213" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.123265, 0.222044, 0.135858, 0.134672, 0.0175862, 0.207876, 0.0911869, 0.274181, -0.123357, 14.466, 14.2523, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone215" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.175237, -0.230266, -0.188429, 0.0939712, 0.240644, -0.19421, 0.527137, -0.119447, -0.0280184, 14.0675, 15.5212, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone216" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.449084, -0.272481, -0.335681, 0.193914, -0.195592, 0.536271, -0.747245, -0.214515, -0.0625746, 12.6498, 14.8763, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone217" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.125363, 0.104732, -0.615492, -0.202565, 0.528444, -0.0143282, 0.311151, 0.30183, 0.238654, 16.0053, 14.0617, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone218" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.35472, 0.349332, -0.30069, -0.166382, -0.348813, -0.421778, -0.397182, 0.458105, -0.0918587, 17.1551, 16.0116, -1.226)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone219" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.12354, 0.506061, -0.0884786, -0.0267371, -0.145466, -0.322507, -0.267716, 0.248054, -0.00861999, 15.4299, 15.4305, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone220" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.230686, -0.0738412, -0.448639, -0.233835, 0.432155, 0.0115329, 0.471392, 0.178235, -0.213831, 0.994205, 13.74, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone222" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.279387, -0.286755, -0.438918, 0.366011, -0.419166, -0.0909684, -0.199827, -0.366836, 0.447047, 0.976698, 16.0442, -1.0572)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone223" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.34164, -0.231164, -0.120657, 0.420053, 0.233756, 0.00358759, 0.162976, -0.117901, 0.243681, 3.08377, 15.5194, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone224" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.567587, -0.270054, -0.237801, -0.0180704, -0.200665, 0.543266, -0.695496, -0.215175, -0.208182, 1.68079, 14.8576, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone225" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.350805, 0.237126, -0.153289, 0.0457639, 0.190887, 0.618787, 0.169165, -0.543378, 0.150484, 5.05419, 14.0835, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone226" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.670745, -0.152268, -0.0146484, -0.0895646, -0.195317, 0.48425, -0.220805, -0.383324, -0.240924, 6.16, 16.047, -0.933478)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone227" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.282191, 0.0152369, 0.0849043, 0.0301479, -0.506479, 0.161983, 0.0679925, 0.287811, 0.280557, 4.44801, 15.4452, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone228" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0568027, -0.203183, 0.132947, 0.258877, 0.113058, 0.130783, -0.245023, 0.0723472, 0.168998, 9.79445, 15.7458, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone229" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.537137, 0.089591, -0.0446388, 0.0705238, 0.292538, 0.149202, 0.154666, 0.177748, -0.223057, 10.1929, 14.4768, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone230" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.341055, -0.0722555, 0.315871, -0.162143, -0.218022, -0.554076, 0.104663, -0.573209, 0.170928, 8.25509, 15.9363, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone231" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.011189, 0.278135, -0.263194, -0.488394, 0.0128664, 0.11949, 0.0852356, 0.110235, 0.65012, 7.10526, 13.9864, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone232" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.051289, 0.407629, -0.0955827, -0.367198, 0.0559217, 0.234491, 0.360809, 0.114856, 0.225056, 8.83055, 14.5675, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone233" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.74153, 0.0924176, -0.353913, -0.489379, -0.268287, 0.406654, -0.167552, 0.374592, 0.378566, 47.4508, 21.6555, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone235" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.218147, -0.544637, -0.144618, -0.225218, -0.237021, -0.329896, 0.133496, 0.490122, -0.320239, 47.4683, 19.3513, -0.829001)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone236" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.500962, 0.101781, -0.0980999, -0.0399316, -0.298122, -0.140357, -0.259163, -0.150809, 0.211253, 45.3612, 19.8761, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone238" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.046828, 0.342029, 0.541793, -0.342511, -0.21053, 0.229587, 0.18512, -0.476046, 0.287733, 43.3908, 21.3121, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone242" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0067853, 0.226119, 0.212835, 0.0157407, -0.269906, 0.177606, 0.203352, 0.0284375, -0.00664622, 38.6506, 19.6497, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone243" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0299634, 0.0884018, -0.664779, 0.506934, -0.0557255, 0.029699, -0.0453949, -0.563946, -0.107143, 36.1571, 21.4687, -1.30493)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone244" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.553954, 0.00681174, -0.0493111, 0.0650089, 0.249123, 0.190621, 0.0795, -0.251179, 0.187724, 38.2521, 20.9187, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone245" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.236218, 0.27981, -0.628976, 0.730359, -0.0110454, -0.304967, -0.178495, -0.415491, -0.415473, 36.8344, 20.2738, -1.15367)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone246" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0411562, -0.335624, -0.549899, 0.342998, 0.214283, -0.22242, 0.184992, -0.471977, 0.290054, 40.1899, 19.4592, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone247" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.434599, 0.086667, -0.273894, 0.204968, -0.258211, 0.208263, -0.122597, -0.12447, -0.622747, 41.3398, 21.4091, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone248" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.222566, -0.293235, 0.198617, -0.169458, -0.309225, -0.205712, 0.435196, 0.0295575, -0.181676, 39.6145, 20.828, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone249" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.574089, -0.0170219, 0.00865324, -0.0175446, 0.192325, -0.453971, 0.0148069, -0.432087, -0.202407, 25.1788, 19.1375, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone250" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0631498, -0.21746, 0.199566, -0.135026, 0.145881, 0.171927, -0.13917, -0.240212, -0.0762519, 27.6954, 19.6529, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone251" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0790271, -0.118371, 0.677853, 0.239046, 0.426947, 0.200695, -0.338218, 0.329416, -0.016538, 25.1613, 21.4416, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone252" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.38875, -0.202826, -0.118556, 0.13045, -0.259824, 0.170551, -0.389332, 0.115466, 0.175523, 27.2684, 20.9169, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone254" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.142791, 0.106246, -0.599724, 0.2817, -0.357663, -0.257209, -0.232448, -0.498713, 0.0566987, 29.2388, 19.4809, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone255" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.130763, 0.275499, -0.390499, 0.294643, -0.100555, -0.560243, -0.382174, -0.171788, -0.298318, 30.3446, 21.4444, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone256" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.392601, -0.278295, -0.0113135, -0.216874, 0.232143, -0.247126, 0.251118, -0.234603, -0.231114, 28.6326, 20.8426, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone258" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.306911, 0.285277, -0.0627561, -0.278817, -0.187941, -0.187091, -0.381416, -0.0921655, 0.187262, 34.3775, 19.8743, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone259" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0411562, 0.335624, 0.549899, -0.342998, -0.214283, 0.22242, 0.184992, -0.471976, 0.290054, 33.7032, 22.4386, -0.259267)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone260" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.230531, -0.129847, 0.549217, -0.340126, 0.21792, -0.00304732, -0.277649, -0.159145, -0.45228, 31.2899, 19.3839, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone261" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.222566, 0.293235, -0.198617, 0.169458, 0.309225, 0.205712, 0.435196, 0.0295575, -0.181676, 32.6771, 20.3543, -1.20649)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone262" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.747577, -0.236397, -0.165678, -0.0276085, 0.190973, -0.601554, 0.507739, 0.358447, 0.211229, 25.1905, 16.3388, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone263" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.131376, -0.0598282, -0.204595, 0.00667511, 0.34847, -0.0529355, 0.155833, 0.035512, 0.174753, 27.7071, 16.8543, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone264" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.104613, -0.123155, 0.663247, 0.498598, -0.136837, -0.199746, 0.212326, 0.382007, 0.142273, 25.173, 18.643, -0.841364)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone265" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.360013, 0.0252267, 0.208775, 0.430827, -0.0740876, -0.166409, 0.0670937, 0.340373, -0.0516949, 27.2801, 18.1182, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone268" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0656765, 0.133283, -0.627042, 0.321063, -0.215538, -0.189693, -0.380206, -0.158986, -0.268499, 30.3563, 18.6457, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone269" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.427513, 0.125158, 0.160321, -0.277392, 0.095495, 0.275007, 0.0672083, -0.401987, 0.115246, 28.6443, 18.0439, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone270" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.873885, -0.08125, 0.147988, -0.225981, 0.0715716, -0.617576, 0.099911, -0.548781, -0.102454, 36.5186, 18.8296, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone272" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0762529, 0.0835095, 0.659166, 0.0913941, -0.560183, 0.0795324, 0.495755, 0.0904268, -0.11605, 36.4842, 16.5256, -1.17022)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone273" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.333251, 0.285277, -0.00258093, -0.403801, -0.187941, -0.122925, -0.208086, -0.0921655, 0.242675, 34.3893, 17.0756, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone274" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.844128, -0.00405303, 0.207559, -0.20566, 0.290502, -0.409358, -0.206895, -0.272233, -0.43992, 35.8069, 17.7205, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone275" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.160574, 0.335624, 0.483729, -0.268433, -0.214283, 0.422979, 0.236057, -0.471976, 0.151944, 32.4514, 18.5351, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone277" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.32009, 0.293235, -0.12944, 0.274925, 0.309225, 0.149063, 0.299343, 0.0295575, -0.275314, 33.0269, 17.1663, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone278" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.463651, 0.14431, 0.251427, -0.155229, -0.270188, 0.385416, 0.301722, -0.360765, -0.188076, 47.4625, 18.8568, -1.00594)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone280" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.525758, -0.00443348, -0.0788187, 0.0303332, 0.67517, 0.141375, 0.0838937, -0.216335, 0.442837, 47.48, 16.5527, -1.08543)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone281" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0834302, 0.340483, 0.0453687, 0.519078, 0.0690702, -0.0934754, -0.208136, 0.0357764, -0.251308, 45.373, 17.0774, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone282" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.503231, 0.329525, -0.044751, 0.565674, 0.147355, -0.429487, -0.482667, -0.170868, -0.45669, 46.7759, 17.7393, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone283" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.540071, 0.233099, 0.143056, 0.298912, -0.545536, -0.0496247, 0.195993, 0.189687, -0.318517, 43.4025, 18.5134, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone284" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.331171, -0.090814, 0.486692, -0.252918, 0.256493, -0.0743355, -0.279839, -0.124346, -0.508784, 42.2967, 16.5499, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone285" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.119035, 0.395922, 0.109866, -0.47373, 0.0431669, 0.126974, 0.160128, -0.166612, 0.293973, 44.0087, 17.1517, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone288" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.133685, -0.679297, -0.14509, 0.317565, -0.362512, 0.149144, -0.190983, -0.127284, 0.349557, 40.2016, 16.6605, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone289" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.33125, 0.086667, -0.487793, 0.244453, -0.258211, 0.0827407, -0.276468, -0.12447, -0.51129, 41.3515, 18.6104, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone290" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.32009, -0.293235, 0.12944, -0.274925, -0.309225, -0.149063, 0.299343, 0.0295576, -0.275314, 39.6262, 18.0293, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone291" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.747577, -0.20293, -0.158326, 0.197715, 0.282211, -0.428236, 0.468476, 0.204725, 0.433382, 25.1905, 10.9414, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone292" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0472854, 0.338684, 0.0533321, 0.0710818, -0.0373999, 0.255403, 0.185202, 0.100827, -0.0844091, 27.7071, 11.4568, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone293" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.122403, -0.390676, 0.225882, 0.0234629, 0.142658, 0.665238, -0.537674, -0.082713, 0.080452, 25.173, 13.2455, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone294" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.207495, 0.152463, 0.223384, -0.509343, -0.018744, 0.117186, 0.131297, -0.31366, 0.101579, 27.2801, 12.7208, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone295" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.649018, -0.244248, -0.202181, -0.0434465, -0.203346, 0.540084, -0.618937, -0.241845, -0.249918, 25.8771, 12.0589, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone297" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.186429, 0.26926, 0.161393, 0.451223, 0.0859103, 0.234211, 0.116593, 0.0980613, -0.648347, 30.3563, 13.2483, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone298" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.111502, 0.321584, -0.169539, 0.293546, 0.0819531, -0.202415, -0.0819941, -0.143915, -0.49411, 28.6443, 12.6465, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone299" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.590861, -0.134258, -0.463457, -0.649585, 0.286579, 0.305724, 0.231619, 0.461229, -0.324865, 36.5186, 13.4322, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone300" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.141609, 0.188853, 0.133751, -0.101601, 0.296799, -0.0596109, -0.10616, -0.032136, 0.235466, 33.9908, 12.9471, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone301" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0649397, -0.0516842, 0.665758, -0.353315, -0.413276, 0.015923, 0.36179, -0.394319, -0.103951, 36.4842, 11.1281, -1.13288)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone302" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.559722, 0.0401888, -0.00258093, -0.0546875, -0.313779, -0.122925, -0.0336542, -0.158514, 0.242675, 34.3893, 11.6782, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone303" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.555433, -0.158388, -0.428829, -0.617725, -0.0497193, 0.452246, -0.327969, 0.361884, -0.125554, 35.8069, 12.3231, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone304" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.244353, 0.175019, -0.357908, -0.228092, -0.228178, -0.113562, -0.169231, 0.0548312, 0.669845, 32.4514, 13.1377, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone306" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.32009, 0.293235, -0.12944, 0.274925, 0.309225, 0.149063, 0.299343, 0.0295575, -0.275314, 33.0269, 11.7689, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone307" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0426726, -0.153816, -0.468684, 0.109342, 0.437014, -0.165703, 0.562431, -0.0966301, -0.00334579, 47.4625, 13.4594, -1.34194)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone308" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.174647, 0.0526125, 0.135639, -0.021593, -0.315291, 0.123106, 0.103054, -0.155226, -0.204075, 44.946, 12.9439, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone309" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0656707, 0.191212, -0.625529, -0.531824, -0.0689014, -0.150216, -0.132199, 0.372171, 0.293572, 47.48, 11.1552, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone312" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.231127, -0.223172, 0.165205, -0.290087, 0.183804, -0.0620831, -0.0269496, -0.0644958, -0.748578, 43.4025, 13.116, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone313" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.113139, -0.206539, 0.486692, -0.487631, 0.0636088, -0.0743356, -0.0369811, -0.206865, -0.508784, 42.2967, 11.1525, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone314" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.360105, 0.296224, -0.0663602, -0.349665, 0.313043, 0.0362795, 0.110859, 0.0251536, 0.32999, 44.0087, 11.7543, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone315" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0999067, 0.145114, 0.213271, 0.137754, -0.134174, 0.175388, 0.112643, 0.292792, -0.0253287, 38.6623, 11.4536, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone317" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0472285, -0.413679, -0.483729, 0.0825492, 0.455987, -0.422979, 0.380155, -0.0476224, 0.151944, 40.2016, 11.2631, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone318" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.411132, -0.0492137, -0.382276, -0.190881, 0.330197, -0.000954039, 0.603341, 0.07093, -0.260795, 41.3515, 13.213, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone319" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.173465, -0.14207, 0.298621, 0.458089, 0.184028, -0.0590416, -0.166467, 0.358372, 0.148701, 39.6262, 12.6319, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone320" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.050518, 0.457415, 0.146489, -0.16453, 0.107579, -0.629939, -0.887586, 0.00609255, 0.125108, 47.4508, 16.258, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone321" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0988879, -0.233289, -0.0187325, 0.15394, -0.0464361, 0.224992, -0.309167, 0.0514969, 0.11802, 44.9343, 15.7426, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone322" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.323469, -0.223824, 0.0581366, 0.00702608, 0.33878, 0.432715, -0.107008, -0.654339, 0.204149, 47.4683, 13.9539, -1.053)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone323" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.214381, 0.288368, -0.113607, 0.468424, -0.17603, -0.0664356, -0.233116, -0.0885228, -0.237973, 45.3612, 14.4786, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone324" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0986095, 0.386343, 0.143472, 0.0383788, -0.0897995, 0.611828, 0.891627, 0.0465929, -0.010468, 46.7642, 15.1405, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone329" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0150088, -0.340194, 0.0718591, 0.159905, -0.0370741, -0.169803, 0.1259, 0.0876428, 0.2071, 38.6506, 14.2523, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone330" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.076253, -0.0835094, -0.659166, 0.503715, 0.00981197, -0.103554, 0.0199353, -0.56735, 0.0952333, 36.1571, 16.0713, -1.05055)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone331" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.516791, 0.0206998, -0.107163, 0.0735575, 0.31502, 0.11868, 0.211963, -0.159791, 0.22009, 38.2521, 15.5212, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone333" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0472285, -0.413679, -0.483729, 0.0825492, 0.455987, -0.422979, 0.380155, -0.0476224, 0.151944, 40.1899, 14.0617, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone335" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0769939, 0.484336, 0.163873, 0.246265, -0.262326, 0.108378, 0.14517, 0.18813, -0.270765, 39.6145, 15.4305, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone336" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.188718, -0.0335935, -0.468215, -0.21798, 0.427487, -0.0996175, 0.496966, 0.200261, 0.134106, 25.1788, 13.74, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone337" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.191111, -0.0631528, 0.0823559, 0.0548804, -0.325476, 0.0816431, 0.0453062, 0.127863, 0.248499, 27.6954, 14.2555, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone338" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.225457, -0.314308, -0.468024, 0.400557, -0.374263, -0.0502914, -0.201679, -0.391963, 0.42332, 25.1613, 16.0442, -1.28142)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone339" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.520161, -0.0166215, -0.105841, 0.0477288, 0.34694, 0.021223, 0.216515, -0.0365483, 0.249597, 27.2684, 15.5194, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone340" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.849283, -0.0171697, -0.202181, 0.244737, -0.172839, 0.540084, -0.158172, -0.359622, -0.249918, 25.8654, 14.8576, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone341" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.219017, -0.426883, -0.306046, 0.0439099, 0.30882, -0.564078, 0.322303, -0.332156, -0.131121, 29.2388, 14.0835, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone342" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.661236, -0.152268, -0.0867889, 0.00166427, -0.195317, 0.489011, -0.263512, -0.383324, -0.214693, 30.3446, 16.047, -0.85266)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone343" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0618873, 0.522756, 0.12984, 0.283151, -0.0850277, -0.0646768, -0.0340486, 0.243074, -0.301858, 28.6326, 15.4452, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone344" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.193833, 0.197025, 0.0600797, -0.0571472, 0.091228, -0.229918, -0.299071, 0.110263, 0.0828722, 33.979, 15.7458, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone345" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.103584, -0.0163899, -0.26711, 0.49358, 0.163003, 0.0387165, 0.25112, -0.313625, 0.0340815, 34.3775, 14.4769, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone346" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.160574, 0.335624, 0.483729, -0.268433, -0.214283, 0.422979, 0.236057, -0.471977, 0.151944, 32.4397, 15.9364, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone347" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.21954, -0.264213, 0.11376, -0.138898, -0.0914757, -0.647502, 0.422408, 0.107241, -0.27204, 31.2899, 13.9864, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone349" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.702005, -0.271534, -0.165678, 0.0067052, 0.19148, -0.601554, 0.569716, 0.332331, 0.211229, 25.1905, -0.0996637, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone350" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.198897, 0.0371734, 0.0533321, -0.0306183, -0.11787, 0.255403, 0.033025, -0.333161, -0.0844091, 27.7071, 0.415771, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone351" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.23636, 0.385969, 0.24939, 0.221478, -0.573862, -0.0719761, 0.105895, 0.338731, -0.406107, 25.173, 2.20448, -0.828998)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone352" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00157685, -0.321715, -0.105841, 0.563349, -0.0125703, 0.0212231, -0.0485698, -0.135354, 0.249597, 27.2801, 1.67971, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone353" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.595096, -0.270054, -0.202181, -0.0858052, -0.200665, 0.540084, -0.666854, -0.215175, -0.249918, 25.8771, 1.01787, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone354" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.24308, -0.392656, -0.306046, 0.0618146, 0.300989, -0.564078, 0.301442, -0.378356, -0.131121, 29.2505, 0.243751, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone355" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.20307, 0.0681778, -0.627042, -0.022287, -0.287917, -0.189693, -0.458495, 0.0441917, -0.268499, 30.3563, 2.20726, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone356" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.130459, -0.416593, -0.0224912, -0.489473, -0.1024, -0.0651369, 0.087337, 0.0483912, -0.331458, 28.6443, 1.60545, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone357" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.728729, 0.321629, 0.102671, -0.189384, -0.0109658, -0.629002, -0.507751, -0.457514, 0.0872531, 36.5186, 2.39112, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone359" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15772, 0.162891, 0.611699, -0.381478, 0.379521, 0.032332, -0.299232, -0.397978, 0.281198, 36.4842, 0.0870819, -1.21175)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone360" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.43516, 0.114949, 0.148476, 0.16611, 0.334195, -0.0394282, -0.316946, 0.0173279, -0.224518, 34.3893, 0.637146, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone361" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.245745, -0.148676, 0.733974, -0.432808, 0.360217, 0.346464, -0.611041, -0.31494, 0.0497804, 35.8069, 1.28201, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone363" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0700971, -0.129847, 0.633182, -0.316085, 0.21792, 0.180231, -0.375627, -0.159145, -0.269822, 31.3016, 0.146721, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone364" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.393949, 0.252364, 0.0903588, -0.207963, -0.321751, 0.176393, 0.263066, 0.123567, 0.27476, 33.0269, 0.727833, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone365" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.238988, -0.357677, 0.251427, -0.346664, 0.0883795, 0.385416, -0.390915, -0.297043, -0.188076, 47.4625, 2.41832, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone366" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0904708, 0.311628, -0.0506525, 0.119521, -0.0454718, 0.219404, 0.138268, -0.164596, -0.156513, 44.946, 1.90289, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone368" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.439426, 0.108016, 0.149048, 0.159503, 0.331691, -0.036965, -0.318098, 0.0171036, -0.224432, 45.373, 0.63894, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone370" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.268508, 0.0621084, 0.472887, -0.283001, 0.143856, 0.427434, -0.0398717, -0.602805, 0.150728, 43.4025, 2.07491, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone371" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.00812894, -0.281608, 0.417098, -0.309285, 0.152307, 0.480955, -0.392743, -0.114113, -0.387385, 42.2967, 0.111402, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone372" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.239976, 0.23167, 0.237967, -0.257591, -0.352038, 0.0980816, 0.374552, -0.0936764, 0.21992, 44.0087, 0.713208, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone373" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.121951, 0.264067, 0.0804105, -0.00257812, -0.124646, 0.259427, 0.163607, -0.198797, -0.055849, 38.6623, 0.412594, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone374" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.391894, -0.231595, -0.0805821, 0.402033, 0.239628, 0.0487739, 0.046905, -0.118918, 0.255217, 38.2638, 1.68151, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone375" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.160574, -0.335624, -0.483729, 0.268433, 0.214283, -0.422979, 0.236057, -0.471976, 0.151944, 40.2016, 0.222012, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone376" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.337444, -0.0774652, -0.487793, -0.123184, -0.287976, 0.0827408, -0.341871, 0.0273028, -0.51129, 41.3515, 2.17193, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone377" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0184429, -0.394474, 0.12944, -0.458236, -0.0631608, -0.149063, 0.239431, -0.151266, -0.275314, 39.6262, 1.59082, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone378" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.58011, 0.34917, -0.125398, -0.508615, -0.134946, 0.510711, 0.471398, 0.284093, 0.396715, 47.4508, 5.21698, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone379" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.113986, -0.237107, -0.135, 0.0886099, 0.095935, -0.23563, 0.144026, -0.246675, 0.0381247, 44.9343, 4.70155, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone380" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24713, -0.0552843, -0.625529, -0.0761744, 0.41022, -0.150216, 0.487597, 0.0921063, 0.293572, 47.4683, 2.91284, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone381" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.086653, 0.345129, -0.000557318, -0.49852, 0.0474252, -0.122903, -0.252374, 0.0248208, 0.242582, 45.3612, 3.4376, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone384" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.343564, 0.0726427, 0.486692, 0.119048, 0.288923, -0.0743356, -0.346039, 0.0272755, -0.508784, 42.285, 2.91006, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone386" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.728729, -0.321629, -0.102671, 0.189384, 0.0109658, 0.629001, -0.507752, -0.457514, 0.0872531, 36.1228, 2.72619, -1.06107)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone388" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0728925, -0.0757379, -0.661124, 0.502695, 0.0385258, -0.10296, 0.0438763, -0.567217, 0.0812839, 36.1571, 5.03023, -1.02088)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone392" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0883875, -0.227859, 0.526017, 0.539805, 0.0175734, 0.17421, -0.10982, 0.269769, 0.432948, 41.3398, 4.97059, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone393" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0184429, -0.394474, 0.12944, -0.458236, -0.0631608, -0.149063, 0.239431, -0.151266, -0.275314, 39.6145, 4.38948, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone394" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.387964, 0.348976, 0.00865322, 0.16638, 0.135703, -0.453971, -0.389753, -0.289444, -0.202407, 25.1788, 2.69899, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone395" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.198897, 0.0371734, 0.0533321, -0.0306183, -0.11787, 0.255403, 0.033025, -0.333161, -0.0844091, 27.6954, 3.21442, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone396" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.316028, 0.518779, 0.158776, 0.428462, -0.401721, -0.0861842, 0.0304267, 0.268634, -0.435507, 25.1613, 5.00313, -0.754332)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone397" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.385837, -0.216114, -0.105841, 0.392283, 0.250053, 0.0212231, 0.130258, -0.112905, 0.249597, 27.2684, 4.47837, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone398" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.00275323, -0.37814, -0.202181, -0.376222, -0.117135, 0.540084, -0.815258, 0.0527778, -0.249918, 25.8654, 3.81652, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone399" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.636277, 0.11432, 0.0116763, 0.115363, 0.542357, 0.161618, 0.0358036, 0.284088, -0.313247, 29.2388, 3.04241, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone401" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.455796, -0.197525, -0.0224912, -0.237138, -0.373915, -0.0651369, 0.0156733, 0.0868833, -0.331458, 28.6326, 4.40411, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone402" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.123796, 0.0462564, 0.217427, -0.0367663, -0.331364, 0.0820836, 0.158014, -0.113341, -0.151245, 33.979, 4.70472, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone403" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.43516, 0.114949, 0.148476, 0.16611, 0.334194, -0.0394281, -0.316946, 0.017328, -0.224518, 34.3775, 3.4358, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone404" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.357489, -0.107374, -0.161492, -0.1386, 0.59727, 0.219261, 0.0904736, 0.490714, -0.302209, 32.4397, 4.8953, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone405" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.200234, -0.0634936, 0.633182, 0.0253174, 0.289289, 0.180231, -0.452972, 0.0442359, -0.269822, 31.2899, 2.94538, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone406" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.179042, 0.205922, 0.272683, -0.317561, -0.326855, 0.0658337, 0.367079, -0.182325, 0.189953, 33.0152, 3.52649, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone407" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.887059, 0.0136547, -0.119833, -0.10383, -0.360681, 0.272521, -0.140633, 0.180164, 0.554658, 47.4508, 10.6144, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone408" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0132721, -0.308438, -0.135, 0.0250712, 0.17645, -0.23563, 0.201949, -0.00163503, 0.0381247, 44.9343, 10.099, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone409" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0656705, 0.191212, -0.625529, -0.531824, -0.0689014, -0.150216, -0.132199, 0.372171, 0.293572, 47.4683, 8.31028, -0.492999)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone411" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.885532, 0.0595783, -0.044751, 0.14113, 0.284743, -0.429487, -0.04595, -0.27362, -0.45669, 46.7642, 9.49689, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone413" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.113139, -0.206539, 0.486692, -0.487631, 0.0636089, -0.0743355, -0.0369811, -0.206865, -0.508784, 42.285, 8.3075, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone414" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0283742, -0.20205, 0.462098, -0.00946306, 0.299899, 0.312813, -0.323157, 0.00895865, -0.0497339, 43.997, 8.90931, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone415" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.525893, 0.454743, -0.0393476, 0.346521, -0.114089, 0.579944, 0.654281, -0.305086, -0.275524, 36.1228, 8.12363, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone417" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0649396, 0.0516842, -0.665758, 0.353315, 0.413276, -0.0159229, 0.36179, -0.394319, -0.103951, 36.1571, 10.4277, -0.98355)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone418" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.329607, 0.273275, -0.0673263, -0.253944, 0.199326, 0.188378, 0.379846, -0.103873, 0.184361, 38.2521, 9.87761, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone419" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.576824, 0.29393, -0.123695, 0.656108, -0.211643, 0.268037, 0.18561, -0.16532, -0.563063, 36.8344, 9.23275, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone420" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0328979, -0.258897, 0.352068, 0.262269, -0.0798253, -0.506841, 0.26553, 0.110921, 0.456997, 40.1899, 8.41811, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone422" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.478054, -0.00522785, 0.12944, 0.0880797, -0.376647, -0.149063, 0.17707, 0.201469, -0.275314, 39.6145, 9.78692, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone424" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.191923, 0.0281237, -0.0901379, -0.0676816, 0.142755, -0.234052, 0.0131535, 0.324194, 0.110881, 27.6954, 8.61187, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone425" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.189106, -0.0227494, 0.663247, 0.466109, 0.192939, -0.199746, -0.227173, 0.376932, 0.142273, 25.1613, 10.4006, -0.797817)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone426" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.547532, 0.0870952, 0.00337599, -0.083158, -0.212989, 0.211776, 0.114091, 0.262734, 0.17056, 27.2684, 9.87581, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone427" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.855808, 0.117862, 0.0418284, 0.269748, 0.358399, 0.203073, 0.0319916, 0.130975, -0.593328, 25.8654, 9.21396, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone428" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.20294, -0.165498, 0.480345, 0.192151, -0.10736, -0.596571, 0.245337, 0.220983, 0.0699049, 29.2388, 8.43985, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone429" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.122141, 0.118309, -0.627042, 0.483582, -0.00216546, -0.189693, -0.0564033, -0.274765, -0.268499, 30.3446, 10.4034, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone430" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0591469, 0.423324, 0.0537985, -0.482399, 0.0236837, 0.115446, 0.167401, -0.0813215, 0.313673, 28.6326, 9.80155, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone431" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0136924, -0.303693, -0.140409, 0.0248666, 0.180433, -0.235979, 0.202089, -0.00162536, 0.03855, 33.979, 10.1022, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone432" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0194284, 0.304263, -0.138551, 0.550704, -0.0478323, -0.0440869, -0.117299, -0.174171, -0.229931, 34.3775, 8.83324, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone433" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.241862, 0.384335, 0.317831, -0.0657613, -0.304783, 0.563474, 0.301233, -0.375122, -0.132179, 32.4397, 10.2927, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone434" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.731978, 0.0799023, -0.0305434, 0.0637864, 0.19756, 0.37532, 0.17212, 0.266588, -0.268983, 31.2899, 8.34282, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone435" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.252357, 0.0338609, -0.29452, 0.402731, -0.209391, 0.132834, -0.20438, -0.370795, -0.101908, 33.0152, 8.92393, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone436" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.734512, -0.247215, -0.165678, -0.017281, 0.1913, -0.601554, 0.526903, 0.350896, 0.211229, 25.1905, 5.29778, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone437" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.17476, 0.0481658, -0.216797, -0.312475, -0.0490836, 0.114719, -0.0296412, 0.233459, 0.0688473, 27.7071, 5.81321, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone438" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.250362, 0.423431, -0.191534, -0.1887, -0.113629, 0.394988, 0.133579, 0.633106, 0.198992, 25.173, 7.60192, -0.866335)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone439" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.516544, 0.0413104, -0.105841, -0.0538543, 0.346597, 0.0212231, 0.223619, -0.0119533, 0.249597, 27.2801, 7.07715, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone440" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.842421, 0.0509049, -0.202181, 0.310504, -0.150496, 0.540084, -0.0104971, -0.366409, -0.249918, 25.8771, 6.41531, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone441" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.224566, -0.231346, 0.122625, 0.290099, -0.183699, -0.0639186, 0.0609068, 0.0219768, 0.756567, 29.2505, 5.64119, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone442" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.122141, 0.118309, -0.627042, 0.483582, -0.00216546, -0.189693, -0.0564033, -0.274765, -0.268499, 30.3563, 7.6047, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone444" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.525893, -0.454743, 0.0393477, -0.346521, 0.114089, -0.579944, 0.654281, -0.305086, -0.275524, 36.5186, 7.78856, -0.819269)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone446" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0728926, 0.0757379, 0.661124, -0.502695, -0.0385257, 0.10296, 0.0438764, -0.567217, 0.0812838, 36.4842, 5.48452, -1.24488)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone447" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.290881, 0.303023, 0.0011549, 0.451169, 0.171445, -0.0957729, -0.171018, -0.0631112, -0.254626, 34.3893, 6.03459, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone449" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.334344, -0.25581, 0.209263, -0.0533859, -0.252891, -0.595631, 0.197299, -0.501926, 0.193451, 32.4514, 7.49409, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone450" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.243327, -0.335598, -0.39419, -0.345655, 0.294725, -0.34281, 0.364111, 0.504058, -0.0620061, 31.3016, 5.54416, -1.226)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone451" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.245769, -0.0431548, 0.184862, -0.148297, 0.195603, 0.266823, -0.0724853, -0.546504, 0.0809026, 33.0269, 6.12527, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone452" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.428029, 0.205858, 0.251427, -0.0984751, -0.2877, 0.385416, 0.370404, -0.314372, -0.188076, 47.4625, 7.81576, -1.12409)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone453" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0132721, -0.308438, -0.135, 0.0250712, 0.17645, -0.23563, 0.201949, -0.00163502, 0.0381247, 44.946, 7.30033, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone454" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.113841, 0.250087, 0.562404, -0.46753, 0.111295, -0.201071, -0.142856, -0.563531, 0.209876, 47.48, 5.51162, -1.0572)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone456" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.885532, 0.0595782, -0.044751, 0.14113, 0.284743, -0.429487, -0.0459498, -0.27362, -0.45669, 46.7759, 6.69823, -0.848852)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone457" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0458953, 0.424759, 0.472887, -0.083373, -0.452989, 0.427434, 0.380419, -0.048033, 0.150728, 43.4025, 7.47235, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone458" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.64969, -0.0979648, -0.188093, 0.106017, 0.281803, -0.417895, 0.27081, -0.345343, -0.287649, 42.2967, 5.50884, -0.933478)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone459" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0590917, -0.495949, -0.162245, -0.250248, 0.229019, -0.111182, 0.138014, 0.202914, -0.271062, 44.0087, 6.11065, -0.487391)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone460" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.17527, -0.212571, -0.0117935, 0.201166, -0.0853363, 0.189438, -0.243091, 0.0826466, 0.165269, 38.6623, 5.81003, -0.320654)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone461" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.329607, 0.273275, -0.0673263, -0.253944, 0.199326, 0.188378, 0.379846, -0.103873, 0.184361, 38.2638, 7.07895, -0.363542)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone462" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0472285, -0.413679, -0.483729, 0.0825491, 0.455987, -0.422979, 0.380155, -0.0476224, 0.151944, 40.2016, 5.61945, -0.656134)
-mesh = SubResource("ArrayMesh_q7cyg")
-skeleton = NodePath("")
-
-[node name="Stone463" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.062672, 0.110709, 0.654931, -0.00672633, -0.278054, 0.263992, 0.49188, 0.0103035, 0.087057, 41.3515, 7.56938, -0.62866)
-mesh = SubResource("ArrayMesh_q7cyg")
+[node name="Stone88" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.5024, 0.347678, 0.00837056, -0.322337, -1.62048, 0.00180649, 0.0810026, 0.000105486, 0.162443, -0.520443, 10.8942, -0.381964)
+mesh = SubResource("ArrayMesh_jj4ce")
 skeleton = NodePath("")

@@ -9,7 +9,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjfk0"]
 
 [resource]
-Button/colors/icon_hover_color = Color(1, 0.446991, 0.600509, 1)
+Button/colors/icon_hover_color = Color(1, 0.728601, 0.61778, 1)
 Button/colors/icon_normal_color = Color(0.952941, 0.0313726, 0.219608, 1)
 Button/styles/focus = SubResource("StyleBoxEmpty_vj6dk")
 Button/styles/hover = SubResource("StyleBoxEmpty_wvktn")

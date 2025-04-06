@@ -37,8 +37,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wo1mq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ks6jm"]
-albedo_color = Color(0.336235, 0.4769, 0.696617, 1)
+albedo_color = Color(0.645945, 0.362504, 0, 1)
 albedo_texture = ExtResource("1_efp35")
+uv1_scale = Vector3(0.005, 0.005, 0.005)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kprwl"]
 size = Vector3(4.25928, 1.66351, 0.224609)
