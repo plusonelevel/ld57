@@ -1,14 +1,16 @@
-[gd_scene load_steps=32 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=33 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
-[ext_resource type="Shader" uid="uid://dwjk346jyxc8o" path="res://scenes/main.gdshader" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c18k5abmlhb72" path="res://assets/ground.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bo5aph1dvp7w6" path="res://assets/lamp.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://vvcgijyfn4ie" path="res://assets/pebbles.tscn" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://b537ka3mua008" path="res://assets/lamp_2.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cfq6mps4hnibg" path="res://assets/fence.tscn" id="9_choun"]
+[ext_resource type="PackedScene" uid="uid://bqld6oitp8aju" path="res://assets/pebbles2.tscn" id="11_ya4ey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -20,27 +22,28 @@ sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
 sky = SubResource("Sky_o5qli")
-tonemap_mode = 2
+tonemap_mode = 4
+tonemap_exposure = 2.0
 fog_enabled = true
 fog_density = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
 albedo_color = Color(0.244822, 0.333282, 0.407164, 1)
 albedo_texture = ExtResource("2_tipki")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
 material = SubResource("StandardMaterial3D_85g3d")
-size = Vector2(20, 20)
+size = Vector2(80, 140)
 subdivide_width = 5
 orientation = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sugp2"]
 plane = Plane(0, 0, 1, 0)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0wfyh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbgi4"]
-shader = ExtResource("4_jyhfs")
+[sub_resource type="BoxShape3D" id="BoxShape3D_85g3d"]
+size = Vector3(20.3474, 0.45282, 7.24011)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vknx"]
 albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
@@ -162,7 +165,7 @@ points = PackedVector3Array(-2.5795, 5.48741, 1.45098, -2.09273, 2.99177, -1.224
 size = Vector3(4.16101, 13.8978, 3.04004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
-size = Vector3(285.993, 14.0005, 3.95996)
+size = Vector3(285.993, 14.0005, 4.42615)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
@@ -173,6 +176,7 @@ environment = SubResource("Environment_0wfyh")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-2.13257e-08, -0.872914, 0.487875, -3.81563e-08, 0.487875, 0.872914, -1, 0, -4.37114e-08, 0, 9.03142, 3.40989)
 light_color = Color(0.98373, 0.422199, 0.369877, 1)
+light_energy = 2.0
 shadow_enabled = true
 sky_mode = 1
 
@@ -181,6 +185,7 @@ sky_mode = 1
 [node name="Wall" type="StaticBody3D" parent="Node3D"]
 
 [node name="WallMesh" type="MeshInstance3D" parent="Node3D/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5175, 0)
 mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall"]
@@ -189,7 +194,8 @@ shape = SubResource("WorldBoundaryShape3D_sugp2")
 [node name="Floor" type="StaticBody3D" parent="Node3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Floor"]
-shape = SubResource("WorldBoundaryShape3D_0wfyh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27359, 3.12006)
+shape = SubResource("BoxShape3D_85g3d")
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20611, 0, 0.54661)
@@ -207,9 +213,6 @@ size = 5.0
 
 [node name="Goal" parent="." instance=ExtResource("3_sugp2")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.96555, 2.689, 1.498)
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-material = SubResource("ShaderMaterial_tbgi4")
 
 [node name="Scene" type="Node3D" parent="."]
 
@@ -251,7 +254,7 @@ transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 4.885, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
 [node name="Stone5" type="StaticBody3D" parent="Scene/Terrain"]
-transform = Transform3D(0.0151694, -0.033094, -0.980895, 0.00299895, 0.167398, -0.19392, 0.99988, 0, 0.015463, -8.36198, 2.69792, 2.20009)
+transform = Transform3D(0.0151694, -0.033094, -0.980895, 0.00299895, 0.167398, -0.19392, 0.99988, 0, 0.015463, -8.36198, 2.69792, 2.43168)
 
 [node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone5"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
@@ -263,7 +266,7 @@ transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
 [node name="Stone6" type="StaticBody3D" parent="Scene/Terrain"]
-transform = Transform3D(-0.957064, -0.039873, -0.17154, -0.26186, 0.162232, 0.165884, 0.124328, 0.0347556, -0.971111, -7.40479, 2.88481, 2.07039)
+transform = Transform3D(-0.957064, -0.039873, -0.17154, -0.26186, 0.162232, 0.165884, 0.124328, 0.0347556, -0.971111, -7.40479, 2.88481, 2.30198)
 
 [node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone6"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
@@ -275,7 +278,7 @@ transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
 [node name="Stone7" type="StaticBody3D" parent="Scene/Terrain"]
-transform = Transform3D(0.105237, 0.0160891, -0.989967, -0.328137, 0.160916, 0.0549357, 0.93875, 0.0544443, 0.130181, -7.23195, 3.16205, 1.01651)
+transform = Transform3D(0.101829, 0.0167154, -0.989967, -0.361352, 0.158831, 0.0549357, 0.926853, 0.0600871, 0.130181, -7.23195, 3.16205, 1.2481)
 
 [node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone7"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
@@ -283,6 +286,90 @@ mesh = SubResource("ArrayMesh_qnkc7")
 skeleton = NodePath("")
 
 [node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone7"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone8" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.131638, 0.0271555, 0.97844, 0.320442, 0.158217, -0.19392, -0.938077, 0.0578567, 0.0710599, -7.41747, 3.39953, 0.577805)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone8"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone8"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone9" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.931438, 0.0619428, 0.0254291, -0.363376, 0.158961, 0.011569, -0.0194893, -0.00341554, 0.99961, -8.393, 3.63046, 0.577728)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone9"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone9"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone10" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(-0.0402928, 0.0553652, 0.94504, -0.039128, 0.161179, -0.325969, -0.998422, -0.00855118, -0.0253637, -9.33288, 3.9667, 0.689109)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone10"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone10"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone11" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(-0.125855, 0.0391013, 0.965221, -0.272519, 0.158273, -0.255737, -0.953884, -0.0503769, -0.054288, -9.38613, 4.15609, 1.63867)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone11"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone11"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone12" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(-0.128816, 0.0107395, 0.989669, -0.315281, 0.161014, -0.101046, -0.940215, -0.0554642, -0.101708, -9.2819, 4.4, 2.4105)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone12"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone12"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone13" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(-0.0764631, -0.0433704, 0.964133, -0.23421, 0.161164, 0.230413, -0.969175, -0.0355254, -0.131747, -8.30451, 4.44451, 2.29572)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone13"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone13"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone14" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.981744, -0.0319774, 0.0325596, 0.189153, 0.167207, -0.0634408, -0.0200163, 0.0116786, 0.997454, -7.35443, 4.66511, 2.25162)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone14"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone14"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
@@ -335,7 +422,7 @@ transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 4.34969, 0, 0, 3.2
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
 [node name="Column4" type="StaticBody3D" parent="Scene/Terrain"]
-transform = Transform3D(0.988369, 0, 0, 0, 1.76331, 0, 0, 0, 0.821515, -8.31253, 0.15384, 1.21198)
+transform = Transform3D(0.988369, 0, 0, 0, 1.76331, 0, 0, 0, 0.821515, -8.31253, 0.15384, 1.44357)
 
 [node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column4"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
@@ -378,8 +465,8 @@ skeleton = NodePath("")
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
-[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column3"]
-transform = Transform3D(0.289888, 1.88024e-14, -1.30385e-08, -2.59792e-14, 0.289888, 1.08073e-13, 0, 4.01013e-13, 0.289888, 41.308, 1.88435, -0.00324631)
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column3" groups=["2d_collider"]]
+transform = Transform3D(0.289888, 1.83172e-14, -1.21072e-08, -2.65343e-14, 0.289888, 1.06144e-13, 0, 4.04564e-13, 0.289888, 41.308, 1.88435, 0.0643263)
 shape = SubResource("BoxShape3D_tipki")
 
 [node name="Lights" type="Node3D" parent="Scene"]
@@ -387,13 +474,16 @@ shape = SubResource("BoxShape3D_tipki")
 [node name="lamp" parent="Scene/Lights" instance=ExtResource("6_tefeu")]
 transform = Transform3D(0.989997, 0.138569, -0.0265612, -0.141091, 0.972296, -0.186373, -1.52737e-07, 0.188256, 0.982121, -1.32073, 3.09904, 2.58608)
 
+[node name="lamp3" parent="Scene/Lights" instance=ExtResource("6_tefeu")]
+transform = Transform3D(0.968673, -0.173067, -0.178107, 0.17751, 0.984077, 0.00919376, 0.17368, -0.0405215, 0.983969, -8.8596, 3.8699, 1.43027)
+
 [node name="lamp2" parent="Scene/Lights" instance=ExtResource("9_85g3d")]
 transform = Transform3D(0.99251, 0.122164, 0, -0.121302, 0.985512, 0.118543, 0.0144816, -0.117655, 0.992949, 5.09461, -0.100036, 0.50122)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Scene/Lights"]
 transform = Transform3D(0.965926, -1.13133e-08, 0.258819, -0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 5.26302, 7.14601, 2.40261)
 light_color = Color(0.170358, 0.69476, 0.835653, 1)
-light_energy = 20.0
+light_energy = 25.0
 shadow_enabled = true
 shadow_bias = 1.0
 spot_range = 11.446
@@ -403,9 +493,26 @@ spot_angle = 30.0
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Lights"]
 transform = Transform3D(0.929029, 1.61735e-08, -0.370006, 0.370006, -4.06092e-08, 0.929029, 0, -1, -4.37114e-08, -7.46556, 7.14601, 2.40261)
 light_color = Color(0.168627, 0.694118, 0.835294, 1)
-light_energy = 20.0
+light_energy = 30.0
 shadow_enabled = true
 shadow_bias = 1.0
 spot_range = 11.446
 spot_attenuation = 1.5
 spot_angle = 30.0
+
+[node name="Props" type="Node3D" parent="Scene"]
+
+[node name="fence" parent="Scene/Props" instance=ExtResource("9_choun")]
+transform = Transform3D(-0.0485294, -0.0200092, 0.698029, -0.00138776, 0.699714, 0.019961, -0.698314, -1.85993e-09, -0.0485492, 8.67532, 0.000641018, 2.01449)
+
+[node name="Pebbles" parent="Scene/Props" instance=ExtResource("7_choun")]
+transform = Transform3D(0.4097, 0, 0.91222, 0, 1, 0, -0.91222, 0, 0.4097, 4.56678, -0.0446739, 4.91325)
+
+[node name="Pebbles2" parent="Scene/Props" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98102, -0.0695441, 3.1089)
+
+[node name="Pebbles3" parent="Scene/Props" instance=ExtResource("7_choun")]
+transform = Transform3D(0.15964, -1.39562e-08, -0.987175, -8.74228e-08, -1, 3.86457e-15, -0.987175, 8.63016e-08, -0.15964, -7.56897, -0.0446734, 1.55071)
+
+[node name="Pebbles4" parent="Scene/Props" instance=ExtResource("11_ya4ey")]
+transform = Transform3D(0.964473, -0.0548283, -0.25843, -0.05296, -0.998496, 0.0141906, -0.258819, 2.26267e-08, -0.965926, 1.86366, -0.0171045, 1.456)
