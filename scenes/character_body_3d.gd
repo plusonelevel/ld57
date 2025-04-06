@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		if not is_jumping:
 			is_jumping = true
-			state_machine.travel("Jumping")
+			state_machine.travel("Jump")
 	else:
 		if is_jumping:
 			is_jumping = false
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump input
 	if Input.is_action_just_pressed("ui_up") and is_on_floor() and move_mode == MOVE_MODE.side:
 		velocity.y = JUMP_VELOCITY
-		state_machine.travel("Jumping")
+		state_machine.travel("Jump")
 		is_jumping = true
 
 	var direction: Vector3
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 
 	if direction:
 		if not is_jumping:
-			state_machine.travel("Running")
+			state_machine.travel("Run")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		last_direction = direction

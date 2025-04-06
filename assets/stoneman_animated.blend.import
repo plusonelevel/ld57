@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkvarrgufhf01"
-path="res://.godot/imported/coalman_animated.blend-500c686ba3e039d440db7d35f67f82f8.scn"
+uid="uid://ccovoq8g3rf6"
+path="res://.godot/imported/stoneman_animated.blend-9aa54d25d8fcb25aa7933bf314a1593e.scn"
 
 [deps]
 
-source_file="res://assets/coalman_animated.blend"
-dest_files=["res://.godot/imported/coalman_animated.blend-500c686ba3e039d440db7d35f67f82f8.scn"]
+source_file="res://assets/stoneman_animated.blend"
+dest_files=["res://.godot/imported/stoneman_animated.blend-9aa54d25d8fcb25aa7933bf314a1593e.scn"]
 
 [params]
 
