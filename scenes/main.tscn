@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=34 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
+
 [ext_resource type="PackedScene" uid="uid://c18k5abmlhb72" path="res://assets/ground.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bo5aph1dvp7w6" path="res://assets/lamp.tscn" id="6_tefeu"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b537ka3mua008" path="res://assets/lamp_2.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cfq6mps4hnibg" path="res://assets/fence.tscn" id="9_choun"]
 [ext_resource type="PackedScene" uid="uid://bqld6oitp8aju" path="res://assets/pebbles2.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bf40kh3d4wcto" path="res://scenes/ui.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -516,3 +518,5 @@ transform = Transform3D(0.15964, -1.39562e-08, -0.987175, -8.74228e-08, -1, 3.86
 
 [node name="Pebbles4" parent="Scene/Props" instance=ExtResource("11_ya4ey")]
 transform = Transform3D(0.964473, -0.0548283, -0.25843, -0.05296, -0.998496, 0.0141906, -0.258819, 2.26267e-08, -0.965926, 1.86366, -0.0171045, 1.456)
+
+[node name="UI" parent="." instance=ExtResource("4_jyhfs")]

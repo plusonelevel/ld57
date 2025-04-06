@@ -14,13 +14,21 @@ material = SubResource("StandardMaterial3D_3vyb7")
 radius = 0.25
 height = 1.0
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_3vyb7"]
+radius = 0.1
+height = 0.2
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_o5qli")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("CapsuleMesh_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110899, -0.214228)
+mesh = SubResource("SphereMesh_3vyb7")
