@@ -519,3 +519,11 @@ transform = Transform3D(0.15964, -1.39562e-08, -0.987175, -8.74228e-08, -1, 3.86
 transform = Transform3D(0.964473, -0.0548283, -0.25843, -0.05296, -0.998496, 0.0141906, -0.258819, 2.26267e-08, -0.965926, 1.86366, -0.0171045, 1.456)
 
 [node name="UI" parent="." instance=ExtResource("4_jyhfs")]
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="1" type="Node3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.884366, 2.63168, 1.44604)
+
+[node name="2" type="Node3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17985, 5.1846, 2.42168)

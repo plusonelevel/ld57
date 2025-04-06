@@ -8,7 +8,6 @@ signal game_paused
 func _ready() -> void:
 	goal_reached.connect(handle_goal_reached)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
