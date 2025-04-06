@@ -32,4 +32,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		$Player.velocity = Vector3.ZERO
 		$Player.position = checkpoints[checkpoint_index]
 		
-		
+
+func _on_death_pit_body_entered(body: Node3D) -> void:
+	get_tree().reload_current_scene()

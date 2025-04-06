@@ -1,7 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://c18k5abmlhb72"]
+[gd_scene load_steps=8 format=4 uid="uid://c18k5abmlhb72"]
 
-[ext_resource type="PackedScene" uid="uid://cysxnd3yhe2cd" path="res://assets/stone.tscn" id="1_gwg0h"]
+[ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="1_6diom"]
 [ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_6diom"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
+albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
+albedo_texture = ExtResource("1_6diom")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tipki"]
+_surfaces = [{
+"aabb": AABB(-2.12101, -2.02716, -2.0897, 4.28778, 4.10784, 4.18492),
+"format": 34359742465,
+"index_count": 384,
+"index_data": PackedByteArray("CQAbABwAGwAdABwAHQAJABwAGwAJAB4AGwAeAB8AIAAbAB8AGwAgAB0AIQAfAB4AIAAfACEADQAeAAkAIAAhAAMAIQAeAAYADQAGAB4AIgADACEAIgAgAAMABgAiACEABgANAA4ACQAjAA0ADQAkAA4AIwAkAA0ACQAKACMACgAJAB0AJAAjACUADwAGAA4ADwAOACQAJQAjAAwAIwAKAAwAJAAlABMAJAATAA8AJQAMABEAEQATACUAJgAMAAoADAAQABEAEAAMACYAEgARABAAEQASABMAEAAmAAsAEgAQAAsACgAnACYAJwALACYACgABACcACgAdAAEAHQAnAAEAEwASABYAFgAPABMAEgALABQAFAAWABIACwAoABQAFwAWABQAFwAUACgACwApACgAFwAoACkAJwApAAsAFwAqABYADwAWACsAFgAqACsAKgAXABgAGAArACoAKQAsABcADwArABUAGQAXACwAGAAXABkAKQAtACwALQAZACwALgAYABkALQAuABkAFQAIAA8ABgAPAAgACAAVAC8AKwAvABUABAAGAAgAGAAwACsAKwAwAC8AMAAYADEAMQAYAC4ALwAwABoACAAvADIAGgAyAC8AMgAEAAgAMwAaADAAMAAxADMAMwAyABoANAAzADEAMQAuADQANQAzADQANQA0AC4ANQAyADMANQAuAAcALgAtAAcANgA1AAcANgAHAC0ANwA1ADYALQA4ADYANwA2ADgAKQA4AC0AKQA5ADgAOAA5ADcAOQApACcANwA5ADoAJwA6ADkABQA1ADcANQAFADIAOgA7ADcABQA3ADsAJwA8ADoAHQA8ACcAOgA9ADsABQA7AD0AMgAFAD4AMgA+AAQABQAEAD4ABAAFAAAABQA9AAAABAAAACIABgAEACIAPQAiAAAAPQA6AAIAOgA8AAIAPAA9AAIAPQA/ACIAPwA9ADwAIgA/ACAAHQAgADwAPwA8AEAAPAAgAEAAIAA/AEEAQABBAD8AQAAgAEEA"),
+"lods": [0.6697, PackedByteArray("AAABAAIAAwAAAAIAAQADAAIABAAAAAMABAAFAAAABAADAAYABQAHAAAAAQAAAAcACAAFAAQABAAGAAgABwAFAAgAAwABAAkAAwAJAAYACgAJAAEAAQALAAoACwABAAcACQAKAAwADQAGAAkACQAMAA0ABgANAA4ADQAPAA4ADwAGAA4ADAAPAA0ABgAPAAgAEAAMAAoAEAAKAAsADAAQABEADwAMABEAEgAQAAsAEgARABAAEQASABMADwARABMAEgALABQAFQAIAA8AEwASABYAFAAWABIAFgAPABMAFwAUAAsAFwAWABQACwAHABcADwAWABgADwAYABUAFwAYABYAGAAIABUABwAZABcAGAAXABkABwAIABoAGAAaAAgABwAaABkAGgAYABkA")],
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 66,
+"vertex_data": PackedByteArray("UIQBQO4BS7+p8sK/WXijP6rqtb+sweU/x9DmP3R5vb+ASuk8bL0EQHIQhz99Qxa/jSDYP9AC9z+Xyrm/OTTgPxhyFz8Tbeu/EhTBP+diA0CwQ6A93Lq3P/LM3L97/+G/JtygP8kpBUDXS76/NPXdPyRQwD+C3e4/14IWP7Mtw7/2l/8/iJGNv/+8AcAgxf29hdDGv4B3Yj0EGAZAhIcoP4gnyD/hnvg/mqcbP4hF8D/qZuc/ZPbPv83oAUDSlyG/+q8EwIxCx7/gusY9kr4HwODobz56asE/iCHpv2NEuL9GcF2/Xk77v0FAvz9814i/CFKFv4s46r9jpUq/SJBLvx7Ljj9iGfu/r6/rvyD7KL+jVKy/d+76vlqs77/18jS/DlWuvk5xI78puem/zHu5Pc6lsb+35OS/mw1RP6jwAz+nJQLA2jbwP5hfyb0DmSI/G335P26Y4L681ZQ/tHCpP1R5b7+Y0+g/VNsBQKSbwj80eMw+k3UAQMItQj9AF+E8XKICQFrh2j5ZDTO/TCYEQKxQwD8Q5Ke9YqwKQJfKuT+Xyrm/ayivvxu2nD8qRvM/driovzMt6T8I6Y8/Ytn0vwh8oz9y82M/8W4bP8tD/7/jpoY/hDSEP/g96L8C5IM/BD8kv+7Y8r8afyS+/nkwPuFd87/YEua9fnKEv/UmGr/3z+K/Iamuv5AAZ74X2Oe/uN/ZvaPQ678/jZW/0AQ1Pw0n8r+JBZ+/dqWoP1FOuL/SE/a/5x9UP0Ynjj+rvQXAgHgePrbYiz4zafq/Yp9CP9FwMr9ZCfm/l8q5Pxny9j9EMdi/VZVbPyCqRLybKwDALb+zP0SMer9B3f+/7OzdPy4Gxr/Y+uS/BGeDP9+G9L+7NzK/8gWUP/rT8r/dJqi++u8XPzDT9b8WfCK/QhouP//p7b/u4O69SYOMP0XN7b8YLKI+E+LeP/2W3L+7EJW/Y+blP0BUgL+QLAY/MGD4P0dHxL+42Jy/EibjP5fKuT9K/eu/6HX0P59En7/00DG/gSvzP+muHL/w+Qe9rhb8P+zru77sw+a+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_85g3d"]
+resource_name = "stone_Stone"
+_surfaces = [{
+"aabb": AABB(-2.12101, -2.02716, -2.0897, 4.28778, 4.10784, 4.18492),
+"attribute_data": PackedByteArray("8hbnPtod8j7aHbI+AACAPibizT7o6bw+8uERP9Da1D7sDhk/JuKNPhLxJj+EQ78+clciP9od8j4S8SY/hEO/PhLxJj/aHfI+6w5ZP9od8j4T8SY/KOKNPuwOGT+0O2Q+7A4ZPybijT4AACA/sDtkPjCzHT9EpAQ/p68KP0z0AD8AACA/FPEGP9odsj4+Jvo+8hbnPtod8j5ZZwo/zQMRPybizT4sbCE//DfoPkpeJz9OxBs+6NS+Ppb/kD4AAIA+AAAgPxTxBj/sDhk/7Q45PwAAID/tDjk/AAAgPxTxRj/tlec+FPFGP+wOGT8U8UY/JuLNPkRBTj/tlec+FPFGPyo1Az/tDnk/JuLNPhgtYj8AACA/FPFGP+wOGT8U8UY/j3wAPwAAgD/sDhk/tDtkPgAAID+wO2Q+TsQbPtDm5j4m4s0+REFOP2SnTT6G8eA+UU96PgAAAD9RT3o+AAAAPwAAAD54feM+AAAAPtCluz4AAAA+0KW7PibizT4w/yE+j3wAPwAAgD8qNQM/7Q55P+wOGT8m4o0+j3wAP4Ai3jzsDhk/tDtkPibizT4w/yE+J+LNPrQ7ZD7ffPs+gnGqPgfS7D4o4o0+7A4ZP+iWtD4Jhww/wP6/PibizT7iQOc+2R2yPspkrT5+M8E+YDPlPtodsj5E4ck+AAAgP+0OeT/sDhk/7Q55P+wOGT+AIt48EvEmP4RDvz4S8SY/2h3yPuwOWT8m4o0+GzLePrA7ZD4H0uw+KOKNPuwOGT+AIt482h2yPgAAAD/5mZo+2h3yPtodsj4+Jvo+b1BiPtod8j6nrwo/TPQAPzCzHT9EpAQ/7A4ZP1bOAz/sDhk/2h3yPuwOGT/olrQ+7ZXnPhTxRj/IKOY+7Q45P+wOGT/tDjk/GzLePrA7ZD7ZHbI+JuKNPtkdsj4AAIA+2R2yPspkrT7wap0+KAPCPqw83T6o1qw+JuLNPujpvD6rcQc/mN7XPgon6z6gNcA+gvbzPkqazj7D19Y+6K/VPt98+z6Ccao+B9LsPijijT4Jhww/wP6/PuwOGT8al8Q+7A4ZP+iWtD4m4s0+FPEGP6u45z5s0BI/7j7ePhTxBj9fdQU/QH0dP6GlAD/3kRA/yCjmPu0OOT+Vl+g+Tko0P+wOGT8U8QY/WWcKP80DET8S8SY/hEO/PuwOGT/aHfI+7A4ZPxqXxD7kzEI+cljIPkh6hj5Ai8M+2R2yPibijT7k5ZI+KOKNPvBqnT4oA8I+2h2yPkThyT7ZHbI+ymStPgSXlz5sl9k++ZmaPtod8j7Kxao+RrPaPm9QYj7aHfI+7A4ZP+0OOT/sDhk/FPEGP+yxHT8U8QY/JuLNPuJA5z7sDhk/2h3yPvIW5z7aHfI+8uERP9Da1D7sDhk/GpfEPqtxBz+Y3tc+w9fWPuiv1T6C9vM+SprOPqw83T6o1qw+JuLNPujpvD4KJ+s+oDXAPtkdsj4m4o0+5OWSPijijT5OxBs+6NS+Pk7EGz7Q5uY+KjUDP+0OeT/sDhk/FPFGP+wOGT/tDnk/5OWSPijijT5OxBs+6NS+PmSnTT6G8eA+b1BiPtod8j78N+g+Sl4nP5WX6D5OSjQ/yCjmPu0OOT9OxBs+0ObmPuTMQj5yWMg+SHqGPkCLwz5mKrg+dPP5Ptodsj4AAAA/JuLNPuJA5z5+M8E+YDPlPtodsj5E4ck+ysWqPkaz2j4El5c+bJfZPibizT6H5AA/2h2yPj4m+j75mZo+2h3yPuyxHT8U8QY/7A4ZP5mrAD/sDhk/FPEGP6GlAD/3kRA/X3UFP0B9HT/uPt4+FPEGP6u45z5s0BI/JuLNPhTxBj8="),
+"format": 34359742487,
+"index_count": 384,
+"index_data": PackedByteArray("BAA3ADgANwAEADkANwA5ADoAOwA8AAIAPAA7AD0APAA9AD4APwAjACIAPwBAACMAQAAkACAAQABBACQAPwBBAEAAQQA/ACUAJQA/ACYAQgAJAEMACQBCAAoACQAKAEQANQBFADYANQAyAEUARQAyAEYAMgA1AEcARwA1ADMAMgBHADQASABJAEoASQBIACsASQArAEsATABNAE4ATQBMAAAATQAAAE8ABwALAA0ACwAHAFAACwBQAAwAUQAbAB0AGwBRAFIAGwBSAFMAVABVAFYAVQBXAFgAVQBZAFcAVABZAFUAVwBZAFoAVABbAFkAWQBbAFwAXABdAF4AXABbAF0AXwBbAFQAXwBUAGAAWwBfAGEAWwBhAGIAWwBiAAMAYgBhAGMAYgBjAAUAZAAVABQAZQAVAGQAZQBkAGYAZwAVAGUAZwBlAGgAFQBnAGkAFQBpAGoAaQBnAGsAawBnAGwAaQBrABkABgBtAAgAbQAGAG4AbQBuAG8AFgBwACcAFgBxAHAAcgAWAHMAcgBxABYAdABxAHIAdQB0AHYAdwB0AHUAcQB0AHcAcQB3AHgAeAB3AHkAcQB4AHoAcQB6ACkAewAYABoAGAB7AHwAGAB8AH0AfgB/AIAAfwCBAIIAfwCDAIEAfwCEAIMAfgCEAH8AgwCEAIUAhAB+AIYAhgB+AIcAhACGAIgAFwCJAIoAFwABAIkALACLAIwALAAtAIsAHgCNACEAjQAeAI4AjgAeAB8AjQCOAI8AMAAuADEALgAwAJAAkAAwAC8ALgCQAJEAKgCSAJMAlACSACoAlQCSAJQAkgCVABwAHACVAJYAkgAcAJcAlwAcACgAkgCXAJgAkgCYAJkAmgCbABEADwCcABIADwCdAJwADwCeAJ0AngCfAKAADwChAJ4AngChAJ8AnwCiAKMAnwChAKIAoQAPAKQApAAPAKUApAClAA4ApAAOABAAEwCkAKYApwCkABMAoQCkAKcApwATAKgAoQCnAKkAqQCnAKoAoQCpAKsA"),
+"lods": [0.6697, PackedByteArray("AAABAAIAAwAAAAIAAQADAAIAAwABAAQAAwAEAAUABgAAAAMABgADAAcABgAHAAgABwAJAAgACQAHAAoACwAHAAwABwALAA0ADgAPAAAAEAAPAA4AEQAPABAADwARABIAEQAQABMAAQAAABEAEQATABQAEwAVABQAFgABABEAAQAWABcAFQATABgAGQAYABoAFQAYABkAGwAVABkAGwAcABUAHAAbAB0AHQAeAB8AIAAeAB0AHgAgACEAIgAgACMAIgAkACAAJAAiACUAJQAiACYAJwAcACgAKQAVABwAKQAcACcAFQApACoAEQArACkAFgARACkAKQAnABYALAAWACcALAAtABYALgAvABYALgAwAC8AMAAuADEAMgAzADQAMgA1ADMANQAyADYA")],
+"material": SubResource("StandardMaterial3D_o6xl0"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 172,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tipki")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3gin"]
 albedo_color = Color(0.0775959, 0.0391398, 0, 1)
@@ -11,187 +47,315 @@ uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b62as"]
 material = SubResource("StandardMaterial3D_d3gin")
-size = Vector2(16, 6)
+size = Vector2(17.13, 8.09)
 
 [node name="Ground" type="Node3D"]
 
-[node name="stone" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.94531, -0.876035, 0)
+[node name="Stone" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.579776, 0, 0, 0, 0.579776, 0, 0, 0, 0.579776, -8.94531, -0.774444, 0)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone3" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.5, 2.26494e-07, 0, -2.26494e-07, -1.5, 0, 0, 0, 1.5, -5.53049, -0.55258, 0)
+[node name="Stone2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.434832, 6.56579e-08, 0, -6.56579e-08, -0.434832, 0, 0, 0, 0.434832, -5.53049, -0.450989, 0)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone2" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.397248, 0, 2.46824, 0, 2.5, 0, -2.46824, 0, -0.397248, -7.10264, -1.13634, 0)
+[node name="Stone3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.115157, 0, 0.715513, 0, 0.72472, 0, -0.715513, 0, -0.115157, -7.10264, -1.03475, 0)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone4" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.93185, 0, 0.517638, 0, 2, 0, -0.517638, 0, -1.93185, -1.16531, -0.876035, 0.453581)
+[node name="Stone4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.56002, 0, 0.150057, 0, 0.579776, 0, -0.150057, 0, -0.56002, -1.16531, -0.774444, 0.453581)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone5" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.44889, -2.18776e-07, 0.388229, -2.26494e-07, -1.5, -6.36272e-22, 0.388229, -5.86209e-08, -1.44889, -4.46378, -0.55258, -0.430241)
+[node name="Stone5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.420016, -6.34205e-08, 0.112543, -6.56579e-08, -0.434832, -1.84448e-22, 0.112543, -1.69935e-08, -0.420016, -4.46378, -0.450989, -0.430241)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone13" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.44889, -2.18776e-07, 0.388229, -2.26494e-07, -1.5, -6.36272e-22, 0.388229, -5.86209e-08, -1.44889, 9.42294, -0.55258, -0.430241)
+[node name="Stone6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.420016, -6.34205e-08, 0.112543, -6.56579e-08, -0.434832, -1.84448e-22, 0.112543, -1.69935e-08, -0.420016, 9.42294, -0.450989, -0.430241)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone7" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.5, 2.26494e-07, 0, -4.45473e-08, -0.295023, 1.4707, 2.2207e-07, 1.4707, 0.295023, 2.56187, -0.434257, -0.0466027)
+[node name="Stone7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.434832, 6.56579e-08, 0, -1.29137e-08, -0.0855236, 0.426338, 6.43754e-08, 0.426338, 0.0855236, 2.56187, -0.332666, -0.0466027)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone10" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.5, 2.26494e-07, 0, -2.26494e-07, -1.5, 0, 0, 0, 1.5, 5.06353, -0.55258, 0)
+[node name="Stone8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.434832, 6.56579e-08, 0, -6.56579e-08, -0.434832, 0, 0, 0, 0.434832, 5.06353, -0.450989, 0)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone11" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1, 0, -1.73205, 0, 2, 0, 1.73205, 0, 1, 6.76415, -0.876035, -0.302908)
+[node name="Stone9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.289888, 0, -0.5021, 0, 0.579776, 0, 0.5021, 0, 0.289888, 6.76415, -0.774444, -0.302908)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone12" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.380113, 1.4509, -0.020131, 0.0789667, 9.54828e-05, 1.49792, 1.44889, -0.380646, -0.0763576, 8.46703, -0.649972, -0.0466027)
+[node name="Stone10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.11019, 0.420598, -0.00583574, 0.0228915, 2.76793e-05, 0.434229, 0.420016, -0.110345, -0.0221352, 8.46703, -0.548381, -0.0466027)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone8" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.397248, -2.49547e-09, 2.46824, 2.42749, -0.452371, 0.39069, 0.446623, 2.45873, 0.0718813, 0.989725, -1.06762, -0.552156)
+[node name="Stone11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.115157, -7.23407e-10, 0.715513, 0.7037, -0.131137, 0.113256, 0.129471, 0.712756, 0.0208375, 0.989725, -0.966029, -0.552156)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone9" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.44889, -2.10126e-07, 0.388229, 0.386014, -0.159995, -1.44062, 0.0414099, 1.49144, -0.154543, 3.62858, -0.475836, 0.168518)
+[node name="Stone12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.420016, -6.0913e-08, 0.112543, 0.111901, -0.0463806, -0.417618, 0.0120042, 0.432351, -0.0448002, 3.62858, -0.374245, 0.168518)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone6" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.255115, 0, -2.48695, 0, 2.5, 0, 2.48695, 0, -0.255115, -2.9452, -1.13634, -0.0233395)
+[node name="Stone13" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0739548, 0, -0.720937, 0, 0.72472, 0, 0.720937, 0, -0.0739548, -2.9452, -1.03475, -0.0233395)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone14" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.41421, 0, -1.41421, 0, 2, 0, 1.41421, 0, 1.41421, 9.00578, -0.876035, 2.41196)
+[node name="Stone14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.409962, 0, -0.409962, 0, 0.579776, 0, 0.409962, 0, 0.409962, 9.00578, -0.774444, 2.41196)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone15" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.5, -2.26494e-07, 1.31134e-07, -2.26494e-07, -1.5, 0, 1.31134e-07, -1.98007e-14, -1.5, 5.59096, -0.55258, 1.93952)
+[node name="Stone15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.434832, -6.56579e-08, 3.80142e-08, -6.56579e-08, -0.434832, 0, 3.80142e-08, -5.73999e-15, -0.434832, 5.59096, -0.450989, 1.93952)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone16" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.397248, 0, -2.46824, 0, 2.5, 0, 2.46824, 0, 0.397248, 7.1631, -1.13634, 1.93952)
+[node name="Stone16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115157, 0, -0.715513, 0, 0.72472, 0, 0.715513, 0, 0.115157, 7.1631, -1.03475, 1.93952)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone17" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.93185, 0, -0.517638, 0, 2, 0, 0.517638, 0, 1.93185, 1.22578, -0.876035, 1.48594)
+[node name="Stone17" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.56002, 0, -0.150057, 0, 0.579776, 0, 0.150057, 0, 0.56002, 1.22578, -0.774444, 1.48594)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone18" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.44889, 2.18776e-07, -0.388229, -2.26494e-07, -1.5, 5.14749e-15, -0.388229, 5.86209e-08, 1.44889, 4.52425, -0.55258, 2.36976)
+[node name="Stone18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.420016, 6.34205e-08, -0.112543, -6.56579e-08, -0.434832, 1.4922e-15, -0.112543, 1.69935e-08, 0.420016, 4.52425, -0.450989, 2.36976)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone19" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.44889, 2.18776e-07, -0.388229, -2.26494e-07, -1.5, 5.14749e-15, -0.388229, 5.86209e-08, 1.44889, -9.36247, -0.55258, 2.36976)
+[node name="Stone19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.420016, 6.34205e-08, -0.112543, -6.56579e-08, -0.434832, 1.4922e-15, -0.112543, 1.69935e-08, 0.420016, -9.36247, -0.450989, 2.36976)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone20" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.5, -9.79209e-08, 2.57917e-08, -4.45473e-08, -0.295023, 1.4707, -9.09355e-08, -1.4707, -0.295023, -2.5014, -0.434257, 1.98612)
+[node name="Stone20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.434832, -2.83861e-08, 7.4767e-09, -1.29137e-08, -0.0855236, 0.426338, -2.63611e-08, -0.426338, -0.0855236, -2.5014, -0.332666, 1.98612)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone21" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.5, -2.26494e-07, 1.31134e-07, -2.26494e-07, -1.5, 0, 1.31134e-07, -1.98007e-14, -1.5, -5.00306, -0.55258, 1.93952)
+[node name="Stone21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0305191, -0.0156501, 0.973481, -0.0615972, -0.537333, -0.0236796, 0.636297, -0.0512664, -0.0489839, -6.30507, -0.56084, 7.219)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone23" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.380113, -1.4509, 0.020131, 0.0789667, 9.54813e-05, 1.49792, -1.44889, 0.380645, 0.0763576, -8.40656, -0.649972, 1.98612)
+[node name="Stone22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.11019, -0.420598, 0.00583574, 0.0228915, 2.76789e-05, 0.434229, -0.420016, 0.110344, 0.0221352, -8.40656, -0.548381, 1.98612)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone24" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.397248, 2.30926e-07, -2.46824, 2.42749, -0.452371, 0.39069, -0.446623, -2.45873, -0.0718816, -0.929258, -1.06762, 2.49167)
+[node name="Stone23" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115157, 6.69427e-08, -0.715513, 0.7037, -0.131137, 0.113256, -0.129471, -0.712756, -0.0208376, -0.929258, -0.966029, 2.49167)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone25" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.44889, 3.413e-07, -0.388229, 0.386014, -0.159995, -1.44062, -0.04141, -1.49144, 0.154543, -3.56812, -0.663627, 1.771)
+[node name="Stone24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.420016, 9.89388e-08, -0.112543, 0.111901, -0.0463806, -0.417618, -0.0120043, -0.432351, 0.0448002, -3.56812, -0.562036, 1.771)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone26" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.255115, 0, 2.48695, 0, 2.5, 0, -2.48695, 0, 0.255115, 3.00567, -1.13634, 1.96286)
+[node name="Stone25" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0739548, 0, 0.720937, 0, 0.72472, 0, -0.720937, 0, 0.0739548, 3.00567, -1.03475, 1.96286)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone27" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, 9.00578, -0.876035, 5.68334)
+[node name="Stone26" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.579776, 0, 5.06858e-08, 0, 0.579776, 0, -5.06858e-08, 0, -0.579776, 9.00578, -0.774444, 5.68334)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone28" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.11333, 1.49571, 9.90759e-09, 1.49571, -0.11333, 1.30759e-07, 1.31134e-07, -1.69462e-14, -1.5, 5.50046, -0.648436, 5.18611)
+[node name="Stone27" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.032853, 0.433588, 2.87209e-09, 0.433588, -0.032853, 3.79055e-08, 3.80142e-08, -4.9125e-15, -0.434832, 5.50046, -0.546845, 5.18611)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone29" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.397248, 0, -2.46824, 0, 2.5, 0, 2.46824, 0, 0.397248, 7.1631, -1.13634, 5.84277)
+[node name="Stone28" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115157, 0, -0.715513, 0, 0.72472, 0, 0.715513, 0, 0.115157, 7.1631, -1.03475, 5.84277)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone30" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.93185, 0, -0.517638, 0, 2, 0, 0.517638, 0, 1.93185, 1.22578, -0.876035, 5.83791)
+[node name="Stone29" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.56002, 0, -0.150057, 0, 0.579776, 0, 0.150057, 0, 0.56002, 1.22578, -0.774444, 5.83791)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone31" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.11056, 0.963379, -0.297575, 0.0818462, -0.355098, -1.45506, -1.00496, -1.09353, 0.21034, 4.52425, -0.738504, 6.72173)
+[node name="Stone30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.321938, 0.279272, -0.0862634, 0.0237262, -0.102939, -0.421804, -0.291326, -0.317001, 0.060975, 4.52425, -0.636913, 6.72173)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone32" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.44889, 2.18776e-07, -0.388229, -2.26494e-07, -1.5, 5.14749e-15, -0.388229, 5.86209e-08, 1.44889, -9.36248, -0.55258, 5.38786)
+[node name="Stone31" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.420016, 6.34205e-08, -0.112543, -6.56579e-08, -0.434832, 1.4922e-15, -0.112543, 1.69935e-08, 0.420016, -9.36248, -0.450989, 5.38786)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone33" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.5, -9.79209e-08, 2.57917e-08, -4.45473e-08, -0.295023, 1.4707, -9.09355e-08, -1.4707, -0.295023, -2.5014, -0.434257, 6.33809)
+[node name="Stone32" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.434832, -2.83861e-08, 7.4767e-09, -1.29137e-08, -0.0855236, 0.426338, -2.63611e-08, -0.426338, -0.0855236, -2.5014, -0.332666, 6.33809)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone34" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.5, -2.26494e-07, 1.31134e-07, -2.26494e-07, -1.5, 0, 1.31134e-07, -1.98007e-14, -1.5, -5.37453, -0.247686, 5.52535)
+[node name="Stone33" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.434832, -6.56579e-08, 3.80142e-08, -6.56579e-08, -0.434832, 0, 3.80142e-08, -5.73999e-15, -0.434832, -5.37453, -0.146095, 5.52535)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone35" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.15, 0, 1.99186, 0, 2.3, 0, -1.99186, 0, -1.15, -6.70368, -1.19258, 5.83925)
+[node name="Stone61" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0374383, 0.429199, 1.06916e-08, 0.226933, -0.0708072, 6.48072e-08, 3.4729e-08, -9.91788e-15, -0.435, -5.19127, -0.146095, 7.58256)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone36" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.380113, -1.4509, 0.020131, 0.0789667, 9.54813e-05, 1.49792, -1.44889, 0.380645, 0.0763576, -8.40656, -0.649972, 5.54811)
+[node name="Stone34" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.333371, 0, 0.577416, 0, 0.666742, 0, -0.577416, 0, -0.333371, -6.70368, -1.09099, 5.83925)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone37" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.397248, 2.30926e-07, -2.46824, 2.42749, -0.452371, 0.39069, -0.446623, -2.45873, -0.0718816, -0.929258, -1.06762, 6.05597)
+[node name="Stone35" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.11019, -0.420598, 0.00583574, 0.0228915, 2.76789e-05, 0.434229, -0.420016, 0.110344, 0.0221352, -8.40656, -0.548381, 5.54811)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone38" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.44889, 3.413e-07, -0.388229, 0.386014, -0.159995, -1.44062, -0.04141, -1.49144, 0.154543, -3.56812, -0.475836, 6.12297)
+[node name="Stone36" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115157, 6.69427e-08, -0.715513, 0.7037, -0.131137, 0.113256, -0.129471, -0.712756, -0.0208376, -0.929258, -0.966029, 6.05597)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone39" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.62884, 0.181573, -1.88783, -0.0984711, 2.49326, 0.154842, 1.89398, -0.0265266, 1.6316, 3.41649, -1.24341, 5.29099)
+[node name="Stone37" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.420016, 9.89388e-08, -0.112543, 0.111901, -0.0463806, -0.417618, -0.0120043, -0.432351, 0.0448002, -3.56812, -0.374245, 6.12297)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone40" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.690302, 0, 1.87709, 0, 2, 0, -1.87709, 0, 0.690302, -8.77955, -0.876035, 3.78628)
+[node name="Stone38" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.472181, 0.0526358, -0.547259, -0.0285456, 0.722766, 0.0448868, 0.549042, -0.00768974, 0.472981, 3.41649, -1.14182, 5.29099)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone41" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.5, 2.26494e-07, -2.62268e-07, -2.26494e-07, -1.5, -5.92979e-22, -2.62268e-07, 3.96014e-14, 1.5, -5.53049, -0.55258, 4.35197)
+[node name="Stone39" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.20011, 0, 0.544146, 0, 0.579776, 0, -0.544146, 0, 0.20011, -8.77955, -0.774444, 3.78628)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone42" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.397247, 0, 2.46824, 0, 2.5, 0, -2.46824, 0, -0.397247, -7.10264, -1.13634, 4.35197)
+[node name="Stone40" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.434832, 6.56579e-08, -7.60283e-08, -6.56579e-08, -0.434832, -1.71897e-22, -7.60283e-08, 1.148e-14, 0.434832, -5.53049, -0.450989, 4.35197)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone43" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.46318, 0, 1.36348, 0, 2, 0, -1.36348, 0, 1.46318, -1.16531, -0.876035, 4.57387)
+[node name="Stone41" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.115157, 0, 0.715513, 0, 0.72472, 0, -0.715513, 0, -0.115157, -7.10264, -1.03475, 4.35197)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone44" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.44889, -2.18776e-07, 0.388229, -2.26494e-07, -1.5, 5.14748e-15, 0.388229, -5.8621e-08, -1.44889, -4.46378, -0.55258, 3.92173)
+[node name="Stone42" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.424158, 0, 0.395256, 0, 0.579776, 0, -0.395256, 0, 0.424158, -1.16531, -0.774444, 4.57387)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone45" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.212383, -1.4838, 0.056908, -1.43324, -0.219875, -0.384035, 0.388229, -5.8621e-08, -1.44889, 9.42294, -0.72563, 3.92173)
+[node name="Stone43" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.420016, -6.34205e-08, 0.112543, -6.56579e-08, -0.434832, 1.49219e-15, 0.112543, -1.69935e-08, -0.420016, -4.46378, -0.450989, 3.92173)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone46" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.5, -3.06518e-08, -5.15835e-08, -4.45473e-08, -0.295023, 1.4707, -4.01986e-08, 1.4707, 0.295023, 2.56187, -0.434257, 4.30537)
+[node name="Stone44" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0615673, -0.430136, 0.0164969, -0.415479, -0.0637391, -0.111327, 0.112543, -1.69935e-08, -0.420016, 9.42294, -0.624039, 3.92173)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone47" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.329358, -0.220057, 1.44675, -0.154113, 1.46948, 0.258598, -1.45526, -0.205424, 0.300048, 5.06353, -0.55258, 4.35197)
+[node name="Stone45" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.434832, -8.88559e-09, -1.49534e-08, -1.29137e-08, -0.0855236, 0.426338, -1.16531e-08, 0.426338, 0.0855236, 2.56187, -0.332666, 4.30537)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone48" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.9927, 0, -0.170764, 0, 2, 0, 0.170764, 0, -1.9927, 6.76415, -0.876035, 4.04906)
+[node name="Stone46" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0954769, -0.0637919, 0.419395, -0.0446755, 0.425985, 0.0749645, -0.421862, -0.05955, 0.0869803, 5.06353, -0.450989, 4.35197)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone49" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.380113, 1.4509, -0.020131, 0.0789667, 9.54841e-05, 1.49792, 1.44889, -0.380645, -0.0763576, 8.46703, -0.649972, 4.30537)
+[node name="Stone47" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.57766, 0, -0.0495024, 0, 0.579776, 0, 0.0495024, 0, -0.57766, 6.76415, -0.774444, 4.04906)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone50" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.0506358, -1.78382, -1.75083, 2.42749, -0.452371, 0.39069, -0.595579, -1.69214, 1.74125, 0.989725, -1.06762, 3.79982)
+[node name="Stone48" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.11019, 0.420598, -0.00583574, 0.0228915, 2.76797e-05, 0.434229, 0.420016, -0.110344, -0.0221352, 8.46703, -0.548381, 4.30537)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone51" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(1.48217, -0.064108, -0.221533, -0.226332, -0.127654, -1.47732, 0.0442855, 1.49318, -0.135809, 3.62858, -0.566524, 4.52049)
+[node name="Stone49" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0146787, -0.517108, -0.507545, 0.7037, -0.131137, 0.113256, -0.172651, -0.490531, 0.504767, 0.989725, -0.966029, 3.79982)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone52" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.255116, 0, -2.48695, 0, 2.5, 0, 2.48695, 0, -0.255116, -2.9452, -1.13634, 4.32863)
+[node name="Stone50" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.429663, -0.0185841, -0.0642198, -0.0656109, -0.0370054, -0.428257, 0.0128378, 0.432855, -0.0393694, 3.62858, -0.464933, 4.52049)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone56" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.38043, 0, 1.44721, 0, 2, 0, -1.44721, 0, -1.38043, -3.02837, -0.876035, 8.13722)
+[node name="Stone51" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0739551, 0, -0.720937, 0, 0.72472, 0, 0.720937, 0, -0.0739551, -2.9452, -1.03475, 4.32863)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone74" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-1.92801, 0, -0.531751, 0, 2, 0, 0.531751, 0, -1.92801, -6.34311, -0.876035, 2.3007)
+[node name="Stone52" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.578143, 0, 0.04349, 0, 0.579776, 0, -0.04349, 0, -0.578143, -1.28868, -0.774444, 7.61922)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone81" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.397247, -2.24552e-08, 2.46824, 1.7363, 1.77684, 0.279446, -1.75427, 1.75864, -0.282339, -7.58038, -1.23819, 8.32632)
+[node name="Stone53" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.558907, 0, -0.154148, 0, 0.579776, 0, 0.154148, 0, -0.558907, -6.34311, -0.774444, 2.3007)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone84" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.381702, 1.88515, -0.548174, -0.962206, -0.307133, -1.72622, -1.71128, 0.593179, 0.848338, 9.42294, -1.2931, 8.35926)
+[node name="Stone54" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.483869, 0.41946, 0.339328, 0.503333, 0.515085, 0.081008, -0.194286, 0.289755, -0.635228, -8.25687, -1.1366, 6.84472)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone86" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-2.3, 3.47932e-07, -3.47267e-07, 3.51963e-07, 2.29984, -0.0268548, 3.43181e-07, -0.0268548, -2.29984, 4.72968, -1.0979, 8.7895)
+[node name="Stone55" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.579289, -0.023022, -0.00595041, -0.00645087, -0.0125259, -0.579605, 0.0228861, 0.579182, -0.0127709, 7.6185, -0.771178, 7.16078)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone87" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.999999, 0, -1.73205, 0, 2, 0, 1.73205, 0, 0.999999, 6.76415, -0.876035, 8.48659)
+[node name="Stone56" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.769307, 0.00230003, 0.188487, 1.22728e-07, 0.696953, -0.0077879, -0.226653, -0.0078064, -0.639766, 2.9992, -0.996309, 7.23274)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone88" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(0.380113, 1.4509, -0.020131, 0.0789667, 9.54841e-05, 1.49792, 1.44889, -0.380645, -0.0763576, 8.46703, -0.649972, 8.7429)
+[node name="Stone57" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.323661, 0, -0.481023, 0, 0.579776, 0, 0.481023, 0, -0.323661, 4.57813, -0.774444, 7.0066)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
-[node name="stone89" parent="." instance=ExtResource("1_gwg0h")]
-transform = Transform3D(-0.397248, -4.54777e-07, 2.46824, 2.42749, -0.452371, 0.39069, 0.446623, 2.45873, 0.0718818, 0.989725, -1.06762, 8.23734)
+[node name="Stone58" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.103694, 0.93375, -0.00483084, 0.0260581, 6.07738e-05, 0.434397, 0.483315, -0.200338, -0.0223842, 5.89932, -0.548381, 7.524)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
+
+[node name="Stone59" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.136899, 0.00406179, 0.711662, 0.699796, -0.131074, 0.135365, 0.129471, 0.712756, 0.0208377, 0.989725, -0.905012, 7.05578)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
+
+[node name="Stone60" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.107824, -0.000144157, 0.7094, 0.665443, -0.0917144, 0.111147, 0.122401, 0.498487, 0.0206545, -3.14993, -0.953511, 7.38988)
+mesh = SubResource("ArrayMesh_85g3d")
+skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197515, 2.28179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.197515, 4.02067)
 mesh = SubResource("PlaneMesh_b62as")
