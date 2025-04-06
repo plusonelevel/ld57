@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=59 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://vvcgijyfn4ie" path="res://assets/pebbles.tscn" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://b537ka3mua008" path="res://assets/lamp_2.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cfq6mps4hnibg" path="res://assets/fence.tscn" id="9_choun"]
+[ext_resource type="Script" uid="uid://bbch2j5h86h4e" path="res://scenes/stone_28.gd" id="9_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bqld6oitp8aju" path="res://assets/pebbles2.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://w0r2cuwnwhj3" path="res://assets/floating_pebbles.tscn" id="15_jkv2x"]
 
@@ -154,6 +155,9 @@ shadow_mesh = SubResource("ArrayMesh_a8y0u")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jyhfs"]
 points = PackedVector3Array(0.82831, 1.11041, -2.0897, -0.795556, 1.11524, -1.96189, 1.45116, 1.92908, -1.68907, 1.77434, 1.45139, -1.84392, 1.40415, -0.97889, -1.99917, -1.36469, -0.22576, -1.81155, -1.96361, 1.49401, -1.06928, -1.62491, 2.02961, -0.631371, 1.25642, 2.08068, -1.48671, 1.6883, 1.92949, -1.45189, 2.16677, 1.45139, -1.45189, 1.73363, -1.54746, -1.78902, 1.75126, 0.591303, -1.83941, 1.31727, -1.4401, -1.92257, 0.090456, -1.38823, -1.78861, -1.03479, -0.602526, -1.77223, -1.84148, -0.660428, -1.34661, -1.91325, 1.27688, 0.890045, -2.07358, -1.55711, 0.0969753, -2.12101, 0.23424, 1.51065, -1.31852, 1.82132, 1.12395, 0.607961, 1.87681, 1.80765, 1.50824, 2.05253, 0.0781317, 2.06478, 1.50246, -0.0820389, 1.94894, -0.438872, 1.16246, 2.02365, -0.793121, -1.52316, 1.43521, -1.72518, -1.76567, 1.94013, -1.53379, -1.22576, 1.74118, -1.72358, -1.16473, -0.106389, -1.8426, -1.16841, -1.04193, -1.83013, -0.791951, -1.82175, -1.43969, -0.865277, -1.36846, 1.22421, 1.90023, -1.10614, -2.02716, -0.124232, 0.587815, -1.52494, 1.99649, -1.55356, 0.0549045, 2.09522, 0.657907, 1.56358, 1.94201, 1.73363, 1.50206, 1.86582, 2.02869, 1.52015, 0.399292, 1.27698, -1.4216, 1.79495, 1.80288, -1.48031, 0.0281553, 1.02641, -1.91055, -0.696504, 0.707013, -1.89206, -1.24256, 1.03271, -1.81445, 1.03014, 1.1561, -1.89728, -0.328644, 0.607122, -1.99459, 1.05185, 1.32357, -0.935464, 1.81871)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muem4"]
+size = Vector3(37.0391, 4.22192, 4.27866)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8y0u"]
 albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
@@ -465,6 +469,23 @@ skeleton = NodePath("")
 [node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone27"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone28" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.0485569, 0, 1.42802, 0, 1.13686, 0, -1.3031, 0, 0.0532115, -5.96539, 0.629973, 3.11533)
+script = ExtResource("9_jbj1t")
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone28"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone28"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone28" groups=["2d_collider"]]
+transform = Transform3D(0.289888, 0, -7.45058e-09, 0, 0.289888, 0, 0, 0, 0.289888, -0.00743961, 0.018932, 0.00285006)
+shape = SubResource("BoxShape3D_muem4")
 
 [node name="Stone5" type="StaticBody3D" parent="Scene/Terrain"]
 transform = Transform3D(0.0151694, -0.033094, -0.980895, 0.00299895, 0.167398, -0.19392, 0.99988, 0, 0.015463, -8.36198, 2.69792, 2.43168)
