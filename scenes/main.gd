@@ -8,7 +8,7 @@ var checkpoints: Array
 
 func _ready() -> void:
 	GameManager.camera_toggled.connect(toggle_camera)
-	get_tree().paused = false
+	get_tree().paused = true
 	checkpoints = $Checkpoints.get_children().map(func(child):
 		if child is Node3D:
 			return child.position

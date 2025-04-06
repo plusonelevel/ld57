@@ -1,12 +1,12 @@
-[gd_scene load_steps=55 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=57 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://mx5xm7wp05rf" path="res://assets/wall.tscn" id="2_trceg"]
-[ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://yyjw2pi8038k" path="res://assets/arrow.png" id="4_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bf40kh3d4wcto" path="res://scenes/ui.tscn" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cw40yk0byhh0o" path="res://assets/symbol.png" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://c18k5abmlhb72" path="res://assets/ground.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bo5aph1dvp7w6" path="res://assets/lamp.tscn" id="6_tefeu"]
@@ -97,6 +97,18 @@ metallic_specular = 0.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_0ld40"]
 material = SubResource("StandardMaterial3D_dp3eg")
 size = Vector2(0.975, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqmmt"]
+transparency = 1
+albedo_color = Color(0.952941, 0.0313726, 0.219608, 1)
+albedo_texture = ExtResource("5_jkv2x")
+emission_enabled = true
+emission = Color(1, 0.0232097, 0.106436, 1)
+uv1_scale = Vector3(0.945, 0.945, 0.945)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yc10j"]
+material = SubResource("StandardMaterial3D_gqmmt")
+size = Vector2(0.5, 0.5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sugp2"]
 plane = Plane(0, 0, 1, 0)
@@ -222,7 +234,7 @@ shadow_mesh = SubResource("ArrayMesh_jbj1t")
 points = PackedVector3Array(-2.5795, 5.48741, 1.45098, -2.09273, 2.99177, -1.22456, -2.45611, 2.58132, 1.16622, -1.18428, 5.33092, 2.47067, -1.41698, 7.66046, 2.37479, -2.2307, 8.37429, 1.76882, -2.12139, 11.6455, 1.51091, -1.96351, 12.9057, -1.06923, -1.56466, 1.73845, -1.67663, -1.82165, 0.0897912, -0.865006, -2.0733, -0.0268918, 0.096673, -1.84157, 10.7519, -1.3468, -1.365, 11.1857, -1.81134, -0.685364, 3.13728, 2.39253, 0.587919, 0.00468129, 1.99654, -0.909318, 12.3964, 2.42369, -1.55349, 11.4671, 2.09482, -1.91298, 12.6888, 0.890082, -1.6249, 13.4411, -0.631537, -0.795641, 12.5268, -1.96188, 0.952269, 3.20454, -2.31232, -1.03514, 0.927164, -1.77203, 1.03583, 6.83544, -2.42689, -1.36937, -0.284967, -0.924451, -1.45001, -0.530688, -0.0893347, 1.78785, 2.43581, 1.78177, 1.73392, 12.9139, 1.86566, 1.27678, 0.107637, 1.79471, 1.32342, 0.593587, 1.81868, 0.693337, -0.490878, 1.38195, 0.607836, 13.2887, 1.80766, -1.31836, 13.2338, 1.12403, 1.50802, 13.4644, 0.0779762, 1.25638, 13.4932, -1.48679, 0.82839, 12.5227, -2.08988, 1.45119, 13.3409, -1.6891, 2.10605, 3.02883, -2.05104, 1.40406, 0.551032, -1.99927, 1.31711, 0.0897912, -1.92256, 0.0904591, 0.141955, -1.78833, 1.77424, 12.8632, -1.84394, 1.31176, 6.98507, -2.33964, -0.199564, -0.300067, -1.3957, 0.818188, -0.361841, -1.48823, 1.218, -0.385177, -0.805081, 1.79562, 0.526323, 0.523819, 2.36643, 2.17499, -1.45419, 2.06038, 4.28489, 1.50947, 2.01083, 7.41062, 1.50084, 2.14345, 6.05298, 1.12115, 2.0288, 12.9318, 0.399175, 1.22577, -0.265749, 1.35462, 1.80291, 0.048609, 0.0281186, 1.38026, -0.368704, -0.344856, 1.68826, 13.3422, -1.45179, 2.00063, 6.69131, -2.11528, 2.38344, 7.48887, -1.70108, 1.73344, -0.0172826, -1.78929, 1.43515, -0.195739, -1.7658, 2.16677, 12.8632, -1.45179, 1.95448, 7.90206, -2.09275, 1.74121, -0.194366, -1.16463, 1.94039, -0.00355518, -1.22552, 2.02346, 0.736353, -1.52322, 2.06475, 12.9139, -0.0821435)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muem4"]
-albedo_color = Color(0.645945, 0.362504, 0, 1)
+albedo_color = Color(0.168475, 0.0781084, 2.40654e-08, 1)
 albedo_texture = ExtResource("2_tipki")
 uv1_scale = Vector3(0.005, 0.005, 0.005)
 uv1_triplanar = true
@@ -277,7 +289,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
-size = Vector3(0.626038, 1, 1)
+size = Vector3(0.685211, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jbj1t"]
 size = Vector3(30.7607, 1, 15.6924)
@@ -343,6 +355,11 @@ mesh = SubResource("PlaneMesh_jscy8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.44547, -10.9843, 0.129045)
 mesh = SubResource("PlaneMesh_0ld40")
 
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Wall/Wall"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.09147, 13.5097, 0.000281245)
+mesh = SubResource("PlaneMesh_yc10j")
+skeleton = NodePath("../WallMesh")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/Wall"]
 shape = SubResource("WorldBoundaryShape3D_sugp2")
 
@@ -365,9 +382,6 @@ size = 5.0
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.136, 5.245, 4.928)
 fov = 45.0
 size = 5.0
-
-[node name="Goal" parent="." instance=ExtResource("3_sugp2")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.96555, 2.689, 1.498)
 
 [node name="Scene" type="Node3D" parent="."]
 
@@ -836,7 +850,7 @@ transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, -1.03855
 shape = SubResource("ConcavePolygonShape3D_jkv2x")
 
 [node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/AngledPlatform" groups=["2d_collider"]]
-transform = Transform3D(14.88, 0, 1.42109e-14, 0, 1.97981, 0, 0, 0, 1, -2.78228, 0.939193, 0)
+transform = Transform3D(14.88, 0, 1.42109e-14, 0, 1.97981, 0, 0, 0, 1, -2.34203, 0.939194, 0)
 shape = SubResource("BoxShape3D_trceg")
 
 [node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/AngledPlatform"]
@@ -869,7 +883,7 @@ transform = Transform3D(0.99251, 0.122164, 0, -0.121302, 0.985512, 0.118543, 0.0
 transform = Transform3D(0.990271, -0.135763, -0.0305293, 0.138398, 0.983731, 0.114544, 0.0144816, -0.117655, 0.992949, 4.06372, 7.96289, 0.370296)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(0.965926, -1.13133e-08, 0.258819, -0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, 5.26302, 4.82702, 2.40261)
+transform = Transform3D(0.855464, -2.26365e-08, 0.517863, -0.517863, -3.73935e-08, 0.855464, 0, -1, -4.37114e-08, 11.3799, 10.4467, 2.40261)
 light_color = Color(0.170358, 0.69476, 0.835653, 1)
 light_energy = 25.0
 shadow_enabled = true
@@ -888,7 +902,7 @@ spot_range = 11.446
 spot_angle = 30.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(0.929029, 1.61735e-08, -0.370006, 0.368732, -0.0829126, 0.92583, -0.0306781, -0.996557, -0.0770282, -7.46556, 7.14601, 2.40261)
+transform = Transform3D(0.929029, 5.2513e-08, -0.370006, 0.368732, -0.0829126, 0.925831, -0.0306781, -0.996557, -0.0770282, -7.46556, 16.0472, 2.40261)
 light_color = Color(0.168627, 0.694118, 0.835294, 1)
 light_energy = 15.0
 shadow_enabled = true
