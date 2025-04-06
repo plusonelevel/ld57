@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=4 uid="uid://b38wx223fpw4j"]
+[gd_scene load_steps=50 format=4 uid="uid://b38wx223fpw4j"]
 
 [ext_resource type="Script" uid="uid://ctbygvq4rqb8t" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://xinswa0lha3x" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ctf13cywhdg1l" path="res://assets/dirt.png" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://mx5xm7wp05rf" path="res://assets/wall.tscn" id="2_trceg"]
 [ext_resource type="PackedScene" uid="uid://wvqsueptq3ju" path="res://scenes/goal.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://yyjw2pi8038k" path="res://assets/arrow.png" id="4_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://bf40kh3d4wcto" path="res://scenes/ui.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c18k5abmlhb72" path="res://assets/ground.tscn" id="5_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://daviq051ef1w2" path="res://assets/rocks.png" id="6_o6xl0"]
@@ -32,7 +33,7 @@ fog_enabled = true
 fog_density = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trceg"]
-albedo_color = Color(0.244822, 0.333282, 0.407164, 1)
+albedo_color = Color(0.210175, 0.0879526, 0, 1)
 albedo_texture = ExtResource("2_tipki")
 uv1_scale = Vector3(0.2, 0.2, 0.2)
 uv1_triplanar = true
@@ -43,13 +44,55 @@ size = Vector2(80, 140)
 subdivide_width = 5
 orientation = 2
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jkv2x"]
+load_path = "res://.godot/imported/symbol3.png-d8fc9a3e124cd5fd4aa68ab4c41c13c9.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbj1t"]
+transparency = 1
+albedo_color = Color(0.952941, 0.0313726, 0.219608, 1)
+albedo_texture = SubResource("CompressedTexture2D_jkv2x")
+emission_enabled = true
+emission = Color(1, 0.0232097, 0.106436, 1)
+uv1_scale = Vector3(0.945, 0.945, 0.945)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_muem4"]
+material = SubResource("StandardMaterial3D_jbj1t")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dp3eg"]
+load_path = "res://.godot/imported/dash.png-a3ac2cbec9e906c2a30d56c18704f1e8.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ld40"]
+transparency = 1
+albedo_color = Color(0.952941, 0.0313726, 0.219608, 1)
+albedo_texture = SubResource("CompressedTexture2D_dp3eg")
+emission_enabled = true
+emission = Color(1, 0.0232097, 0.106436, 1)
+uv1_scale = Vector3(0.945, 0.945, 0.945)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gqmmt"]
+material = SubResource("StandardMaterial3D_0ld40")
+size = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc10j"]
+transparency = 1
+albedo_color = Color(0.952941, 0.0313726, 0.219608, 1)
+albedo_texture = ExtResource("4_a8y0u")
+emission_enabled = true
+emission = Color(1, 0.0232097, 0.106436, 1)
+uv1_scale = Vector3(0.945, 0.945, 0.945)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jscy8"]
+material = SubResource("StandardMaterial3D_yc10j")
+size = Vector2(0.5, 0.5)
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sugp2"]
 plane = Plane(0, 0, 1, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_85g3d"]
 size = Vector3(20.3474, 0.45282, 7.24011)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vknx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
 albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
 albedo_texture = ExtResource("6_o6xl0")
 
@@ -76,7 +119,7 @@ _surfaces = [{
 "index_count": 384,
 "index_data": PackedByteArray("BAA3ADgANwAEADkANwA5ADoAOwA8AAIAPAA7AD0APAA9AD4APwAjACIAPwBAACMAQAAkACAAQABBACQAPwBBAEAAQQA/ACUAJQA/ACYAQgAJAEMACQBCAAoACQAKAEQANQBFADYANQAyAEUARQAyAEYAMgA1AEcARwA1ADMAMgBHADQASABJAEoASQBIACsASQArAEsATABNAE4ATQBMAAAATQAAAE8ABwALAA0ACwAHAFAACwBQAAwAUQAbAB0AGwBRAFIAGwBSAFMAVABVAFYAVQBXAFgAVQBZAFcAVABZAFUAVwBZAFoAVABbAFkAWQBbAFwAXABdAF4AXABbAF0AXwBbAFQAXwBUAGAAWwBfAGEAWwBhAGIAWwBiAAMAYgBhAGMAYgBjAAUAZAAVABQAZQAVAGQAZQBkAGYAZwAVAGUAZwBlAGgAFQBnAGkAFQBpAGoAaQBnAGsAawBnAGwAaQBrABkABgBtAAgAbQAGAG4AbQBuAG8AFgBwACcAFgBxAHAAcgAWAHMAcgBxABYAdABxAHIAdQB0AHYAdwB0AHUAcQB0AHcAcQB3AHgAeAB3AHkAcQB4AHoAcQB6ACkAewAYABoAGAB7AHwAGAB8AH0AfgB/AIAAfwCBAIIAfwCDAIEAfwCEAIMAfgCEAH8AgwCEAIUAhAB+AIYAhgB+AIcAhACGAIgAFwCJAIoAFwABAIkALACLAIwALAAtAIsAHgCNACEAjQAeAI4AjgAeAB8AjQCOAI8AMAAuADEALgAwAJAAkAAwAC8ALgCQAJEAKgCSAJMAlACSACoAlQCSAJQAkgCVABwAHACVAJYAkgAcAJcAlwAcACgAkgCXAJgAkgCYAJkAmgCbABEADwCcABIADwCdAJwADwCeAJ0AngCfAKAADwChAJ4AngChAJ8AnwCiAKMAnwChAKIAoQAPAKQApAAPAKUApAClAA4ApAAOABAAEwCkAKYApwCkABMAoQCkAKcApwATAKgAoQCnAKkAqQCnAKoAoQCpAKsA"),
 "lods": [0.6697, PackedByteArray("AAABAAIAAwAAAAIAAQADAAIAAwABAAQAAwAEAAUABgAAAAMABgADAAcABgAHAAgABwAJAAgACQAHAAoACwAHAAwABwALAA0ADgAPAAAAEAAPAA4AEQAPABAADwARABIAEQAQABMAAQAAABEAEQATABQAEwAVABQAFgABABEAAQAWABcAFQATABgAGQAYABoAFQAYABkAGwAVABkAGwAcABUAHAAbAB0AHQAeAB8AIAAeAB0AHgAgACEAIgAgACMAIgAkACAAJAAiACUAJQAiACYAJwAcACgAKQAVABwAKQAcACcAFQApACoAEQArACkAFgARACkAKQAnABYALAAWACcALAAtABYALgAvABYALgAwAC8AMAAuADEAMgAzADQAMgA1ADMANQAyADYA")],
-"material": SubResource("StandardMaterial3D_7vknx"),
+"material": SubResource("StandardMaterial3D_eb6dy"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 172,
@@ -88,7 +131,7 @@ shadow_mesh = SubResource("ArrayMesh_a8y0u")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jyhfs"]
 points = PackedVector3Array(0.82831, 1.11041, -2.0897, -0.795556, 1.11524, -1.96189, 1.45116, 1.92908, -1.68907, 1.77434, 1.45139, -1.84392, 1.40415, -0.97889, -1.99917, -1.36469, -0.22576, -1.81155, -1.96361, 1.49401, -1.06928, -1.62491, 2.02961, -0.631371, 1.25642, 2.08068, -1.48671, 1.6883, 1.92949, -1.45189, 2.16677, 1.45139, -1.45189, 1.73363, -1.54746, -1.78902, 1.75126, 0.591303, -1.83941, 1.31727, -1.4401, -1.92257, 0.090456, -1.38823, -1.78861, -1.03479, -0.602526, -1.77223, -1.84148, -0.660428, -1.34661, -1.91325, 1.27688, 0.890045, -2.07358, -1.55711, 0.0969753, -2.12101, 0.23424, 1.51065, -1.31852, 1.82132, 1.12395, 0.607961, 1.87681, 1.80765, 1.50824, 2.05253, 0.0781317, 2.06478, 1.50246, -0.0820389, 1.94894, -0.438872, 1.16246, 2.02365, -0.793121, -1.52316, 1.43521, -1.72518, -1.76567, 1.94013, -1.53379, -1.22576, 1.74118, -1.72358, -1.16473, -0.106389, -1.8426, -1.16841, -1.04193, -1.83013, -0.791951, -1.82175, -1.43969, -0.865277, -1.36846, 1.22421, 1.90023, -1.10614, -2.02716, -0.124232, 0.587815, -1.52494, 1.99649, -1.55356, 0.0549045, 2.09522, 0.657907, 1.56358, 1.94201, 1.73363, 1.50206, 1.86582, 2.02869, 1.52015, 0.399292, 1.27698, -1.4216, 1.79495, 1.80288, -1.48031, 0.0281553, 1.02641, -1.91055, -0.696504, 0.707013, -1.89206, -1.24256, 1.03271, -1.81445, 1.03014, 1.1561, -1.89728, -0.328644, 0.607122, -1.99459, 1.05185, 1.32357, -0.935464, 1.81871)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6xl0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8y0u"]
 albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
 albedo_texture = ExtResource("6_o6xl0")
 
@@ -115,7 +158,7 @@ _surfaces = [{
 "index_count": 384,
 "index_data": PackedByteArray("BAA3ADgANwAEADkANwA5ADoAOwA8AAIAPAA7AD0APAA9AD4APwAjACIAPwBAACMAQAAkACAAQABBACQAPwBBAEAAQQA/ACUAJQA/ACYAQgAJAEMACQBCAAoACQAKAEQANQBFADYANQAyAEUARQAyAEYAMgA1AEcARwA1ADMAMgBHADQASABJAEoASQBIACsASQArAEsATABNAE4ATQBMAAAATQAAAE8ABwALAA0ACwAHAFAACwBQAAwAUQAbAB0AGwBRAFIAGwBSAFMAVABVAFYAVQBXAFgAVQBZAFcAVABZAFUAVwBZAFoAVABbAFkAWQBbAFwAXABdAF4AXABbAF0AXwBbAFQAXwBUAGAAWwBfAGEAWwBhAGIAWwBiAAMAYgBhAGMAYgBjAAUAZAAVABQAZQAVAGQAZQBkAGYAZwAVAGUAZwBlAGgAFQBnAGkAFQBpAGoAaQBnAGsAawBnAGwAaQBrABkABgBtAAgAbQAGAG4AbQBuAG8AFgBwACcAFgBxAHAAcgAWAHMAcgBxABYAdABxAHIAdQB0AHYAdwB0AHUAcQB0AHcAcQB3AHgAeAB3AHkAcQB4AHoAcQB6ACkAewAYABoAGAB7AHwAGAB8AH0AfgB/AIAAfwCBAIIAfwCDAIEAfwCEAIMAfgCEAH8AgwCEAIUAhAB+AIYAhgB+AIcAhACGAIgAFwCJAIoAFwABAIkALACLAIwALAAtAIsAHgCNACEAjQAeAI4AjgAeAB8AjQCOAI8AMAAuADEALgAwAJAAkAAwAC8ALgCQAJEAKgCSAJMAlACSACoAlQCSAJQAkgCVABwAHACVAJYAkgAcAJcAlwAcACgAkgCXAJgAkgCYAJkAmgCbABEADwCcABIADwCdAJwADwCeAJ0AngCfAKAADwChAJ4AngChAJ8AnwCiAKMAnwChAKIAoQAPAKQApAAPAKUApAClAA4ApAAOABAAEwCkAKYApwCkABMAoQCkAKcApwATAKgAoQCnAKkAqQCnAKoAoQCpAKsA"),
 "lods": [0.6697, PackedByteArray("AAABAAIAAwAAAAIAAQADAAIAAwABAAQAAwAEAAUABgAAAAMABgADAAcABgAHAAgABwAJAAgACQAHAAoACwAHAAwABwALAA0ADgAPAAAAEAAPAA4AEQAPABAADwARABIAEQAQABMAAQAAABEAEQATABQAEwAVABQAFgABABEAAQAWABcAFQATABgAGQAYABoAFQAYABkAGwAVABkAGwAcABUAHAAbAB0AHQAeAB8AIAAeAB0AHgAgACEAIgAgACMAIgAkACAAJAAiACUAJQAiACYAJwAcACgAKQAVABwAKQAcACcAFQApACoAEQArACkAFgARACkAKQAnABYALAAWACcALAAtABYALgAvABYALgAwAC8AMAAuADEAMgAzADQAMgA1ADMANQAyADYA")],
-"material": SubResource("StandardMaterial3D_o6xl0"),
+"material": SubResource("StandardMaterial3D_a8y0u"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 172,
@@ -127,7 +170,8 @@ shadow_mesh = SubResource("ArrayMesh_jkv2x")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_choun"]
 points = PackedVector3Array(0.82831, 1.11041, -2.0897, -0.795556, 1.11524, -1.96189, 1.45116, 1.92908, -1.68907, 1.77434, 1.45139, -1.84392, 1.40415, -0.97889, -1.99917, -1.36469, -0.22576, -1.81155, -1.96361, 1.49401, -1.06928, -1.62491, 2.02961, -0.631371, 1.25642, 2.08068, -1.48671, 1.6883, 1.92949, -1.45189, 2.16677, 1.45139, -1.45189, 1.73363, -1.54746, -1.78902, 1.75126, 0.591303, -1.83941, 1.31727, -1.4401, -1.92257, 0.090456, -1.38823, -1.78861, -1.03479, -0.602526, -1.77223, -1.84148, -0.660428, -1.34661, -1.91325, 1.27688, 0.890045, -2.07358, -1.55711, 0.0969753, -2.12101, 0.23424, 1.51065, -1.31852, 1.82132, 1.12395, 0.607961, 1.87681, 1.80765, 1.50824, 2.05253, 0.0781317, 2.06478, 1.50246, -0.0820389, 1.94894, -0.438872, 1.16246, 2.02365, -0.793121, -1.52316, 1.43521, -1.72518, -1.76567, 1.94013, -1.53379, -1.22576, 1.74118, -1.72358, -1.16473, -0.106389, -1.8426, -1.16841, -1.04193, -1.83013, -0.791951, -1.82175, -1.43969, -0.865277, -1.36846, 1.22421, 1.90023, -1.10614, -2.02716, -0.124232, 0.587815, -1.52494, 1.99649, -1.55356, 0.0549045, 2.09522, 0.657907, 1.56358, 1.94201, 1.73363, 1.50206, 1.86582, 2.02869, 1.52015, 0.399292, 1.27698, -1.4216, 1.79495, 1.80288, -1.48031, 0.0281553, 1.02641, -1.91055, -0.696504, 0.707013, -1.89206, -1.24256, 1.03271, -1.81445, 1.03014, 1.1561, -1.89728, -0.328644, 0.607122, -1.99459, 1.05185, 1.32357, -0.935464, 1.81871)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60dlg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv2x"]
+albedo_color = Color(0.308501, 0.248992, 0.359891, 1)
 albedo_texture = ExtResource("6_o6xl0")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jbj1t"]
@@ -153,7 +197,7 @@ _surfaces = [{
 "index_count": 726,
 "index_data": PackedByteArray("QwBTAFQAUwBDAFUAUwBVAFYAVwBYAAIAWABXAFkAWABZAFoAWwBcADsAWwAwAFwAWwA4ADAAMAA4AB4AWwA6ADgAOAA6AF0AOgBbADkAXgBIAF8ASABeAEkASABJAGAATABhAEoAYQBMAGIAYQBiAGMAZABlAGYAZQBkAAsAZQALAGcAaABpAGoAawBpAGgAaQBrAGwAbABrAG0AaQBsADEAMQBsAG4AaQAxAG8ARwBQAFIAUABHAHAAUABwAFEAcQAvAHIALwBxAHMALwBzAHQAdQB2AHcAdgB4AHkAdgADAHgAdQADAHYAeAADAHoAAwB1AAUABQB1AHsAAwAFAHwAfAAFAAgAfQB+AA8AfQB/AH4AfgB/AIAAfwB9AIEAgQB9AIIAfwCBAIMAPwCEAIUAhAA/AIYAhACGAEIAhwCIAAYAhwCJAIgAigCHAIsAigCJAIcAjACJAIoAjQCMAI4AjwCMAI0AiQCMAI8AiQCPAJAAkACPAJEAiQCQAJIAiQCSAAoALgCTAC0AkwAuACYAkwAmAJQAlQCWAJcAlQCYAJYAlgCYAJkAlQCaAJgAmACaAJsAmgCVAJwABACdAJ4ABAABAJ0AnwCgAKEAnwAHAKAAEACiAKMAEACkAKIApQA2AKYApQA1ADYAHwCnAKgAqQCnAB8AqgCnAKkApwCqAKsAqwCqAKwApwCrAK0ArQCrAK4ApwCtAK8ApwCvALAAsQCyAAAAswC0ALUAswC2ALQAswC3ALYAuACzALkAugCzALgAuwCzALoAuwC3ALMAuwC6ALwAtwC7AL0AtwC9AL4AvQC7AL8AvQC/AMAAwQDCAMMAxADCAMEAwgDEAMUAxQDEAMYAxQDGAMcAwgDFABkAwgAZAMgAPgDJAMoAyQA+AMsAywA+AMwAyQDLAD0AzQDOAM8AzgDNANAAzgDQAAwA0QDSANMAHQDSANEA0gAdANQA1AAdANUA0gDUABsAIgDWANcAIgDYANYA2QAOAA0A2gAOANkADgDaACEADgAhACAA2wDcAN0A3gDcANsA3ADeAN8A3wDeAOAA3ADfAOEAPADiADcAPADjAOIA5ADlAOYAGADnABcAGAAaAOcA6AAcAOkA6AAjABwAHAAjACQAIwDoAOoA6gDoAOsAIwDqAOwAIwDsAO0A7gDvAPAA7gDxAO8A7wDxAEUA8gDxAO4A8wDxAPIA8QDzAPQA9ADzAPUA9AD1AEQA8QD0APYA8QD2APcA+AD5APoA+AD7APkATQD8AEsA/ABNAP0A/AD9AP4AFQD/AAABFQABAf8A/wABAQIBAwEEAQUBBgEEAQMBBAEGAQcBBwEGAQgBBAEHAQkBCgELAQwBCgENAQsBCwENAQ4BDQEKAQ8BDQEPARABEQFOABIBEQFPAE4AEwEUARUBEwAUARMBFAETABYBFgETABcBFAEWARIAGAEZARoBGQEYARsBGwEYARwBGQEbAREAEQAbAR0BHgEfASABIQEfAR4BHwEhASIBIgEhASMBHwEiASQBJQEmAScBJQEoACYBKAAoASkBKAAqASgBFAAoACUBFAAqASgAFAAlASsBKgEUACwBLQEUADQALgEUAC0BLAEUAC4BLgEtATMALAEuAS8BLAEvATABLwEuATIAMgAuATEBKwAyATMBKwAnADIBMgEnADQBLAArADUBKQArACwAJwArACkAKQAsADYBJwApACUAJQApACoAJwAlADcBOAE5AToBCQA5ATgBCQA7ATkBOQE7AUYAOwEJADwBPAEJAD0BPAE9AT4BOwE8AT8BPwE8AUABOwE/AUEBQgFDAUQBQgFFAUMBRQFCAUYBRQFGAUcBQwFFAUgBQwFIAUkBQQBKAUsBTAFKAUEASgFMAU0BSgFNAU4BTQFMAU8BTQFPAVABUQEWAFIBUQFTARYAVAFAAFUB"),
 "lods": [1.17553, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIABAABAAAAAwABAAUABgAHAAQAAAADAAgAAwAFAAgABQABAAkACgAGAAQABAAAAAoAAAALAAoACgAMAAYAAAAIAA0ADQAIAAUAAAANAA4ADwAAAA4AEAAGAAwABQAJABEAEQASAAUAEwASABEAEgATABQACQAVABEAFgAQAAwAEAAWABcADAAYABYAEAAXABkAGAAaABcAGwAYAAwAHAAXABYAGwAdABwAFwAeABkAGwAMAB8AHwAdABsACgAfAAwAHQAfACAAIAAfAA4ADgAhACAAIQAOAA0AIgAgACEAFAAhAA0AIgAjABwAHAAjACQAIwAiACUAIwAlACYAJQAiACcAFAAoACEAJwApACUAJQApACoAKwAnACgAJwArACkAFAArACgAKQArACwALAArABQAKQAsAC0ALQAmACkALQAuACYALwAkAC4ALwAXACQAFwAvAB4AHgAvADAALAAUADEAMQAUADIAMgAzADEAFAAzADIAMwAUADQAFQA0ABQAFQAzADQAHgA1ADYAHgA2ADcAMAA4AB4AOQA4ADAAOQA6ADgAOQAwADsAPAA9ADcAPgA9ADwAMwA/AEAAMwBBAD8APwBBAEIAQQBDAEIAQgBDAEQAQwBBABUAFQBBAEUAQwAVAEYARwA/AEIAPwBHAEgASABHAEkARgAVAAkARgAJAEoASwBGAEoASgBMAEsATQBGAEsARgBNAE4ATQBPAE4AUABHAFEARwBQAFIA")],
-"material": SubResource("StandardMaterial3D_60dlg"),
+"material": SubResource("StandardMaterial3D_jkv2x"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 342,
@@ -193,9 +237,8 @@ script = ExtResource("1_0wfyh")
 environment = SubResource("Environment_0wfyh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-2.13257e-08, -0.872914, 0.487875, -3.81563e-08, 0.487875, 0.872914, -1, 0, -4.37114e-08, 0, 9.03142, 3.40989)
-light_color = Color(0.98373, 0.422199, 0.369877, 1)
-light_energy = 2.0
+transform = Transform3D(0.82934, 0.0195389, 0.558403, -0.558744, 0.0290014, 0.828833, 0, -0.999388, 0.0349693, 0, 5, 5)
+light_color = Color(0.98312, 0.491065, 1, 1)
 shadow_enabled = true
 sky_mode = 1
 
@@ -204,11 +247,44 @@ sky_mode = 1
 [node name="Wall" type="StaticBody3D" parent="Node3D"]
 
 [node name="Wall" parent="Node3D/Wall" instance=ExtResource("2_trceg")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.3, -13.5763, 0, -0.0318122)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.3, -13.5763, 0, -0.215032)
+visible = false
 
 [node name="WallMesh" type="MeshInstance3D" parent="Node3D/Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5175, 0)
 mesh = SubResource("PlaneMesh_o5qli")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.938541, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_muem4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0103248, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.469334, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.461295, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.925787, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.43038, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.94065, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_gqmmt")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D/Wall/WallMesh"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.44612, -18.1853, 0.000281245)
+mesh = SubResource("PlaneMesh_jscy8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall"]
 shape = SubResource("WorldBoundaryShape3D_sugp2")
@@ -220,7 +296,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27359, 3.12006)
 shape = SubResource("BoxShape3D_85g3d")
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20611, 0, 0.54661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25094, 0, 0.54661)
 
 [node name="FrontCamera" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121, 1.04, 8.30322)
@@ -305,6 +381,18 @@ shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
 [node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Stone16" groups=["2d_collider"]]
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 4.885, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="Stone27" type="StaticBody3D" parent="Scene/Terrain"]
+transform = Transform3D(0.0912437, 0, 1.41942, 0, 0.170638, 0, -2.44867, 0, 0.0528912, 2.11554, 5.96074, 1.82701)
+
+[node name="Stone" type="MeshInstance3D" parent="Scene/Terrain/Stone27"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
+[node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone27"]
+transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
 
 [node name="Stone5" type="StaticBody3D" parent="Scene/Terrain"]
@@ -615,7 +703,7 @@ shape = SubResource("ConvexPolygonShape3D_tipki")
 transform = Transform3D(0.00827038, 0, -0.271348, 0, 2.67708, 0, 0.201014, 0, 0.0111641, 1.17103, 2.36173, 0.136029)
 
 [node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column2"]
-transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+transform = Transform3D(0.289888, 0, 1.86265e-09, 0, 0.289888, 0, 0, 0, 0.289888, -0.00693834, 0, -0.000211716)
 mesh = SubResource("ArrayMesh_vfl2y")
 skeleton = NodePath("")
 
@@ -628,7 +716,7 @@ transform = Transform3D(12.7032, 0, -0.0113346, 0, 0.289472, 0, 0.420745, 0, 0.3
 shape = SubResource("BoxShape3D_o6xl0")
 
 [node name="Column3" type="StaticBody3D" parent="Scene/Terrain"]
-transform = Transform3D(1.91458e-09, 0.486043, 1.04929e-08, -0.00840014, -2.12456e-08, 0.23755, 0.204168, 0, 0.00977357, 3.19668, 1.37804, 0.136029)
+transform = Transform3D(1.91458e-09, 0.486043, 1.04929e-08, -0.00840014, -2.12456e-08, 0.23755, 0.204168, 0, 0.00977357, 3.19668, 1.37804, 0.252446)
 
 [node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column3"]
 transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
@@ -714,7 +802,7 @@ shape = SubResource("BoxShape3D_trceg")
 transform = Transform3D(0.989997, 0.138569, -0.0265612, -0.141091, 0.972296, -0.186373, -1.52737e-07, 0.188256, 0.982121, -1.32073, 3.09904, 2.58608)
 
 [node name="lamp3" parent="Scene/Lights" instance=ExtResource("6_tefeu")]
-transform = Transform3D(0.968673, -0.173067, -0.178107, 0.17751, 0.984077, 0.00919376, 0.17368, -0.0405215, 0.983969, -8.8596, 3.8699, 1.43027)
+transform = Transform3D(0.947987, -0.309913, -0.0726393, 0.300025, 0.946183, -0.121352, 0.106339, 0.0932475, 0.989949, -8.78001, 4.40496, 1.16148)
 
 [node name="lamp2" parent="Scene/Lights" instance=ExtResource("9_85g3d")]
 transform = Transform3D(0.99251, 0.122164, 0, -0.121302, 0.985512, 0.118543, 0.0144816, -0.117655, 0.992949, 5.09461, -0.100036, 0.50122)
@@ -732,21 +820,19 @@ spot_angle = 30.0
 [node name="SpotLight3D3" type="SpotLight3D" parent="Scene/Lights"]
 transform = Transform3D(0.897828, -1.92482e-08, 0.440347, -0.440347, -3.92453e-08, 0.897828, 0, -1, -4.37114e-08, 8.95075, 16.7445, 2.40261)
 light_color = Color(0.170358, 0.69476, 0.835653, 1)
-light_energy = 25.0
+light_energy = 10.0
 shadow_enabled = true
 shadow_bias = 1.0
 spot_range = 11.446
-spot_attenuation = 1.5
 spot_angle = 30.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Scene/Lights"]
-transform = Transform3D(0.929029, 1.61735e-08, -0.370006, 0.370006, -4.06092e-08, 0.929029, 0, -1, -4.37114e-08, -7.46556, 7.14601, 2.40261)
+transform = Transform3D(0.929029, 1.61735e-08, -0.370006, 0.368732, -0.0829126, 0.92583, -0.0306781, -0.996557, -0.0770282, -7.46556, 7.14601, 2.40261)
 light_color = Color(0.168627, 0.694118, 0.835294, 1)
-light_energy = 30.0
+light_energy = 15.0
 shadow_enabled = true
 shadow_bias = 1.0
 spot_range = 11.446
-spot_attenuation = 1.5
 spot_angle = 30.0
 
 [node name="Props" type="Node3D" parent="Scene"]
@@ -780,7 +866,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 0
 
 [node name="IntroCamera" type="Camera3D" parent="IntroViewportContainer/IntroViewport"]
-transform = Transform3D(0.941888, 0.0504815, 0.332112, 0.167334, 0.786752, -0.594156, -0.291284, 0.615202, 0.732585, -1.88018, -0.0848012, 1.44166)
+transform = Transform3D(1, 0, 0, 0, -0.135128, 0.990828, 0, -0.990828, -0.135128, 0, 2.02917, 4.13061)
 
 [node name="UI" parent="." instance=ExtResource("4_jyhfs")]
 

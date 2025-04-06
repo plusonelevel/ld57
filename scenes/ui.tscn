@@ -1,23 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf40kh3d4wcto"]
+[gd_scene load_steps=7 format=3 uid="uid://bf40kh3d4wcto"]
 
 [ext_resource type="Script" uid="uid://87kwxphreif4" path="res://scenes/ui.gd" id="1_nt7q6"]
-[ext_resource type="Shader" uid="uid://cc7b7564g5633" path="res://scenes/shmat_ui_symbol.tres" id="2_gdt2y"]
+[ext_resource type="Theme" uid="uid://bcxmt6c2ecx3g" path="res://theme.tres" id="2_wm3ai"]
 [ext_resource type="Script" uid="uid://bdta37svqp68f" path="res://hide_on_web.gd" id="2_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://dmymsgtonve4p" path="res://assets/symbol.png" id="2_yev5y"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wm3ai"]
-shader = ExtResource("2_gdt2y")
-shader_parameter/ColorParameter = Color(0.952941, 0.0313726, 0.219608, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_nt7q6"]
-font_names = PackedStringArray("Courier New")
-font_weight = 700
-subpixel_positioning = 0
-
-[sub_resource type="LabelSettings" id="LabelSettings_x4jx1"]
-font = SubResource("SystemFont_nt7q6")
-font_size = 72
-font_color = Color(0.952941, 0.0313726, 0.219608, 1)
+[ext_resource type="Texture2D" uid="uid://cw40yk0byhh0o" path="res://assets/symbol.png" id="2_yev5y"]
+[ext_resource type="Texture2D" uid="uid://bkfk52rmfmeum" path="res://assets/symbol3.png" id="3_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://bxshv0dr8d4fj" path="res://assets/symbol2.png" id="6_8dubc"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -29,82 +17,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nt7q6")
 
-[node name="Symbol" type="TextureRect" parent="."]
+[node name="StartMenu" type="Control" parent="."]
 visible = false
-material = SubResource("ShaderMaterial_wm3ai")
 layout_mode = 1
-offset_left = 111.0
-offset_top = 38.0
-offset_right = 582.0
-offset_bottom = 509.0
-rotation = 0.226893
-texture = ExtResource("2_yev5y")
-
-[node name="StartMenu" type="VBoxContainer" parent="."]
-visible = false
-custom_minimum_size = Vector2(0, 300)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -432.5
-offset_top = -76.0
-offset_right = 432.5
-offset_bottom = 76.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="Label" parent="StartMenu"]
+[node name="Play" type="Button" parent="StartMenu"]
+clip_contents = true
 layout_mode = 2
-text = "ROCK AND STONE"
-label_settings = SubResource("LabelSettings_x4jx1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
+offset_left = 178.0
+offset_top = -31.0
+offset_right = 426.0
+offset_bottom = 217.0
+rotation = 0.190241
+scale = Vector2(2, 2)
 size_flags_horizontal = 4
-size_flags_vertical = 10
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("2_yev5y")
 
-[node name="StartButton" type="Button" parent="StartMenu/VBoxContainer"]
+[node name="Exit" type="Button" parent="StartMenu"]
 layout_mode = 2
-text = "Start"
-
-[node name="QuitButton" type="Button" parent="StartMenu/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
+offset_left = 664.0
+offset_top = 370.0
+offset_right = 912.0
+offset_bottom = 618.0
+rotation = 0.190241
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("3_gdt2y")
 script = ExtResource("2_x4jx1")
 
-[node name="PauseMenu" type="VBoxContainer" parent="."]
+[node name="PauseMenu" type="Control" parent="."]
 visible = false
-custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -35.0
-offset_top = -240.0
-offset_right = 35.0
-offset_bottom = -174.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="PauseMenu"]
+[node name="Play" type="Button" parent="PauseMenu"]
+clip_contents = true
 layout_mode = 2
-text = "Resume"
+offset_left = 178.0
+offset_top = -31.0
+offset_right = 426.0
+offset_bottom = 217.0
+rotation = 0.190241
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("2_yev5y")
 
 [node name="RestartButton" type="Button" parent="PauseMenu"]
+clip_contents = true
 layout_mode = 2
-text = "Restart"
+offset_left = 668.0
+offset_top = 77.0
+offset_right = 916.0
+offset_bottom = 325.0
+scale = Vector2(1.015, 1.015)
+size_flags_horizontal = 4
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("6_8dubc")
 
 [node name="QuitButton" type="Button" parent="PauseMenu"]
 layout_mode = 2
-text = "Quit"
+offset_left = 664.0
+offset_top = 370.0
+offset_right = 912.0
+offset_bottom = 618.0
+rotation = 0.190241
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("3_gdt2y")
 script = ExtResource("2_x4jx1")
 
 [node name="SettingsMenu" type="VBoxContainer" parent="."]
@@ -150,9 +142,9 @@ ticks_on_borders = true
 layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="StartMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="StartMenu/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="StartMenu/Play" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenu/Exit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="PauseMenu/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackButton" to="." method="_on_back_button_pressed"]

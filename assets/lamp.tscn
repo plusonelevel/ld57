@@ -107,7 +107,7 @@ skeleton = NodePath("")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854795, 0.00396609)
 light_color = Color(1, 0.549063, 0.129974, 1)
-light_energy = 5.0
+light_energy = 3.0
 shadow_enabled = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
