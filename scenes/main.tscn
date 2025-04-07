@@ -354,7 +354,7 @@ size = Vector3(0.870956, 0.789368, 0.69242)
 size = Vector3(1.35179, 1.43701, 0.532631)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
-size = Vector3(7.91019, 1, 0.8396)
+size = Vector3(7.91019, 1, 0.95398)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jbj1t"]
 size = Vector3(30.7607, 1, 15.6924)
@@ -1400,13 +1400,13 @@ mesh = SubResource("ArrayMesh_muem4")
 skeleton = NodePath("")
 
 [node name="Floating pebbles" parent="Scene/Props" instance=ExtResource("15_jkv2x")]
-transform = Transform3D(0.276476, 0, -0.961021, 0, 1, 0, 0.961021, 0, 0.276476, 9.32119, 9.25162, 2.41623)
+transform = Transform3D(0.276476, 0, -0.961021, 0, 1, 0, 0.961021, 0, 0.276476, 9.89334, 9.25162, 2.41623)
 
 [node name="Floating pebbles2" type="StaticBody3D" parent="Scene/Props"]
-transform = Transform3D(0.276476, 0, -0.961021, 0, 1, 0, 0.961021, 0, 0.276476, 9.32119, 9.25162, 2.41623)
+transform = Transform3D(0.276476, 0, -0.961021, 0, 1, 0, 0.961021, 0, 0.276476, 9.89334, 9.25162, 2.41623)
 
 [node name="CollisionFront" type="CollisionShape3D" parent="Scene/Props/Floating pebbles2" groups=["2d_collider"]]
-transform = Transform3D(0.955844, 0, -0.293874, 0, 1, 0, 0.293874, 0, 0.955844, 0.930173, 1.191, 0.445665)
+transform = Transform3D(0.955844, 0, -0.293874, 0, 1, 0, 0.293874, 0, 0.955844, 0.928613, 1.191, 0.450739)
 shape = SubResource("BoxShape3D_0ld40")
 
 [node name="DeathPit" type="Area3D" parent="Scene"]
@@ -1437,15 +1437,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.721, 11.0861, 7.71677)
 
 [connection signal="button_pressed" from="Player" to="Scene/Terrain/Stone28" method="_on_button_pressed"]
 [connection signal="button_pressed" from="Player" to="Scene/Terrain/Stone51" method="_on_button_pressed"]
-[connection signal="trigger_win" from="Player" to="UI" method="_on_player_trigger_win"]
 [connection signal="body_entered" from="Scene/Terrain/ButtonArea" to="Player" method="_on_symbol_button_area_entered"]
-[connection signal="body_entered" from="Scene/Terrain/ButtonArea" to="UI" method="_on_symbol_button_area_entered"]
 [connection signal="body_exited" from="Scene/Terrain/ButtonArea" to="Player" method="_on_symbol_button_area_exited"]
-[connection signal="body_exited" from="Scene/Terrain/ButtonArea" to="UI" method="_on_symbol_button_area_exited"]
-[connection signal="body_entered" from="Scene/Terrain/PerspectiveArea" to="UI" method="_on_perspective_area_body_entered"]
-[connection signal="body_exited" from="Scene/Terrain/PerspectiveArea" to="UI" method="_on_perspective_area_exited"]
 [connection signal="body_entered" from="Scene/Terrain/WinArea" to="Player" method="_on_win_area_entered"]
-[connection signal="body_entered" from="Scene/Terrain/WinArea" to="UI" method="_on_win_area_entered"]
 [connection signal="body_exited" from="Scene/Terrain/WinArea" to="Player" method="_on_win_area_exited"]
-[connection signal="body_exited" from="Scene/Terrain/WinArea" to="UI" method="_on_win_area_exited"]
 [connection signal="body_entered" from="Scene/DeathPit" to="." method="_on_death_pit_body_entered"]

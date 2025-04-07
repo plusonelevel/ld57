@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf40kh3d4wcto"]
+[gd_scene load_steps=14 format=3 uid="uid://bf40kh3d4wcto"]
 
 [ext_resource type="Script" uid="uid://87kwxphreif4" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Theme" uid="uid://bcxmt6c2ecx3g" path="res://theme.tres" id="2_wm3ai"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cufx8bfjmik2" path="res://assets/symbol5.png" id="7_cgfq5"]
 [ext_resource type="Texture2D" uid="uid://bubyqssht680r" path="res://assets/symbol6.png" id="8_7dvkv"]
 [ext_resource type="Texture2D" uid="uid://qloag41nj6wv" path="res://assets/symbol4.png" id="9_vdcm2"]
+[ext_resource type="Script" uid="uid://6sl8e05ujcp" path="res://scenes/audio_manager.gd" id="10_vsj0x"]
+[ext_resource type="AudioStream" uid="uid://02aldwn1p6f8" path="res://audio/drone.wav" id="11_qsv74"]
+[ext_resource type="AudioStream" uid="uid://bfaocjyy13osh" path="res://audio/gong1.wav" id="12_h1mc3"]
+[ext_resource type="AudioStream" uid="uid://b1in5vxjg8a3m" path="res://audio/gong2.wav" id="13_cof4p"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -248,6 +252,8 @@ offset_left = -398.0
 offset_top = -355.0
 offset_right = -150.0
 offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 0.190241
 scale = Vector2(2, 2)
 size_flags_horizontal = 4
@@ -330,10 +336,36 @@ ticks_on_borders = true
 layout_mode = 2
 text = "Back"
 
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("10_vsj0x")
+
+[node name="Drone" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("11_qsv74")
+autoplay = true
+
+[node name="Gong2" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("12_h1mc3")
+
+[node name="Gong1" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("13_cof4p")
+
+[connection signal="mouse_entered" from="WinMenu/Exit" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="WinMenu/Exit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="WinMenu/Exit" to="AudioManager" method="_on_pressed"]
+[connection signal="mouse_entered" from="StartMenu/Play" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="StartMenu/Play" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenu/Play" to="AudioManager" method="_on_pressed"]
+[connection signal="mouse_entered" from="StartMenu/Exit" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="StartMenu/Exit" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="StartMenu/Exit" to="AudioManager" method="_on_pressed"]
+[connection signal="mouse_entered" from="PauseMenu/Play" to="AudioManager" method="_on_mouse_entered"]
+[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Play" to="AudioManager" method="_on_pressed"]
+[connection signal="mouse_entered" from="PauseMenu/RestartButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="PauseMenu/RestartButton" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseMenu/RestartButton" to="AudioManager" method="_on_pressed"]
+[connection signal="mouse_entered" from="PauseMenu/QuitButton" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="AudioManager" method="_on_pressed"]
 [connection signal="pressed" from="SettingsMenu/BackButton" to="." method="_on_back_button_pressed"]

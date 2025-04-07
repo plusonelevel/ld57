@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 	rotation.y += 0.1 * delta
 	stone.rotation.z += 1.0 * delta
 	stone_2.rotation.y += 1.2 * delta
-	stone_3.rotation.y += 0.1 * delta
 	stone_4.rotation.x += 0.6 * delta
 	stone_5.rotation.y += 1.5 * delta
 	stone_6.rotation.z += 1.3 * delta
