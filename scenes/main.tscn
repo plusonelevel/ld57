@@ -330,7 +330,7 @@ size = Vector3(285.993, 14.0005, 4.76581)
 size = Vector3(65.3686, 14.0005, 4.76581)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pm3ni"]
-size = Vector3(23.7026, 14.0005, 4.76581)
+size = Vector3(30.2717, 14.0005, 4.76581)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_trceg"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
@@ -1236,16 +1236,16 @@ shape = SubResource("BoxShape3D_jscy8")
 transform = Transform3D(1.89876e-08, 0.45956, 1.51334e-08, -0.0833074, -2.0088e-08, 0.342606, 2.02481, 0, 0.0140959, -3.07664, 5.98051, 2.97545)
 
 [node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Column5"]
-transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+transform = Transform3D(0.416234, 2.61997e-17, 2.32831e-10, 0, 0.289888, -1.95677e-15, 1.49012e-08, 1.78273e-15, 0.295086, -0.2427, 0, -0.0590153)
 mesh = SubResource("ArrayMesh_vfl2y")
 skeleton = NodePath("")
 
 [node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Column5"]
-transform = Transform3D(0.289888, 0, 0, 0, 0.289888, 0, 0, 0, 0.289888, 0, 0, 0)
+transform = Transform3D(0.416234, 2.61997e-17, 2.32831e-10, 0, 0.289888, -1.95677e-15, 1.49012e-08, 1.78273e-15, 0.295086, -0.2427, 0, -0.0590153)
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
 [node name="CollisionFront" type="CollisionShape3D" parent="Scene/Terrain/Column5" groups=["2d_collider"]]
-transform = Transform3D(0.289891, 1.97757e-14, -1.234e-08, -7.19425e-14, 0.289888, 1.04618e-13, -6.85453e-07, 5.45732e-13, 0.289888, 3.29022, 1.88435, 0.0643463)
+transform = Transform3D(0.289891, 2.123e-14, -1.25729e-08, -8.26006e-14, 0.289888, 1.03743e-13, -1.03563e-06, 5.46086e-13, 0.289888, 2.33806, 1.88435, 0.0643482)
 shape = SubResource("BoxShape3D_pm3ni")
 
 [node name="AngledPlatform" type="StaticBody3D" parent="Scene/Terrain"]
