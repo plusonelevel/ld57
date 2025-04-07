@@ -56,7 +56,7 @@ func _on_symbol_button_area_exited(_body: CharacterBody3D) -> void:
 	guide_c.hide()
 
 
-func _on_perspective_area_body_entered(_body: CharacterBody3D) -> void:
+func _on_perspective_area_entered(_body: CharacterBody3D) -> void:
 	guide_x.show()
 
 

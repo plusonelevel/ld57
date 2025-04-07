@@ -341,13 +341,16 @@ script = ExtResource("10_vsj0x")
 
 [node name="Drone" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("11_qsv74")
+volume_db = -6.0
 autoplay = true
 
 [node name="Gong2" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("12_h1mc3")
+volume_db = -6.0
 
 [node name="Gong1" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("13_cof4p")
+volume_db = -6.0
 
 [connection signal="mouse_entered" from="WinMenu/Exit" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="WinMenu/Exit" to="." method="_on_quit_button_pressed"]

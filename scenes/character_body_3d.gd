@@ -3,9 +3,10 @@ extends CharacterBody3D
 @onready var body: MeshInstance3D = $Body
 @onready var state_machine = $Body/AnimationTree["parameters/playback"]
 @onready var is_jumping = false
-@onready var steps: AudioStreamPlayer = $AudioManager/Steps
-@onready var jump: AudioStreamPlayer = $AudioManager/Jump
-@onready var fall: AudioStreamPlayer = $AudioManager/Fall
+@onready var steps = $AudioManager/Steps
+@onready var steps_2 = $AudioManager/Steps2
+@onready var jump = $AudioManager/Jump
+@onready var fall = $AudioManager/Fall
 
 
 const SPEED = 4.0
@@ -56,10 +57,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		if not is_jumping and is_on_floor():
 			state_machine.travel("Run")
-			if not steps.playing:
-				steps.play()
+			if not steps.playing and not steps_2.playing:
+				play_random_steps()
 		else:
 			steps.stop()
+			steps_2.stop()
 
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -68,6 +70,7 @@ func _physics_process(delta: float) -> void:
 		if not is_jumping:
 			state_machine.travel("Idle")
 			steps.stop()
+			steps_2.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
@@ -85,6 +88,11 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("toggle_win"):
 			emit_signal("trigger_win")
 
+func play_random_steps():
+	if randi() % 2 == 0:
+		steps.play()
+	else:
+		steps_2.play()
 
 func toggle_camera():
 	move_mode = MOVE_MODE.iso if move_mode == MOVE_MODE.side else MOVE_MODE.side
