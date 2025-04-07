@@ -1450,6 +1450,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.721, 11.0861, 7.71677)
 
 [connection signal="button_pressed" from="Player" to="Scene/Terrain/Stone28" method="_on_button_pressed"]
 [connection signal="button_pressed" from="Player" to="Scene/Terrain/Stone51" method="_on_button_pressed"]
+[connection signal="trigger_win" from="Player" to="UI" method="_on_player_trigger_win"]
 [connection signal="body_entered" from="Scene/Terrain/ButtonArea" to="Player" method="_on_symbol_button_area_entered"]
 [connection signal="body_entered" from="Scene/Terrain/ButtonArea" to="UI" method="_on_symbol_button_area_entered"]
 [connection signal="body_exited" from="Scene/Terrain/ButtonArea" to="Player" method="_on_symbol_button_area_exited"]

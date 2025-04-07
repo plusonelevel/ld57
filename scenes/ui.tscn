@@ -362,7 +362,7 @@ volume_db = -6.0
 [connection signal="pressed" from="StartMenu/Exit" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="StartMenu/Exit" to="AudioManager" method="_on_pressed"]
 [connection signal="mouse_entered" from="PauseMenu/Play" to="AudioManager" method="_on_mouse_entered"]
-[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Play" to="AudioManager" method="_on_pressed"]
 [connection signal="mouse_entered" from="PauseMenu/RestartButton" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="PauseMenu/RestartButton" to="AudioManager" method="_on_mouse_entered"]
