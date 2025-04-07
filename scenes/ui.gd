@@ -3,6 +3,12 @@ extends Control
 @onready var pause_menu: Control = $PauseMenu
 @onready var settings_menu: VBoxContainer = $SettingsMenu
 @onready var start_menu: Control = $StartMenu
+@onready var guide_c: Control = $GuideC
+@onready var guide_x: Control = $GuideX
+@onready var guide_e: Control = $GuideE
+@onready var win_menu: Control = $WinMenu
+
+
 #@onready var ivc: SubViewportContainer = $"IntroScene/IntroViewportContainer"
 
 func _ready() -> void:
@@ -40,3 +46,32 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_back_button_pressed() -> void:
 	settings_menu.hide()
 	start_menu.show()
+
+
+func _on_symbol_button_area_entered(_body: CharacterBody3D) -> void:
+	guide_c.show()
+
+
+func _on_symbol_button_area_exited(_body: CharacterBody3D) -> void:
+	guide_c.hide()
+
+
+func _on_perspective_area_body_entered(_body: CharacterBody3D) -> void:
+	guide_x.show()
+
+
+func _on_perspective_area_exited(_body: CharacterBody3D) -> void:
+	guide_x.hide()
+
+
+func _on_win_area_entered(_body: CharacterBody3D) -> void:
+	guide_e.show()
+
+
+func _on_win_area_exited(_body: CharacterBody3D) -> void:
+	guide_e.hide()
+
+
+func _on_player_trigger_win() -> void:
+	win_menu.show()
+	get_tree().paused = !get_tree().paused

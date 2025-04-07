@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://2my7wmbrdxec"]
+
+[ext_resource type="Texture2D" uid="uid://bxshv0dr8d4fj" path="res://assets/symbol2.png" id="1_n5eb8"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_n5eb8")
+emission = Color(1, 0.0232097, 0.106436, 1)
+uv1_scale = Vector3(0.945, 0.945, 0.945)
