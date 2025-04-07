@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var steps_2 = $AudioManager/Steps2
 @onready var jump = $AudioManager/Jump
 @onready var fall = $AudioManager/Fall
+@onready var gong = $AudioManager/Gong
+
 
 
 const SPEED = 4.0
@@ -82,11 +84,13 @@ func _physics_process(delta: float) -> void:
 	if is_button_active == true:
 		if Input.is_action_just_pressed("toggle_button"):
 			emit_signal("button_pressed")
+			gong.play()
 			
 	#handle win button
 	if is_win_button_active == true:
 		if Input.is_action_just_pressed("toggle_win"):
 			emit_signal("trigger_win")
+			gong.play()
 
 func play_random_steps():
 	if randi() % 2 == 0:

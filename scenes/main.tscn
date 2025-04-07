@@ -1096,6 +1096,11 @@ transform = Transform3D(-0.702059, 0.00397905, -0.0312124, -0.0119283, -0.215568
 mesh = SubResource("ArrayMesh_qnkc7")
 skeleton = NodePath("")
 
+[node name="Stone2" type="MeshInstance3D" parent="Scene/Terrain/Stone23"]
+transform = Transform3D(-0.76497, 0.00391996, 5.07095e-05, -0.0129502, -0.231933, -0.000527622, 0.00113381, -0.00434868, 0.0281861, 0.802929, -0.0294018, -0.73564)
+mesh = SubResource("ArrayMesh_qnkc7")
+skeleton = NodePath("")
+
 [node name="CollisionIso" type="CollisionShape3D" parent="Scene/Terrain/Stone23"]
 transform = Transform3D(-0.702059, 0.00397905, -0.0312124, -0.0119283, -0.215568, -0.00690359, -0.0598554, -0.00371183, 0.367474, 0.999445, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jyhfs")
