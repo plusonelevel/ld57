@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bf40kh3d4wcto"]
+[gd_scene load_steps=16 format=3 uid="uid://bf40kh3d4wcto"]
 
 [ext_resource type="Script" uid="uid://87kwxphreif4" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Theme" uid="uid://bcxmt6c2ecx3g" path="res://theme.tres" id="2_wm3ai"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw40yk0byhh0o" path="res://assets/symbol.png" id="2_yev5y"]
 [ext_resource type="Texture2D" uid="uid://bkfk52rmfmeum" path="res://assets/symbol3.png" id="3_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bxshv0dr8d4fj" path="res://assets/symbol2.png" id="6_8dubc"]
+[ext_resource type="Shader" uid="uid://cxjqdkqw1igch" path="res://scenes/ui.gdshader" id="6_qsv74"]
 [ext_resource type="Texture2D" uid="uid://cufx8bfjmik2" path="res://assets/symbol5.png" id="7_cgfq5"]
 [ext_resource type="Texture2D" uid="uid://bubyqssht680r" path="res://assets/symbol6.png" id="8_7dvkv"]
 [ext_resource type="Texture2D" uid="uid://qloag41nj6wv" path="res://assets/symbol4.png" id="9_vdcm2"]
@@ -13,6 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://02aldwn1p6f8" path="res://audio/drone.wav" id="11_qsv74"]
 [ext_resource type="AudioStream" uid="uid://bfaocjyy13osh" path="res://audio/gong1.wav" id="12_h1mc3"]
 [ext_resource type="AudioStream" uid="uid://b1in5vxjg8a3m" path="res://audio/gong2.wav" id="13_cof4p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1mc3"]
+shader = ExtResource("6_qsv74")
+shader_parameter/blur = 4.0
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -170,6 +175,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Blur" type="Panel" parent="WinMenu"]
+material = SubResource("ShaderMaterial_h1mc3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Exit" type="Button" parent="WinMenu"]
 layout_mode = 2
 anchor_left = 0.5
@@ -189,6 +203,15 @@ script = ExtResource("2_x4jx1")
 
 [node name="StartMenu" type="Control" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="Panel" parent="StartMenu"]
+material = SubResource("ShaderMaterial_h1mc3")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,6 +257,15 @@ script = ExtResource("2_x4jx1")
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="Panel" parent="PauseMenu"]
+material = SubResource("ShaderMaterial_h1mc3")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -362,7 +394,7 @@ volume_db = -6.0
 [connection signal="pressed" from="StartMenu/Exit" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="StartMenu/Exit" to="AudioManager" method="_on_pressed"]
 [connection signal="mouse_entered" from="PauseMenu/Play" to="AudioManager" method="_on_mouse_entered"]
-[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Play" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Play" to="AudioManager" method="_on_pressed"]
 [connection signal="mouse_entered" from="PauseMenu/RestartButton" to="." method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="PauseMenu/RestartButton" to="AudioManager" method="_on_mouse_entered"]
