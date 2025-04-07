@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ludum Dare 57"
+config/name="Perspector"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cj1r0c1vl6dcq"
 
 [autoload]
 
