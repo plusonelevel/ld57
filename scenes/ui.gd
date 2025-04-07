@@ -8,12 +8,8 @@ extends Control
 @onready var guide_e: Control = $GuideE
 @onready var win_menu: Control = $WinMenu
 
-
-#@onready var ivc: SubViewportContainer = $"IntroScene/IntroViewportContainer"
-
 func _ready() -> void:
 	start_menu.show()
-	#ivc.show()
 
 func handle_pause() -> void:
 	pause_menu.visible = !pause_menu.visible
@@ -25,7 +21,6 @@ func _on_quit_button_pressed() -> void:
 func _on_start_button_pressed() -> void:
 	get_tree().paused = false
 	start_menu.hide()
-	#ivc.hide()
 	GameManager.game_paused.emit()
 	GameManager.game_paused.connect(handle_pause)
 
