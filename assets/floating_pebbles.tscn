@@ -110,9 +110,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b8gmj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6xj14"]
-size = Vector3(0.50058, 1, 0.641144)
+size = Vector3(0.564587, 1.3692, 0.625887)
 
 [node name="Floating pebbles" type="RigidBody3D"]
+mass = 10000.0
 gravity_scale = 0.0
 script = ExtResource("1_6xj14")
 
@@ -149,5 +150,5 @@ mesh = SubResource("ArrayMesh_6tvvr")
 skeleton = NodePath("")
 
 [node name="CollisionIso" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.168228, 1.20742, 0.103806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267149, 1.00439, 0.100612)
 shape = SubResource("BoxShape3D_6xj14")
