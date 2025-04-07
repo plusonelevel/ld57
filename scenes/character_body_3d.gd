@@ -102,17 +102,21 @@ func toggle_camera():
 	move_mode = MOVE_MODE.iso if move_mode == MOVE_MODE.side else MOVE_MODE.side
 
 
-func _on_symbol_button_area_entered(_body: CharacterBody3D) -> void:
-	is_button_active = true
+func _on_symbol_button_area_entered(other) -> void:
+	if other is CharacterBody3D:
+		is_button_active = true
 
 
-func _on_symbol_button_area_exited(_body: CharacterBody3D) -> void:
-	is_button_active = false
+func _on_symbol_button_area_exited(other) -> void:
+	if other is CharacterBody3D:
+		is_button_active = false
 
 
-func _on_win_area_entered(_body: CharacterBody3D) -> void:
-	is_win_button_active = true
+func _on_win_area_entered(other) -> void:
+	if other is CharacterBody3D:
+		is_win_button_active = true
 
 
-func _on_win_area_exited(_body: CharacterBody3D) -> void:
-	is_win_button_active = false
+func _on_win_area_exited(other) -> void:
+	if other is CharacterBody3D:
+		is_win_button_active = false

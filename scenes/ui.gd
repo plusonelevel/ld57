@@ -48,28 +48,34 @@ func _on_back_button_pressed() -> void:
 	start_menu.show()
 
 
-func _on_symbol_button_area_entered(_body: CharacterBody3D) -> void:
-	guide_c.show()
+func _on_symbol_button_area_entered(other) -> void:
+	if other is CharacterBody3D:
+		guide_c.show()
 
 
-func _on_symbol_button_area_exited(_body: CharacterBody3D) -> void:
-	guide_c.hide()
+func _on_symbol_button_area_exited(other) -> void:
+	if other is CharacterBody3D:
+		guide_c.hide()
 
 
-func _on_perspective_area_entered(_body: CharacterBody3D) -> void:
-	guide_x.show()
+func _on_perspective_area_entered(other) -> void:
+	if other is CharacterBody3D:
+		guide_x.show()
 
 
-func _on_perspective_area_exited(_body: CharacterBody3D) -> void:
-	guide_x.hide()
+func _on_perspective_area_exited(other) -> void:
+	if other is CharacterBody3D:
+		guide_x.hide()
 
 
-func _on_win_area_entered(_body: CharacterBody3D) -> void:
-	guide_e.show()
+func _on_win_area_entered(other) -> void:
+	if other is CharacterBody3D:
+		guide_e.show()
 
 
-func _on_win_area_exited(_body: CharacterBody3D) -> void:
-	guide_e.hide()
+func _on_win_area_exited(other) -> void:
+	if other is CharacterBody3D:
+		guide_e.hide()
 
 
 func _on_player_trigger_win() -> void:
