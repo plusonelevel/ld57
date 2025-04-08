@@ -6,6 +6,9 @@
 export.cfg
 export_credentials.cfg
 
+# Godot export
+dist/
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 

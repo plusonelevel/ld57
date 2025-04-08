@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bf40kh3d4wcto"]
+[gd_scene load_steps=17 format=3 uid="uid://bf40kh3d4wcto"]
 
 [ext_resource type="Script" uid="uid://87kwxphreif4" path="res://scenes/ui.gd" id="1_nt7q6"]
 [ext_resource type="Theme" uid="uid://bcxmt6c2ecx3g" path="res://theme.tres" id="2_wm3ai"]
@@ -18,6 +18,14 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1mc3"]
 shader = ExtResource("6_qsv74")
 shader_parameter/blur = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsv74"]
+font_size = 96
+font_color = Color(0.93, 0.1116, 0.23436, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.0784314)
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -184,18 +192,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Exit" type="Button" parent="WinMenu"]
-layout_mode = 2
+[node name="Label" type="Label" parent="WinMenu"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 64.0
+offset_right = 1750.0
+offset_bottom = 264.0
+text = "YOU MADE IT OUT"
+label_settings = SubResource("LabelSettings_qsv74")
+
+[node name="RestartButton" type="Button" parent="WinMenu"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -143.0
-offset_top = -229.0
-offset_right = 105.0
-offset_bottom = 19.0
+offset_left = -301.0
+offset_top = -41.0
+offset_right = -53.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.270526
+scale = Vector2(1.285, 1.285)
+size_flags_horizontal = 4
+theme = ExtResource("2_wm3ai")
+icon = ExtResource("6_8dubc")
+
+[node name="Exit" type="Button" parent="WinMenu"]
+layout_mode = 2
+anchor_left = 0.449
+anchor_top = 0.339
+anchor_right = 0.449
+anchor_bottom = 0.339
+offset_left = 381.752
+offset_top = 141.328
+offset_right = 629.752
+offset_bottom = 389.328
 rotation = 0.190241
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.86, 0.86)
 size_flags_horizontal = 4
 theme = ExtResource("2_wm3ai")
 icon = ExtResource("3_gdt2y")
@@ -384,6 +421,10 @@ volume_db = -6.0
 stream = ExtResource("13_cof4p")
 volume_db = -6.0
 
+[connection signal="mouse_entered" from="WinMenu/RestartButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="WinMenu/RestartButton" to="AudioManager" method="_on_mouse_entered"]
+[connection signal="pressed" from="WinMenu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="WinMenu/RestartButton" to="AudioManager" method="_on_pressed"]
 [connection signal="mouse_entered" from="WinMenu/Exit" to="AudioManager" method="_on_mouse_entered"]
 [connection signal="pressed" from="WinMenu/Exit" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="WinMenu/Exit" to="AudioManager" method="_on_pressed"]
