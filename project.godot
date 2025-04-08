@@ -20,6 +20,10 @@ config/icon="uid://cj1r0c1vl6dcq"
 InputListener="*res://autoloads/input_listener.gd"
 GameManager="*res://autoloads/game_manager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
