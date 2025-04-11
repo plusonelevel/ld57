@@ -1426,7 +1426,7 @@ transform = Transform3D(0.955844, 0, -0.293874, 0, 1, 0, 0.293874, 0, 0.955844, 
 shape = SubResource("BoxShape3D_0ld40")
 
 [node name="DeathPit" type="Area3D" parent="Scene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.07936, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -5.07936, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/DeathPit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.91548)
